@@ -1,0 +1,53 @@
+{
+  "name": "generator-verdaccio-plugin",
+  "version": "0.0.1",
+  "description": "plugin generator for verdaccio",
+  "homepage": "https://github.com/verdaccio",
+  "author": {
+    "name": "Juan Picado <@jotadeveloper>",
+    "email": "juanpicado19@gmail.com",
+    "url": "https://github.com/verdaccio/generator-verdaccio-plugin"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/auth/index.js",
+  "keywords": [
+    "verdaccio-plugin",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "generator-git-init": "^1.1.3",
+    "lodash": "^4.17.4",
+    "yeoman-generator": "1.1.0",
+    "yosay": "^1.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "gulp": "^3.9.0",
+    "gulp-coveralls": "^0.1.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^1.0.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-nsp": "^2.1.0",
+    "gulp-plumber": "^1.0.0",
+    "yeoman-assert": "^2.2.1",
+    "yeoman-test": "^1.6.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "verdaccio/generator-verdaccio-plugin",
+  "scripts": {
+    "prepublish": "gulp prepublish test",
+    "test": "gulp test"
+  },
+  "license": "MIT"
+}
