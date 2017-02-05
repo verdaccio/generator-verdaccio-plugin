@@ -13,7 +13,7 @@ npm install -g generator-verdaccio-plugin
 Then generate your new project:
 
 ```bash
-yo verdaccio-plugin
+yo verdaccio-plugin:auth
 ```
 
 ## Getting To Know Yeoman
