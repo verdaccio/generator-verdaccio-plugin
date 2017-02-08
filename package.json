@@ -1,6 +1,6 @@
 {
   "name": "generator-verdaccio-plugin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "plugin generator for verdaccio",
   "homepage": "https://github.com/verdaccio",
   "author": {
