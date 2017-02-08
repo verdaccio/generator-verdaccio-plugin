@@ -75,67 +75,62 @@ module.exports = class extends Generator {
   }
 
   packageJSON() {
-      this.fs.copyTpl(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json'), 
-        this.props
-      );
+    this.fs.copyTpl(
+      this.templatePath('_package.json'),
+      this.destinationPath('package.json'), 
+      this.props
+    );
   }
 
-  writing(){
-    
+  writing(){   
     this.fs.copy(
       this.templatePath('gitignore'),
       this.destinationPath('.gitignore')
     );
-
     this.fs.copy(
       this.templatePath('npmignore'),
       this.destinationPath('.npmignore')
     );
-
     this.fs.copy(
       this.templatePath('babelrc'),
       this.destinationPath('.babelrc')
     );
-
     this.fs.copy(
       this.templatePath('travis.yml'),
       this.destinationPath('.travis.yml')
     );
-
     this.fs.copy(
       this.templatePath('travis.yml'),
       this.destinationPath('.travis.yml')
     );
-
     this.fs.copyTpl(
       this.templatePath('README.md'),
       this.destinationPath('README.md'),
       this.props
     );
-
     this.fs.copyTpl(
       this.templatePath('eslintrc'),
       this.destinationPath('.eslintrc'),
       this.props
     );
-
     this.fs.copyTpl(
       this.templatePath('eslintignore'),
       this.destinationPath('.eslintignore'),
       this.props
     );
-
     this.fs.copy(
       this.templatePath('src/index.js'),
       this.destinationPath('src/index.js'),
       this.props
     );
-
-      this.fs.copy(
+    this.fs.copy(
       this.templatePath('index.js'),
       this.destinationPath('index.js'),
+      this.props
+    );
+    this.fs.copy(
+      this.templatePath('editorconfig'),
+      this.destinationPath('.editorconfig'),
       this.props
     );
   }
