@@ -6,7 +6,7 @@ class AuthCustomPlugin {
 		return this;
 	}
 	/**
-	 * authenticate an user
+	 * Authenticate an user.
 	 * @param user user to log
 	 * @param password provided password
 	 * @param cb callback function
@@ -16,20 +16,20 @@ class AuthCustomPlugin {
 	}
 
 	/**
-	 * check grants for such user
+	 * check grants for such user.
 	 */
 	allow_access() {
 		// in case of restrict the access
 	}
 
 	/**
-	 * 
+	 * check grants to publish
 	 */
 	allow_publish() {
-		// 
+		// in cass to check if has permission to publish
 	}
 }
 
-module.exports = ()=> {
-	return Object.create(AuthPlugin.prototype);
+module.exports = (config, stuff)=> {
+	return new AuthCustomPlugin(config, stuff);
 };
