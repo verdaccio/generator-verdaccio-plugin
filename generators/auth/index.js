@@ -53,7 +53,7 @@ module.exports = class extends Generator {
 			name: 'keywords',
 			message: 'Key your keywords (comma to split)',
 			filter: function (keywords) {
-				return _.uniq(_.words(keywords).concat(['verdacio-plugin']));
+				return _.uniq(_.words(keywords).concat(['verdaccio-plugin']));
 			}
 		}
 		];
