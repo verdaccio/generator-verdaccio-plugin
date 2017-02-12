@@ -1,32 +1,35 @@
 /**
  * Custom Verdaccio Authenticate Plugin.
  */
-class AuthPlugin {
-    constructor() {
-        return this;
-    }
-    /**
-     * authenticate an user
-     * @param user user to log
-     * @param password provided password
-     * @param cb callback function
-     */
-    authenticate(user, password, cb) {
+class AuthCustomPlugin {
+	constructor() {
+		return this;
+	}
+	/**
+	 * authenticate an user
+	 * @param user user to log
+	 * @param password provided password
+	 * @param cb callback function
+	 */
+	authenticate(user, password, cb) {
+		// here your code
+	}
 
-    }
+	/**
+	 * check grants for such user
+	 */
+	allow_access() {
+		// in case of restrict the access
+	}
 
-    /**
-     * check grants for such user
-     */
-    allow_access() {
-
-    }
-
-    /**
-     * 
-     */
-    allow_publish() {
-
-    }
+	/**
+	 * 
+	 */
+	allow_publish() {
+		// 
+	}
 }
-export default AuthPlugin;
+
+module.exports = ()=> {
+	return Object.create(AuthPlugin.prototype);
+};
