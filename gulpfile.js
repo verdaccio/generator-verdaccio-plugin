@@ -7,6 +7,8 @@ var mocha = require('gulp-mocha');
 var istanbul = require('gulp-istanbul');
 var plumber = require('gulp-plumber');
 var coveralls = require('gulp-coveralls');
+var ts = require('gulp-typescript');
+var tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('static', function() {
   return gulp
@@ -38,7 +40,7 @@ gulp.task('test', gulp.series('pre-test'), function(cb) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['generators/**/*.js', 'test/**'], gulp.series('test'));
+  gulp.watch(['generators/**/*.ts', 'test/**'], gulp.series('test'));
 });
 
 gulp.task('coveralls', gulp.series('test'), function() {
@@ -52,4 +54,11 @@ gulp.task('coveralls', gulp.series('test'), function() {
 // TODO :  need to change it with npm's audit command or using synk
 // gulp.task('prepublish');
 
-gulp.task('default', gulp.series('static', 'test', 'coveralls'));
+gulp.task('ts', function() {
+  return gulp
+    .src('generators/')
+    .pipe(tsProject())
+    .js.pipe(gulp.dest('build'));
+});
+
+gulp.task('default', gulp.series('ts', 'static', 'test', 'coveralls'));
