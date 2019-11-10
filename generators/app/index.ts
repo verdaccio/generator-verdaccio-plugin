@@ -1,14 +1,18 @@
 import Generator from 'yeoman-generator';
 import chalk from 'chalk';
 import * as _ from 'lodash';
+import { resolve } from 'path';
 var yosay = require('yosay');
+
+import { propsTypes } from './types';
 
 export default class VerdaccioPluginGenerator extends Generator {
   private pkg: any;
-  private props: object;
+  private props: propsTypes;
+  private projectName: string = 'verdaccio-plugin';
+  private destinationPathName: string = 'verdaccio-plugin';
   constructor(args, opts) {
     super(args, opts);
-    this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
     this.props = {};
   }
 
@@ -18,7 +22,7 @@ export default class VerdaccioPluginGenerator extends Generator {
       yosay(
         'Welcome to ' +
           chalk.red('generator-verdaccio-plugin') +
-          ' auth plugin generator!'
+          ' plugin generator!'
       )
     );
 
@@ -28,16 +32,28 @@ export default class VerdaccioPluginGenerator extends Generator {
         name: 'name',
         require: true,
         message: 'What is the name of your plugin?',
-        default: 'verdaccio-plugin-auth-custom',
+        default: 'customname',
         validate: function(input) {
-          return input.indexOf('verdaccio-plugin-auth') === 0;
+          return input !== '';
         }
+      },
+      {
+        type: 'list',
+        name: 'pluginType',
+        require: true,
+        message: 'What kind of plugin you want to create?',
+        store: true,
+        choices: [
+          { value: 'auth' },
+          { value: 'storage' },
+          { value: 'middleware' }
+        ]
       },
       {
         type: 'input',
         name: 'description',
         message: 'Please, describe your plugin',
-        default: 'An amazing verdaccio auth plugin'
+        default: 'An amazing verdaccio plugin'
       },
       {
         name: 'githubUsername',
@@ -66,85 +82,93 @@ export default class VerdaccioPluginGenerator extends Generator {
     ];
 
     return this.prompt(prompts).then(
-      function(props) {
+      function(_props) {
         // To access props later use this.props.someAnswer;
         // @ts-ignore
-        this.props = props;
+        this.props = _props;
+        const { name, pluginType, githubUsername } = _props;
         // @ts-ignore
         this.props.license = '';
-        if (props.githubUsername) {
+
+        if (githubUsername) {
           // @ts-ignore
-          this.props.repository = props.githubUsername + '/' + this.props.name;
+          this.props.repository = githubUsername + '/' + name;
         }
+
+        // @ts-ignore
+        this.projectName = `verdaccio-plugin-${pluginType}-${name}`;
+
+        // @ts-ignore
+        this.destinationPathName = resolve(this.projectName);
+        // @ts-ignore
+        this.props.name = this.projectName;
       }.bind(this)
     );
   }
 
   packageJSON() {
     this.fs.copyTpl(
-      this.templatePath('auth/_package.json'),
-      this.destinationPath('package.json'),
+      this.templatePath('common/_package.json'),
+      this.destinationPath(resolve(this.destinationPathName, 'package.json')),
       this.props
     );
   }
 
   writing() {
     this.fs.copy(
-      this.templatePath('auth/gitignore'),
-      this.destinationPath('.gitignore')
+      this.templatePath('common/gitignore'),
+      this.destinationPath(resolve(this.destinationPathName, '.gitignore'))
     );
     this.fs.copy(
-      this.templatePath('auth/npmignore'),
-      this.destinationPath('.npmignore')
+      this.templatePath('common/npmignore'),
+      this.destinationPath(resolve(this.destinationPathName, '.npmignore'))
     );
     this.fs.copy(
-      this.templatePath('auth/babelrc'),
-      this.destinationPath('.babelrc')
+      this.templatePath('common/babelrc'),
+      this.destinationPath(resolve(this.destinationPathName, '.babelrc'))
     );
     this.fs.copy(
-      this.templatePath('auth/travis.yml'),
-      this.destinationPath('.travis.yml')
+      this.templatePath('common/travis.yml'),
+      this.destinationPath(resolve(this.destinationPathName, '.travis.yml'))
     );
     this.fs.copy(
-      this.templatePath('auth/travis.yml'),
-      this.destinationPath('.travis.yml')
+      this.templatePath('common/travis.yml'),
+      this.destinationPath(resolve(this.destinationPathName, '.travis.yml'))
     );
     this.fs.copyTpl(
-      this.templatePath('auth/README.md'),
-      this.destinationPath('README.md'),
-      this.props
-    );
-    this.fs.copyTpl(
-      this.templatePath('auth/eslintrc'),
-      this.destinationPath('.eslintrc'),
+      this.templatePath('common/README.md'),
+      this.destinationPath(resolve(this.destinationPathName, 'README.md')),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath('auth/eslintignore'),
-      this.destinationPath('.eslintignore'),
+      this.templatePath('common/eslintrc'),
+      this.destinationPath(resolve(this.destinationPathName, '.eslintrc')),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath('common/eslintignore'),
+      this.destinationPath(resolve(this.destinationPathName, '.eslintignore')),
       this.props
     );
     this.fs.copy(
-      this.templatePath('auth/src/index.js'),
-      this.destinationPath('src/index.js'),
+      this.templatePath(`${this.props.pluginType}/src/index.js`),
+      this.destinationPath(resolve(this.destinationPathName, 'src/index.js')),
       this.props
     );
     this.fs.copy(
-      this.templatePath('auth/index.js'),
-      this.destinationPath('index.js'),
+      this.templatePath('common/index.js'),
+      this.destinationPath(resolve(this.destinationPathName, 'index.js')),
       this.props
     );
     this.fs.copy(
-      this.templatePath('auth/editorconfig'),
-      this.destinationPath('.editorconfig'),
+      this.templatePath('common/editorconfig'),
+      this.destinationPath(resolve(this.destinationPathName, '.editorconfig')),
       this.props
     );
-  }
-  destinationPath(arg0: string): any {
-    throw new Error('Method not implemented.');
   }
 
   install() {
+    process.chdir(this.projectName);
     this.installDependencies({ npm: true, bower: false });
   }
 }

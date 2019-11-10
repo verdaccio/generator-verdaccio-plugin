@@ -11,7 +11,7 @@
   "files": [
     "build"
   ],
-  "main": "generators/app/index.js",
+  "main": "build/index.js",
   "keywords": [
     "verdaccio-plugin",
     "yeoman-generator"
