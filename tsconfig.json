@@ -5,7 +5,6 @@
     "module": "commonjs",
     "noImplicitAny": false,
     "strict": true,
-    "outDir": "build",
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "allowJs": true,
@@ -14,12 +13,13 @@
     "esModuleInterop": true,
   },
   "include": [
-    "generators",
+    "generators/",
     "types/*.d.ts",
     "scripts/lib",
-    "node_modules/config"
+    "node_modules/config", "generators"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "generators/app/templates/*"
   ]
 }
