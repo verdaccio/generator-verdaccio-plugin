@@ -100,6 +100,8 @@ export default class VerdaccioPluginGenerator extends Generator {
 
         // @ts-ignore
         this.destinationPathName = resolve(this.projectName);
+        // @ts-ignore
+        this.props.name = this.projectName;
       }.bind(this)
     );
   }
