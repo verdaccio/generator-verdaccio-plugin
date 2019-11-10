@@ -13,8 +13,6 @@ npm install -g generator-verdaccio-plugin
 
 Then generate your new project:
 
-- Generate authorization plugin
-
 ```bash
 yo verdaccio-plugin
 ```
