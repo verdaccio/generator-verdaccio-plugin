@@ -1,16 +1,16 @@
-import Generator from 'yeoman-generator';
-import chalk from 'chalk';
-import * as _ from 'lodash';
-import { resolve } from 'path';
-var yosay = require('yosay');
+import Generator from "yeoman-generator";
+import chalk from "chalk";
+import * as _ from "lodash";
+import { resolve } from "path";
+var yosay = require("yosay");
 
-import { propsTypes } from './types';
+import { propsTypes } from "./types";
 
 export default class VerdaccioPluginGenerator extends Generator {
   private pkg: any;
   private props: propsTypes;
-  private projectName: string = 'verdaccio-plugin';
-  private destinationPathName: string = 'verdaccio-plugin';
+  private projectName: string = "verdaccio-plugin";
+  private destinationPathName: string = "verdaccio-plugin";
   constructor(args, opts) {
     super(args, opts);
     this.props = {};
@@ -20,63 +20,72 @@ export default class VerdaccioPluginGenerator extends Generator {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        'Welcome to ' +
-          chalk.red('generator-verdaccio-plugin') +
-          ' plugin generator!'
+        "Welcome to " +
+          chalk.red("generator-verdaccio-plugin") +
+          " plugin generator!"
       )
     );
 
     var prompts = [
       {
-        type: 'input',
-        name: 'name',
+        type: "input",
+        name: "name",
         require: true,
-        message: 'What is the name of your plugin?',
-        default: 'customname',
+        message: "What is the name of your plugin?",
+        default: "customname",
         validate: function(input) {
-          return input !== '';
+          return input !== "";
         }
       },
       {
-        type: 'list',
-        name: 'pluginType',
+        type: "list",
+        name: "lang",
         require: true,
-        message: 'What kind of plugin you want to create?',
+        message: "Select Language",
+        default: "typescript",
+        store: true,
+        choices: [{ value: "typescript" }, { value: "javascript" }]
+      },
+      {
+        type: "list",
+        name: "pluginType",
+        require: true,
+        message: "What kind of plugin you want to create?",
         store: true,
         choices: [
-          { value: 'auth' },
-          { value: 'storage' },
-          { value: 'middleware' }
+          { value: "auth" },
+          { value: "storage" },
+          { value: "middleware" }
         ]
       },
       {
-        type: 'input',
-        name: 'description',
-        message: 'Please, describe your plugin',
-        default: 'An amazing verdaccio plugin'
+        type: "input",
+        name: "description",
+        message: "Please, describe your plugin",
+        default: "An amazing verdaccio plugin"
       },
       {
-        name: 'githubUsername',
-        message: 'GitHub username or organization',
+        name: "githubUsername",
+        message: "GitHub username or organization",
         validate: function(input) {
-          return input !== '';
+          return input !== "";
         }
       },
       {
-        name: 'authorName',
+        name: "authorName",
         message: "Author's Name",
         store: true
       },
       {
-        name: 'authorEmail',
+        name: "authorEmail",
         message: "Author's Email",
         store: true
       },
       {
-        name: 'keywords',
-        message: 'Key your keywords (comma to split)',
+        name: "keywords",
+        message: "Key your keywords (comma to split)",
         filter: function(keywords) {
-          return _.uniq(_.words(keywords).concat(['verdaccio-plugin']));
+          return _.uniq(_.words(keywords).concat(["verdaccio-plugin"]));
         }
       }
     ];
@@ -88,11 +97,11 @@ export default class VerdaccioPluginGenerator extends Generator {
         this.props = _props;
         const { name, pluginType, githubUsername } = _props;
         // @ts-ignore
-        this.props.license = '';
+        this.props.license = "";
 
         if (githubUsername) {
           // @ts-ignore
-          this.props.repository = githubUsername + '/' + name;
+          this.props.repository = githubUsername + "/" + name;
         }
 
         // @ts-ignore
@@ -107,62 +116,64 @@ export default class VerdaccioPluginGenerator extends Generator {
   }
 
   packageJSON() {
+    const { lang } = this.props;
     this.fs.copyTpl(
-      this.templatePath('common/_package.json'),
-      this.destinationPath(resolve(this.destinationPathName, 'package.json')),
+      this.templatePath(lang + "/common/_package.json"),
+      this.destinationPath(resolve(this.destinationPathName, "package.json")),
       this.props
     );
   }
 
   writing() {
+    const { lang } = this.props;
     this.fs.copy(
-      this.templatePath('common/gitignore'),
-      this.destinationPath(resolve(this.destinationPathName, '.gitignore'))
+      this.templatePath(lang + "common/gitignore"),
+      this.destinationPath(resolve(this.destinationPathName, ".gitignore"))
     );
     this.fs.copy(
-      this.templatePath('common/npmignore'),
-      this.destinationPath(resolve(this.destinationPathName, '.npmignore'))
+      this.templatePath(lang + "common/npmignore"),
+      this.destinationPath(resolve(this.destinationPathName, ".npmignore"))
     );
     this.fs.copy(
-      this.templatePath('common/babelrc'),
-      this.destinationPath(resolve(this.destinationPathName, '.babelrc'))
+      this.templatePath(lang + "common/babelrc"),
+      this.destinationPath(resolve(this.destinationPathName, ".babelrc"))
     );
     this.fs.copy(
-      this.templatePath('common/travis.yml'),
-      this.destinationPath(resolve(this.destinationPathName, '.travis.yml'))
+      this.templatePath(lang + "common/travis.yml"),
+      this.destinationPath(resolve(this.destinationPathName, ".travis.yml"))
     );
     this.fs.copy(
-      this.templatePath('common/travis.yml'),
-      this.destinationPath(resolve(this.destinationPathName, '.travis.yml'))
+      this.templatePath(lang + "common/travis.yml"),
+      this.destinationPath(resolve(this.destinationPathName, ".travis.yml"))
     );
     this.fs.copyTpl(
-      this.templatePath('common/README.md'),
-      this.destinationPath(resolve(this.destinationPathName, 'README.md')),
-      this.props
-    );
-    this.fs.copyTpl(
-      this.templatePath('common/eslintrc'),
-      this.destinationPath(resolve(this.destinationPathName, '.eslintrc')),
+      this.templatePath(lang + "common/README.md"),
+      this.destinationPath(resolve(this.destinationPathName, "README.md")),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath('common/eslintignore'),
-      this.destinationPath(resolve(this.destinationPathName, '.eslintignore')),
+      this.templatePath(lang + "common/eslintrc"),
+      this.destinationPath(resolve(this.destinationPathName, ".eslintrc")),
+      this.props
+    );
+    this.fs.copyTpl(
+      this.templatePath(lang + "common/eslintignore"),
+      this.destinationPath(resolve(this.destinationPathName, ".eslintignore")),
       this.props
     );
     this.fs.copy(
-      this.templatePath(`${this.props.pluginType}/src/index.js`),
-      this.destinationPath(resolve(this.destinationPathName, 'src/index.js')),
+      this.templatePath(`${lang}/${this.props.pluginType}/src/index.js`),
+      this.destinationPath(resolve(this.destinationPathName, "src/index.js")),
       this.props
     );
     this.fs.copy(
-      this.templatePath('common/index.js'),
-      this.destinationPath(resolve(this.destinationPathName, 'index.js')),
+      this.templatePath(lang + "common/index.js"),
+      this.destinationPath(resolve(this.destinationPathName, "index.js")),
       this.props
     );
     this.fs.copy(
-      this.templatePath('common/editorconfig'),
-      this.destinationPath(resolve(this.destinationPathName, '.editorconfig')),
+      this.templatePath(lang + "common/editorconfig"),
+      this.destinationPath(resolve(this.destinationPathName, ".editorconfig")),
       this.props
     );
   }
