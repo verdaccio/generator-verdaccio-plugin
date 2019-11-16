@@ -127,37 +127,37 @@ export default class VerdaccioPluginGenerator extends Generator {
   writing() {
     const { lang } = this.props;
     this.fs.copy(
-      this.templatePath(lang + "common/gitignore"),
+      this.templatePath(lang + "/common/gitignore"),
       this.destinationPath(resolve(this.destinationPathName, ".gitignore"))
     );
     this.fs.copy(
-      this.templatePath(lang + "common/npmignore"),
+      this.templatePath(lang + "/common/npmignore"),
       this.destinationPath(resolve(this.destinationPathName, ".npmignore"))
     );
     this.fs.copy(
-      this.templatePath(lang + "common/babelrc"),
+      this.templatePath(lang + "/common/babelrc"),
       this.destinationPath(resolve(this.destinationPathName, ".babelrc"))
     );
     this.fs.copy(
-      this.templatePath(lang + "common/travis.yml"),
+      this.templatePath(lang + "/common/travis.yml"),
       this.destinationPath(resolve(this.destinationPathName, ".travis.yml"))
     );
     this.fs.copy(
-      this.templatePath(lang + "common/travis.yml"),
+      this.templatePath(lang + "/common/travis.yml"),
       this.destinationPath(resolve(this.destinationPathName, ".travis.yml"))
     );
     this.fs.copyTpl(
-      this.templatePath(lang + "common/README.md"),
+      this.templatePath(lang + "/common/README.md"),
       this.destinationPath(resolve(this.destinationPathName, "README.md")),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath(lang + "common/eslintrc"),
+      this.templatePath(lang + "/common/eslintrc"),
       this.destinationPath(resolve(this.destinationPathName, ".eslintrc")),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath(lang + "common/eslintignore"),
+      this.templatePath(lang + "/common/eslintignore"),
       this.destinationPath(resolve(this.destinationPathName, ".eslintignore")),
       this.props
     );
@@ -167,7 +167,7 @@ export default class VerdaccioPluginGenerator extends Generator {
       this.props
     );
     this.fs.copy(
-      this.templatePath(lang + "common/index.js"),
+      this.templatePath(lang + "/common/index.js"),
       this.destinationPath(resolve(this.destinationPathName, "index.js")),
       this.props
     );
