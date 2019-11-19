@@ -1,21 +1,21 @@
-"use strict";
-var path = require("path");
-var assert = require("yeoman-assert");
-var helpers = require("yeoman-test");
+'use strict';
+var path = require('path');
+var assert = require('yeoman-assert');
+var helpers = require('yeoman-test');
 
-describe("generator-verdaccio-plugin:app", function() {
+describe('generator-verdaccio-plugin:app', function() {
   before(function() {
     return helpers
-      .run(path.join(__dirname, "../generators/app/templates/javascript/auth"))
+      .run(path.join(__dirname, '../generators/app/templates/javascript/auth'))
       .withPrompts({
-        name: "verdaccio-plugin-auth-custom",
-        description: "test",
-        githubUsername: "verdaccio"
+        name: 'verdaccio-plugin-auth-custom',
+        description: 'test',
+        githubUsername: 'verdaccio'
       })
       .toPromise();
   });
 
-  it("creates files", function() {
-    assert.file(["README.md"]);
+  it('creates files', function() {
+    assert.file(['README.md']);
   });
 });
