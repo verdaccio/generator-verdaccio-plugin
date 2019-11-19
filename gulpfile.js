@@ -44,10 +44,7 @@ gulp.task('watch', function() {
 // gulp.task('prepublish');
 
 gulp.task('ts', function() {
-  return gulp
-    .src('generators/')
-    .pipe(tsProject())
-    .js.pipe(gulp.dest('build'));
+  return gulp.src('generators/').pipe(tsProject());
 });
 
 gulp.task('default', gulp.series('ts', 'static', 'test'));

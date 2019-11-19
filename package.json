@@ -9,9 +9,9 @@
     "url": "https://github.com/verdaccio/generator-verdaccio-plugin"
   },
   "files": [
-    "build"
+    "generators"
   ],
-  "main": "build/index.js",
+  "main": "generators/app/index.js",
   "keywords": [
     "verdaccio-plugin",
     "yeoman-generator"
@@ -49,7 +49,7 @@
   "scripts": {
     "prepublish": "gulp test",
     "prebuild": "gulp test",
-    "build": "tsc",
+    "build": "gulp ",
     "watch": "tsc -w",
     "test": "gulp test"
   },
