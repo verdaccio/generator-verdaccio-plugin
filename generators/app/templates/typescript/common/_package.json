@@ -1,0 +1,31 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "description": "<%= description %>",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib/"],
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@verdaccio/babel-preset": "^8.2.0",
+    "@verdaccio/types": "^8.3.0",
+    "eslint": "^6.6.0",
+    "typescript": "^3.7.2"
+  },
+  "keywords": "[<%= keywords %>]",
+  "license": "<%= license %>",
+  "repository": "<%= repository %>",
+  "author": "<%= authorName %> <<%= authorEmail %>>",
+  "scripts": {
+    "build": "npm run build:types && npm run build:js",
+    "build:js": "babel src/ --out-dir lib --extensions \".ts,.tsx\"",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "npm run lint",
+    "lint": "eslint .",
+    "prepublish": "npm run lint && npm run build"
+  }
+}

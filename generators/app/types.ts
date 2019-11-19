@@ -6,4 +6,5 @@ export type propsTypes = {
   authorName?: string;
   authorEmail?: string;
   keywords?: Array<string>;
+  lang?: string;
 };

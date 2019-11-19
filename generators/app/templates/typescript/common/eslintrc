@@ -1,0 +1,16 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+
+  "parserOptions": {
+    "sourceType": "module"
+  },
+
+  "rules": {
+    "quotes": [2, "single"],
+    "no-underscore-dangle": [0]
+  }
+}
