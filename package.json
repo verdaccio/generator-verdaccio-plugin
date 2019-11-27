@@ -36,6 +36,7 @@
     "gulp-line-ending-corrector": "^1.0.1",
     "gulp-mocha": "7.0.2",
     "gulp-plumber": "^1.0.0",
+    "rimraf": "^3.0.0",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "2.0.0"
   },
@@ -48,9 +49,10 @@
   "repository": "verdaccio/generator-verdaccio-plugin",
   "scripts": {
     "prepublish": "gulp test",
-    "prebuild": "gulp test",
+    "prebuild": "test",
     "build": "tsc",
     "watch": "tsc -w",
+    "pretest":"gulp static",
     "test": "gulp test"
   },
   "license": "MIT"

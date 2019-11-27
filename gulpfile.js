@@ -21,18 +21,16 @@ gulp.task('pre-test', function() {
   return gulp.src('generators/**/*.js');
 });
 
-gulp.task('test', gulp.series('pre-test'), function(cb) {
-  var mochaErr;
-
+gulp.task('test', function(cb) {
   gulp
-    .src('test/**/*.js')
-    .pipe(plumber())
-    .pipe(mocha({ reporter: 'spec' }))
-    .on('error', function(err) {
-      mochaErr = err;
+    .src('test/app.test.js')
+    .pipe(mocha())
+    .once('error', err => {
+      console.error(err);
+      process.exit(1);
     })
-    .on('end', function() {
-      cb(mochaErr);
+    .once('end', () => {
+      process.exit();
     });
 });
 
@@ -45,7 +43,7 @@ gulp.task('watch', function() {
 
 gulp.task('ts', function() {
   return gulp
-    .src(['generators/app/index.ts','generators/app/types.ts'])
+    .src(['generators/app/index.ts', 'generators/app/types.ts'])
     .pipe(tsProject());
 });
 
