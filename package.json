@@ -49,7 +49,7 @@
   "scripts": {
     "prepublish": "gulp test",
     "prebuild": "gulp test",
-    "build": "gulp ",
+    "build": "tsc",
     "watch": "tsc -w",
     "test": "gulp test"
   },

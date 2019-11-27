@@ -45,7 +45,7 @@ gulp.task('watch', function() {
 
 gulp.task('ts', function() {
   return gulp
-    .src(['generators/app/index.ts', 'generators/app/types.ts'])
+    .src(['generators/app/index.ts','generators/app/types.ts'])
     .pipe(tsProject());
 });
 
