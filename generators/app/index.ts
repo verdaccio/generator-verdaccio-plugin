@@ -161,18 +161,38 @@ export default class VerdaccioPluginGenerator extends Generator {
       this.destinationPath(resolve(this.destinationPathName, ".eslintignore")),
       this.props
     );
+
     this.fs.copy(
-      this.templatePath(`${lang}/${this.props.pluginType}/src/index.js`),
-      this.destinationPath(resolve(this.destinationPathName, "src/index.js")),
+      this.templatePath(`${lang}/${this.props.pluginType}/src`),
+      this.destinationPath(resolve(this.destinationPathName, "src")),
       this.props
     );
+
     this.fs.copy(
-      this.templatePath(lang + "/common/index.js"),
-      this.destinationPath(resolve(this.destinationPathName, "index.js")),
+      this.templatePath(
+        lang + `/common/index.${lang == "typescript" ? "ts" : "js"}`
+      ),
+      this.destinationPath(
+        resolve(
+          this.destinationPathName,
+          `index.${lang == "typescript" ? "ts" : "js"}`
+        )
+      ),
       this.props
     );
+
+    if (lang == "typescript") {
+      this.fs.copy(
+        this.templatePath(`${lang}/common/tsconfig.json`),
+        this.destinationPath(
+          resolve(this.destinationPathName, "tsconfig.json")
+        ),
+        this.props
+      );
+    }
+
     this.fs.copy(
-      this.templatePath(lang + "common/editorconfig"),
+      this.templatePath(lang + "/common/editorconfig"),
       this.destinationPath(resolve(this.destinationPathName, ".editorconfig")),
       this.props
     );
