@@ -5,17 +5,17 @@ const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
 describe('generator-verdaccio-plugin app', function() {
-  var name = 'test',
-    lang = 'javascript',
-    pluginType = 'storage',
-    description = 'An amazing verdaccio plugin',
-    githubUsername = 'testing',
-    authorName = 'test',
-    authorEmail = 'test',
-    keywords = ['verdaccio-plugin'],
-    license = 'MIT',
-    repository = 'verdaccio/generator-test';
-  let tempRoot;
+  const name = 'test';
+  const  lang = 'javascript';
+  const  pluginType = 'storage';
+  const   description = 'An amazing verdaccio plugin';
+  const  githubUsername = 'testing';
+  const  authorName = 'test';
+  const  authorEmail = 'test';
+  const  keywords = ['verdaccio-plugin'];
+  const  license = 'MIT';
+  const  repository = 'verdaccio/generator-test';
+
   before(function() {
     tempRoot = fs.mkdtempSync(path.join(fs.realpathSync(os.tmpdir()), 'generator-test'));
   });

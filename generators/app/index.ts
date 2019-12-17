@@ -1,10 +1,12 @@
+import { resolve } from "path";
+
 import Generator from "yeoman-generator";
 import chalk from "chalk";
-import * as _ from "lodash";
-import { resolve } from "path";
-var yosay = require("yosay");
+import _ from "lodash";
 
 import { propsTypes } from "./types";
+
+const yosay = require("yosay");
 
 export default class VerdaccioPluginGenerator extends Generator {
   private pkg: any;
@@ -26,7 +28,7 @@ export default class VerdaccioPluginGenerator extends Generator {
       )
     );
 
-    var prompts = [
+    const prompts = [
       {
         type: "input",
         name: "name",

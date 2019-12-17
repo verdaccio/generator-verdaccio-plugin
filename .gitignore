@@ -1,5 +1,4 @@
 node_modules
 coverage
 generators/app/*.js
-test/tmp
 yarn-error.log
