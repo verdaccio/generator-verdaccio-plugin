@@ -2,7 +2,7 @@ import Generator from "yeoman-generator";
 import chalk from "chalk";
 import * as _ from "lodash";
 import { resolve } from "path";
-var yosay = require("yosay");
+const yosay = require("yosay");
 
 import { propsTypes } from "./types";
 
@@ -26,7 +26,7 @@ export default class VerdaccioPluginGenerator extends Generator {
       )
     );
 
-    var prompts = [
+    const prompts = [
       {
         type: "input",
         name: "name",

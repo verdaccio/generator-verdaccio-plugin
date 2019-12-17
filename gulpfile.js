@@ -1,9 +1,6 @@
-'use strict';
-const path = require('path');
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const excludeGitignore = require('gulp-exclude-gitignore');
-const mocha = require('gulp-mocha');
 
 gulp.task('static', function() {
   return gulp

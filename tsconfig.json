@@ -12,10 +12,14 @@
     "checkJs": false,
     "esModuleInterop": true,
   },
+  "typeRoots": [
+    "./node_modules/@verdaccio/types/lib/verdaccio",
+    "./node_modules/@types",
+    "./types/custom.d.ts"
+  ],
   "include": [
     "generators/",
     "types/*.d.ts",
-    "scripts/lib",
     "node_modules/config", "generators"
   ],
   "exclude": [
