@@ -97,8 +97,7 @@ export default class VerdaccioPluginGenerator extends Generator {
         this.props = _props;
         const { name, pluginType, githubUsername } = _props;
         // @ts-ignore
-        this.props.license = "";
-
+        this.props.license = "MIT";
         if (githubUsername) {
           // @ts-ignore
           this.props.repository = githubUsername + "/" + name;
