@@ -33,8 +33,6 @@
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-line-ending-corrector": "^1.0.1",
     "gulp-mocha": "7.0.2",
-    "gulp-plumber": "^1.0.0",
-    "rimraf": "^3.0.0",
     "typescript": "^3.7.3",
     "semantic-release": "^15.13.31",
     "yeoman-assert": "^3.0.0",
