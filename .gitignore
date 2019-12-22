@@ -2,3 +2,4 @@ node_modules
 coverage
 generators/app/*.js
 yarn-error.log
+.idea/*

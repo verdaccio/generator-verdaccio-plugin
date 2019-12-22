@@ -3,14 +3,14 @@
     "skipLibCheck": true,
     "target": "esnext",
     "module": "commonjs",
+    "declaration": true,
     "noImplicitAny": false,
     "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react",
     "allowJs": true,
+    "strictNullChecks": true,
     "resolveJsonModule": true,
-    "checkJs": false,
-    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "typeRoots": [
     "./node_modules/@verdaccio/types/lib/verdaccio",
