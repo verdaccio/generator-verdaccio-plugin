@@ -1,6 +1,7 @@
 import {
   PluginOptions,
-  Callback,
+  AuthAccessCallback,
+  AuthCallback,
   PackageAccess,
   IPluginAuth,
   RemoteUser,
@@ -13,11 +14,14 @@ import { CustomConfig } from "../types/index";
  * Custom Verdaccio Authenticate Plugin.
  */
 export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
-  public _logger: Logger;
+  public logger: Logger;
+  private foo: string;
   public constructor(
     config: CustomConfig,
     options: PluginOptions<CustomConfig>
   ) {
+    this.logger = options.logger;
+    this.foo = config.foo;
     return this;
   }
   /**
@@ -26,29 +30,77 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
    * @param password provided password
    * @param cb callback function
    */
-  public authenticate(user: string, password: string, cb: Callback): void {
-    // here your code
+  public authenticate(user: string, password: string, cb: AuthCallback): void {
+    /**
+     * This code is just an example for demostration purpose
+      if (this.foo) {
+        cb(null, ['group-foo', 'group-bar']);
+      } else {
+        cb('error, try again', false);
+      }
+    */
   }
 
   /**
-   * check grants for such user.
+   * Triggered on each access request
+   * @param user
+   * @param pkg
+   * @param cb
    */
   public allow_access(
     user: RemoteUser,
     pkg: PackageAccess,
-    cb: Callback
+    cb: AuthAccessCallback
   ): void {
-    // in case of restrict the access
+    /**
+     * This code is just an example for demostration purpose
+    if (user.name === this.foo && pkg.access.includes[user.name]) {
+      this.logger.debug({name: user.name}, 'your package has been granted for @{name}');
+      cb(null, true)
+    } else {
+      this.logger.error({name: user.name}, '@{name} is not allowed to access this package');
+      cb('error, try again', false);
+    }
+     */
   }
 
   /**
-   * check grants to publish
+   * Triggered on each publish request
+   * @param user
+   * @param pkg
+   * @param cb
    */
   public allow_publish(
     user: RemoteUser,
     pkg: PackageAccess,
-    cb: Callback
+    cb: AuthAccessCallback
   ): void {
-    // in cass to check if has permission to publish
+    /**
+     * This code is just an example for demostration purpose
+    if (user.name === this.foo && pkg.access.includes[user.name]) {
+      this.logger.debug({name: user.name}, '@{name} has been granted to publish');
+      cb(null, ['group-foo', 'another-group-foo'])
+    } else {
+      this.logger.error({name: user.name}, '@{name} is not allowed to publish this package');
+      cb('error, try again', false);
+    }
+     */
+  }
+
+  public allow_unpublish(
+    user: RemoteUser,
+    pkg: PackageAccess,
+    cb: AuthAccessCallback
+  ): void {
+    /**
+     * This code is just an example for demostration purpose
+    if (user.name === this.foo && pkg.access.includes[user.name]) {
+      this.logger.debug({name: user.name}, '@{name} has been granted to unpublish');
+      cb(null, ['group-foo', 'another-group-foo'])
+    } else {
+      this.logger.error({name: user.name}, '@{name} is not allowed to publish this package');
+      cb('error, try again', false);
+    }
+     */
   }
 }
