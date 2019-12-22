@@ -9,7 +9,6 @@ import { propsTypes } from "./types";
 const yosay = require("yosay");
 
 export default class VerdaccioPluginGenerator extends Generator {
-  private pkg: any;
   private props: propsTypes;
   private projectName: string = "verdaccio-plugin";
   private destinationPathName: string = "verdaccio-plugin";
@@ -117,9 +116,10 @@ export default class VerdaccioPluginGenerator extends Generator {
   }
 
   packageJSON() {
-    const { lang } = this.props;
+    const { lang, pluginType } = this.props;
+    const pkgJsonLocation = `${lang}/${pluginType}/_package.json`;
     this.fs.copyTpl(
-      this.templatePath(lang + "/common/_package.json"),
+      this.templatePath(pkgJsonLocation),
       this.destinationPath(resolve(this.destinationPathName, "package.json")),
       this.props
     );
@@ -128,37 +128,41 @@ export default class VerdaccioPluginGenerator extends Generator {
   writing() {
     const { lang } = this.props;
     this.fs.copy(
-      this.templatePath(lang + "/common/gitignore"),
+      this.templatePath(`${lang}/common/gitignore`),
       this.destinationPath(resolve(this.destinationPathName, ".gitignore"))
     );
     this.fs.copy(
-      this.templatePath(lang + "/common/npmignore"),
+      this.templatePath(`${lang}/common/npmignore`),
       this.destinationPath(resolve(this.destinationPathName, ".npmignore"))
     );
     this.fs.copy(
-      this.templatePath(lang + "/common/babelrc"),
+      this.templatePath(`${lang}/common/jest.config.js`),
+      this.destinationPath(resolve(this.destinationPathName, "jest.config.js"))
+    );
+    this.fs.copy(
+      this.templatePath(`${lang}/common/babelrc`),
       this.destinationPath(resolve(this.destinationPathName, ".babelrc"))
     );
     this.fs.copy(
-      this.templatePath(lang + "/common/travis.yml"),
+      this.templatePath(`${lang}/common/travis.yml`),
       this.destinationPath(resolve(this.destinationPathName, ".travis.yml"))
     );
     this.fs.copy(
-      this.templatePath(lang + "/common/travis.yml"),
+      this.templatePath(`${lang}/common/travis.yml`),
       this.destinationPath(resolve(this.destinationPathName, ".travis.yml"))
     );
     this.fs.copyTpl(
-      this.templatePath(lang + "/common/README.md"),
+      this.templatePath(`${lang}/common/README.md`),
       this.destinationPath(resolve(this.destinationPathName, "README.md")),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath(lang + "/common/eslintrc"),
+      this.templatePath(`${lang}/common/eslintrc`),
       this.destinationPath(resolve(this.destinationPathName, ".eslintrc")),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath(lang + "/common/eslintignore"),
+      this.templatePath(`${lang}/common/eslintignore`),
       this.destinationPath(resolve(this.destinationPathName, ".eslintignore")),
       this.props
     );
@@ -171,7 +175,7 @@ export default class VerdaccioPluginGenerator extends Generator {
 
     this.fs.copy(
       this.templatePath(
-        lang + `/common/index.${lang == "typescript" ? "ts" : "js"}`
+        `${lang}/common/index.${lang == "typescript" ? "ts" : "js"}`
       ),
       this.destinationPath(
         resolve(
@@ -190,10 +194,15 @@ export default class VerdaccioPluginGenerator extends Generator {
         ),
         this.props
       );
+      this.fs.copy(
+        this.templatePath(`${lang}/${this.props.pluginType}/types`),
+        this.destinationPath(resolve(this.destinationPathName, "types")),
+        this.props
+      );
     }
 
     this.fs.copy(
-      this.templatePath(lang + "/common/editorconfig"),
+      this.templatePath(`${lang}/common/editorconfig`),
       this.destinationPath(resolve(this.destinationPathName, ".editorconfig")),
       this.props
     );
