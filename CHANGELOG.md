@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v1.0.7...v1.1.0) (2019-12-23)
+
+
+### Features
+
+* improve auth example ([#16](https://github.com/verdaccio/generator-verdaccio-plugin/issues/16)) ([4d7a2da](https://github.com/verdaccio/generator-verdaccio-plugin/commit/4d7a2da934121c5e2026f9d5c55d9bfa84b4bfc5))
+
 ### [1.0.7](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v0.1.0...v1.0.7) (2019-12-22)
 
 
