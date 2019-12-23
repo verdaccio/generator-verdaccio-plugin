@@ -5,10 +5,10 @@ import {
   PackageAccess,
   IPluginAuth,
   RemoteUser,
-  Logger
-} from "@verdaccio/types";
+  Logger,
+} from '@verdaccio/types';
 
-import { CustomConfig } from "../types/index";
+import { CustomConfig } from '../types/index';
 
 /**
  * Custom Verdaccio Authenticate Plugin.
@@ -16,10 +16,7 @@ import { CustomConfig } from "../types/index";
 export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
   public logger: Logger;
   private foo: string;
-  public constructor(
-    config: CustomConfig,
-    options: PluginOptions<CustomConfig>
-  ) {
+  public constructor(config: CustomConfig, options: PluginOptions<CustomConfig>) {
     this.logger = options.logger;
     this.foo = config.foo;
     return this;
@@ -47,11 +44,7 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
    * @param pkg
    * @param cb
    */
-  public allow_access(
-    user: RemoteUser,
-    pkg: PackageAccess,
-    cb: AuthAccessCallback
-  ): void {
+  public allow_access(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
     /**
      * This code is just an example for demostration purpose
     if (user.name === this.foo && pkg.access.includes[user.name]) {
@@ -70,11 +63,7 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
    * @param pkg
    * @param cb
    */
-  public allow_publish(
-    user: RemoteUser,
-    pkg: PackageAccess,
-    cb: AuthAccessCallback
-  ): void {
+  public allow_publish(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
     /**
      * This code is just an example for demostration purpose
     if (user.name === this.foo && pkg.access.includes[user.name]) {
@@ -87,11 +76,7 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
      */
   }
 
-  public allow_unpublish(
-    user: RemoteUser,
-    pkg: PackageAccess,
-    cb: AuthAccessCallback
-  ): void {
+  public allow_unpublish(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
     /**
      * This code is just an example for demostration purpose
     if (user.name === this.foo && pkg.access.includes[user.name]) {
