@@ -30,6 +30,7 @@
   "repository": "<%= repository %>",
   "author": "<%= authorName %> <<%= authorEmail %>>",
   "scripts": {
+    "release": "standard-version -a -s",
     "build": "npm run build:types && npm run build:js",
     "build:js": "babel src/ --out-dir lib --extensions \".ts,.tsx\"",
     "build:types": "tsc --emitDeclarationOnly",
