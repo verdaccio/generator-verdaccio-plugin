@@ -86,7 +86,7 @@ export default class VerdaccioPluginGenerator extends Generator {
         name: "keywords",
         message: "Key your keywords (comma to split)",
         filter: function(keywords) {
-          return _.uniq(_.words(keywords).concat(["verdaccio-plugin"]));
+          return _.uniq(_.words(keywords).concat(["verdaccio-"]));
         }
       }
     ];
@@ -105,7 +105,7 @@ export default class VerdaccioPluginGenerator extends Generator {
         }
 
         // @ts-ignore
-        this.projectName = `verdaccio-plugin-${pluginType}-${name}`;
+        this.projectName = `verdaccio-${pluginType}-${name}`;
 
         // @ts-ignore
         this.destinationPathName = resolve(this.projectName);
