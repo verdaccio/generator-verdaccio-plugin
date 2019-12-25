@@ -43,7 +43,7 @@ describe('generator-verdaccio-plugin app', function() {
           ),
           path.join(
             tempRoot,
-            `/verdaccio-plugin-${pluginType}-${name}/src/storageManager.js`
+            `/verdaccio-plugin-${pluginType}-${name}/src/index.js`
           ),
           path.join(
             tempRoot,
