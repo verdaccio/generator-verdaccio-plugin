@@ -10,8 +10,8 @@ const yosay = require("yosay");
 
 export default class VerdaccioPluginGenerator extends Generator {
   private props: propsTypes;
-  private projectName: string = "verdaccio-plugin";
-  private destinationPathName: string = "verdaccio-plugin";
+  private projectName: string = "verdaccio-";
+  private destinationPathName: string = "verdaccio-";
   constructor(args, opts) {
     super(args, opts);
     this.props = {};
