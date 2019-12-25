@@ -1,28 +1,9 @@
-import {
-  Callback,
-  Logger,
-  ILocalPackageManager,
-  StorageUpdateCallback,
-  PackageTransformer,
-  StorageWriteCallback,
-  CallbackAction,
-  Package,
-  ReadPackageCallback
-} from "@verdaccio/types";
 import { UploadTarball, ReadTarball } from "@verdaccio/streams";
 import { getNotFound, getConflict, getInternalError } from '@verdaccio/commons-api';
 
-import { CustomConfig } from "../types/index";
-export default class StoragePluginManage implements ILocalPackageManager {
-  public logger: Logger;
-  public packageName: string;
-  public config: CustomConfig;
 
-  public constructor(
-    config: CustomConfig,
-    packageName: string,
-    logger: Logger
-  ) {
+export default class StoragePluginManage {
+  constructor(packageName, helper, config, logger) {
     this.logger = logger;
     this.packageName = packageName;
     this.config = config;
@@ -36,13 +17,7 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * @param transformPackage
    * @param onEnd
    */
-  public updatePackage(
-    name: string,
-    updateHandler: StorageUpdateCallback,
-    onWrite: StorageWriteCallback,
-    transformPackage: PackageTransformer,
-    onEnd: CallbackAction
-  ): void {
+  updatePackage(name, updateHandler, onWrite, transformPackage, onEnd) {
     /**
      * Example of implementation:
       this.customStore.get().then((pkg: Package) => {
@@ -62,8 +37,8 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * @param fileName
    * @param callback
    */
-  public deletePackage(fileName: string, callback: CallbackAction): void {
-    /**
+  deletePackage(fileName, callback) {
+     /**
      * Example of implementation:
      this.customStore.delete(fileName,  (err) => {
         if (err) {
@@ -80,7 +55,7 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * This happens after all versions ar tarballs have been removed.
    * @param callback
    */
-  public removePackage(callback: CallbackAction): void {
+  removePackage(callback) {
     /**
      * Example of implementation:
       this.customStore.removePackage((err) => {
@@ -93,17 +68,13 @@ export default class StoragePluginManage implements ILocalPackageManager {
      */
   }
 
-  /**
+ /**
    * Publish a new package (version).
    * @param name
    * @param data
    * @param callback
    */
-  public createPackage(
-    name: string,
-    data: Package,
-    callback: CallbackAction
-  ): void {
+  createPackage(name, metadata, cb) {
     /**
      * Example of implementation:
      * this.customStore.create(name, data).then(err => {
@@ -125,8 +96,8 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * @param pkg package metadata
    * @param callback
    */
-  public savePackage(pkgName: string, pkg: Package, callback: CallbackAction): void {
-    /*
+  savePackage(name, value, cb) {
+     /*
       Example of implementation:
       this.cumstomStore.write(pkgName, pkgName).then(data => {
         callback(null);
@@ -141,7 +112,7 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * @param pkgName package name
    * @param callback
    */
-  public readPackage(pkgName: string, callback: ReadPackageCallback): void {
+  readPackage(name, cb) {
     /**
      * Example of implementation:
      * this.customStorage.read(name, (err, pkg: Package) => {
@@ -160,24 +131,23 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * Create writtable stream (write a tarball)
    * @param name
    */
-  public writeTarball(name: string): UploadTarball {
-      /**
+  writeTarball(name) {
+     /**
        * Example of implementation:
        * const stream = new UploadTarball({});
          return stream;
        */
-
   }
 
   /**
    * Create a readable stream (read a from a tarball)
    * @param name
    */
-  public readTarball(name: string): ReadTarball {
+  readTarball(name) {
     /**
      * Example of implementation:
      * const stream = new ReadTarball({});
        return stream;
      */
   }
-}
+};

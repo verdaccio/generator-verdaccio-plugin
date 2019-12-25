@@ -1,45 +1,19 @@
-import {
-  Logger,
-  Callback,
-  IPluginStorage,
-  PluginOptions,
-  IPackageStorage,
-  TokenFilter,
-  Token,
-  Config,
-  onEndSearchPackage,
-  onSearchPackage,
-  onValidatePackage
-} from '@verdaccio/types';
-import { getInternalError } from '@verdaccio/commons-api';
-
-import { CustomConfig } from '../types/index';
-
 import PackageStorage from './PackageStorage';
 
-export default class VerdaccioStoragePlugin implements IPluginStorage<CustomConfig> {
-  config: CustomConfig & Config;
-  version?: string;
-  public logger: Logger;
-  public constructor(
-    config: CustomConfig,
-    options: PluginOptions<CustomConfig>
-  ) {
+class VerdaccioStoragePlugin {
+  constructor(config, options) {
     this.config = config;
     this.logger = options.logger;
   }
 
-  /**
-   *
-   */
-  public async getSecret(): Promise<string> {
-    /**
+  async getSecret() {
+     /**
      * return await resolveSecret();
      */
   }
 
-  public async setSecret(secret: string): Promise<any> {
-    /**
+  async setSecret(secret) {
+     /**
      * return await getYourSecret();
      */
   }
@@ -49,22 +23,10 @@ export default class VerdaccioStoragePlugin implements IPluginStorage<CustomConf
    * @param {*} name
    * @return {Error|*}
    */
-  public add(name: string, callback: Callback): void {
+  add(name, cb) {}
 
-  }
-
-  /**
-   * Perform a search in your registry
-   * @param onPackage
-   * @param onEnd
-   * @param validateName
-   */
-  public search(
-    onPackage: onSearchPackage,
-    onEnd: onEndSearchPackage,
-    validateName: onValidatePackage
-  ): void {
-    /**
+  search(onPackage, onEnd, validateName) {
+     /**
      * Example of implementation:
      * try {
      *  someApi.getPackages((items) => {
@@ -86,8 +48,8 @@ export default class VerdaccioStoragePlugin implements IPluginStorage<CustomConf
    * @param {*} name
    * @return {Error|*}
    */
-  public remove(name: string, callback: Callback): void {
-    /**
+  remove(name, callback) {
+     /**
      * Example of implementation
       database.getPackage(name, (item, err) => {
         if (err) {
@@ -104,8 +66,8 @@ export default class VerdaccioStoragePlugin implements IPluginStorage<CustomConf
    * Return all database elements.
    * @return {Array}
    */
-  public get(callback: Callback): void {
-    /*
+  get(callback) {
+      /*
       Example of implementation
       database.getAll((allItems, err) => {
         callback(err, allItems);
@@ -117,7 +79,7 @@ export default class VerdaccioStoragePlugin implements IPluginStorage<CustomConf
    * Create an instance of the `PackageStorage`
    * @param packageInfo
    */
-  public getPackageStorage(packageInfo: string): IPackageStorage {
+  getPackageStorage(packageInfo) {
     return new PackageStorage(this.config, packageInfo, this.logger);
   }
 
@@ -126,15 +88,19 @@ export default class VerdaccioStoragePlugin implements IPluginStorage<CustomConf
    * more info here https://github.com/verdaccio/verdaccio/pull/1427
    */
 
-  public saveToken(token: Token): Promise<any> {
+  saveToken(token) {
     throw new Error('Method not implemented.');
   }
 
-  public deleteToken(user: string, tokenKey: string): Promise<any> {
+  deleteToken(user, tokenKey) {
     throw new Error('Method not implemented.');
   }
 
-  public readTokens(filter: TokenFilter): Promise<Token[]> {
+  readTokens(filter) {
     throw new Error('Method not implemented.');
   }
 }
+
+export default (config, options) => {
+  return new VerdaccioStoragePlugin(config, options);
+};

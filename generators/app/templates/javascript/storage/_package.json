@@ -15,7 +15,6 @@
   "devDependencies": {
     "@verdaccio/babel-preset": "^8.5.0",
     "@verdaccio/eslint-config": "^8.5.0",
-    "@verdaccio/types": "^8.5.0",
     "eslint": "^6.6.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
