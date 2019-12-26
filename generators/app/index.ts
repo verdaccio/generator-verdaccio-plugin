@@ -96,7 +96,7 @@ export default class VerdaccioPluginGenerator extends Generator {
         // To access props later use this.props.someAnswer;
         // @ts-ignore
         this.props = _props;
-        const { name, pluginType, githubUsername } = _props;
+        const { name, githubUsername } = _props;
         // @ts-ignore
         this.props.license = "MIT";
         if (githubUsername) {
@@ -105,7 +105,7 @@ export default class VerdaccioPluginGenerator extends Generator {
         }
 
         // @ts-ignore
-        this.projectName = `verdaccio-${pluginType}-${name}`;
+        this.projectName = `verdaccio-${name}`;
 
         // @ts-ignore
         this.destinationPathName = resolve(this.projectName);

@@ -15,7 +15,7 @@ describe('template generator', function() {
   const  license = 'MIT';
   const  repository = 'verdaccio/generator-test';
   const getBuildAsset = (tempRoot, pluginType, item) => {
-    const prefixPath = path.join(tempRoot, `/verdaccio-${pluginType}-${name}`);
+    const prefixPath = path.join(tempRoot, `/verdaccio-${name}`);
     return `${prefixPath}/${item}`;
   }
 
