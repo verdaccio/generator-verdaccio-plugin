@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v1.1.3...v1.1.4) (2019-12-26)
+
+
+### Bug Fixes
+
+* plugin suffix ([#19](https://github.com/verdaccio/generator-verdaccio-plugin/issues/19)) ([d7d0c02](https://github.com/verdaccio/generator-verdaccio-plugin/commit/d7d0c02e689ac904109ebe7bc66114acdae14f84))
+* remove suffix ([#20](https://github.com/verdaccio/generator-verdaccio-plugin/issues/20)) ([28df490](https://github.com/verdaccio/generator-verdaccio-plugin/commit/28df490347ad46e9593955d764c24850aeaefffc))
+
 ### [1.1.3](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v1.1.2...v1.1.3) (2019-12-25)
 
 
