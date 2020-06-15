@@ -9,7 +9,7 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@verdaccio/commons-api": "^8.5.0",
+    "@verdaccio/commons-api": "^9.6.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
@@ -17,14 +17,14 @@
     "@types/node": "^12.12.5",
     "@types/express": "^4.17.1",
     "@typescript-eslint/eslint-plugin": "^2.12.0",
-    "@verdaccio/babel-preset": "^8.5.0",
-    "@verdaccio/eslint-config": "^8.5.0",
-    "@verdaccio/types": "^8.5.2",
+    "@verdaccio/babel-preset": "^9.6.1",
+    "@verdaccio/eslint-config": "^9.3.2",
+    "@verdaccio/types": "^9.5.0",
     "eslint": "^6.6.0",
-    "jest": "^24.9.0",
+    "jest": "^26.0.1 ",
     "prettier": "^1.19.1",
-    "standard-version": "^7.0.0",
-    "typescript": "^3.7.2"
+    "standard-version": "^8.0.0",
+    "typescript": "^3.9.5"
   },
   "keywords": ["<%= keywords %>"],
   "license": "<%= license %>",

@@ -47,7 +47,7 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
   public allow_access(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
     /**
      * This code is just an example for demostration purpose
-    if (user.name === this.foo && pkg.access.includes[user.name]) {
+    if (user.name === this.foo && pkg?.access?.includes[user.name]) {
       this.logger.debug({name: user.name}, 'your package has been granted for @{name}');
       cb(null, true)
     } else {
@@ -66,9 +66,9 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
   public allow_publish(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
     /**
      * This code is just an example for demostration purpose
-    if (user.name === this.foo && pkg.access.includes[user.name]) {
+    if (user.name === this.foo && pkg?.access?.includes[user.name]) {
       this.logger.debug({name: user.name}, '@{name} has been granted to publish');
-      cb(null, ['group-foo', 'another-group-foo'])
+      cb(null, true)
     } else {
       this.logger.error({name: user.name}, '@{name} is not allowed to publish this package');
       cb('error, try again', false);
@@ -79,9 +79,9 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
   public allow_unpublish(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
     /**
      * This code is just an example for demostration purpose
-    if (user.name === this.foo && pkg.access.includes[user.name]) {
+    if (user.name === this.foo && pkg?.access?.includes[user.name]) {
       this.logger.debug({name: user.name}, '@{name} has been granted to unpublish');
-      cb(null, ['group-foo', 'another-group-foo'])
+      cb(null, true)
     } else {
       this.logger.error({name: user.name}, '@{name} is not allowed to publish this package');
       cb('error, try again', false);
