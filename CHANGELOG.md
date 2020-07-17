@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v1.1.5...v2.0.0) (2020-07-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Use Nodev10 minimum
+
+* chore: fix linting
+
+### Features
+
+* update dependencies and remove Node v8 ([#27](https://github.com/verdaccio/generator-verdaccio-plugin/issues/27)) ([397e58e](https://github.com/verdaccio/generator-verdaccio-plugin/commit/397e58e93f748cd0662bd2ec337c80b42f70a021))
+
+
+### Bug Fixes
+
+* storage template ([#35](https://github.com/verdaccio/generator-verdaccio-plugin/issues/35)) ([e5ef0ef](https://github.com/verdaccio/generator-verdaccio-plugin/commit/e5ef0efdc0278ba17e4008581c014aa77a61f42c))
+* update dependencies ([#34](https://github.com/verdaccio/generator-verdaccio-plugin/issues/34)) ([ffc6421](https://github.com/verdaccio/generator-verdaccio-plugin/commit/ffc642117aa2c071473325d6db210d18b09865b0))
+* upgrade yeoman-generator from 4.3.0 to 4.4.0 ([#22](https://github.com/verdaccio/generator-verdaccio-plugin/issues/22)) ([e3a9a3a](https://github.com/verdaccio/generator-verdaccio-plugin/commit/e3a9a3a6be98d6eabaf740369819baa977999d7b))
+* upgrade yeoman-generator from 4.4.0 to 4.5.0 ([#23](https://github.com/verdaccio/generator-verdaccio-plugin/issues/23)) ([6f3cffa](https://github.com/verdaccio/generator-verdaccio-plugin/commit/6f3cffab99ef5eb0e6bc2bcfdd5ab118f9c83022))
+
 ### [1.1.5](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v1.1.4...v1.1.5) (2019-12-26)
 
 
