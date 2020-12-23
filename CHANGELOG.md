@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v2.0.0...v2.0.1) (2020-12-23)
+
+
+### Bug Fixes
+
+* package.json & yarn.lock to reduce vulnerabilities ([#36](https://github.com/verdaccio/generator-verdaccio-plugin/issues/36)) ([097db60](https://github.com/verdaccio/generator-verdaccio-plugin/commit/097db607a3540b06bba261ede7e0db6982fb665f))
+* update dependencies ([3fd5a14](https://github.com/verdaccio/generator-verdaccio-plugin/commit/3fd5a14cde0e46dce01bc582e6e77d3e67a91cad))
+
 ## [2.0.0](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v1.1.5...v2.0.0) (2020-07-17)
 
 
