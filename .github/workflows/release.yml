@@ -12,9 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Use Node (latest)
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node_version: 14
+        node_version: 14.x
     - name: Install
       run: yarn install --frozen-lockfile
     - name: Lint
