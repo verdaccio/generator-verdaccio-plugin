@@ -19,7 +19,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "lodash": "^4.17.20",
-    "yeoman-generator": "4.11.0",
+    "yeoman-generator": "4.12.0",
     "yosay": "^2.0.2"
   },
   "devDependencies": {
@@ -48,7 +48,7 @@
     "standard-version": "^8.0.2",
     "typescript": "^3.9.7",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^2.7.0"
+    "yeoman-test": "^4.0.0"
   },
   "repository": {
     "type": "git",
