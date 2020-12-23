@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v3.0.0...v3.0.1) (2020-12-23)
+
+
+### Bug Fixes
+
+* release workflow ([4fb266f](https://github.com/verdaccio/generator-verdaccio-plugin/commit/4fb266f296d4a0b7aa841ff3ef81de0a5be1e927))
+
 ## [3.0.0](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v2.0.1...v3.0.0) (2020-12-23)
 
 
