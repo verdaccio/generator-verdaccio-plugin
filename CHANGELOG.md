@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v2.0.1...v3.0.0) (2020-12-23)
+
+
+### Bug Fixes
+
+* remove node 10 support ([6c0604e](https://github.com/verdaccio/generator-verdaccio-plugin/commit/6c0604ef68007e19ad4eb42f6f74072d1c7270c4))
+
 ### [2.0.1](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v2.0.0...v2.0.1) (2020-12-23)
 
 
