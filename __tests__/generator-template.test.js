@@ -4,7 +4,6 @@ const fs = require('fs');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 const constants = require('../test/constants');
-const jestConfig = require('../jest.config');
 
 describe('template generator', function() {
   jest.setTimeout(10000);
