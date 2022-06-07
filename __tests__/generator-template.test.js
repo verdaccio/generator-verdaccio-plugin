@@ -6,7 +6,7 @@ const helpers = require('yeoman-test');
 const constants = require('../helpers/constants');
 
 describe('template generator', function() {
-  // jest.setTimeout(10000);
+  jest.setTimeout(10000);
   const name = 'test';
   const description = 'An amazing verdaccio plugin';
   const githubUsername = 'testing';
