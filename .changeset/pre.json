@@ -5,6 +5,7 @@
     "generator-verdaccio-plugin": "3.0.1"
   },
   "changesets": [
-    "early-ads-flow"
+    "early-ads-flow",
+    "fuzzy-eels-approve"
   ]
 }

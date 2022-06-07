@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","names":["VerdaccioPlugin"],"sources":["index.ts"],"sourcesContent":["import VerdaccioPlugin from './lib/index';\n\nexport default VerdaccioPlugin;\n"],"mappings":";;;;;;;AAAA;;;;eAEeA,c"}
