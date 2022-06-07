@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.0.0-next.2
+### Major Changes
+
+- 0a5326d2: fix: broken build
+
 ## 4.0.0-next.1
 ### Major Changes
 
