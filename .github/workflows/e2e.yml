@@ -36,5 +36,11 @@ jobs:
       run: pnpm build
     - name: login
       run: npx npm-cli-login -u test -p 1234 -e test@domain.test -r http://localhost:4873
+    - name: pre-release
+      run: npm version patch --no-git-tag-version
     - name: publish
       run: pnpm publish --registry http://localhost:4873 --no-git-checks
+    - name: install yeoman
+      run: npm install -g yo
+    - name: install generator
+      run: npm install -g generator-verdaccio-plugin --registry http://localhost:4873
