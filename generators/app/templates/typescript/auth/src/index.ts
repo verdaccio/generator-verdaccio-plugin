@@ -8,7 +8,7 @@ import {
   Logger,
 } from '@verdaccio/types';
 
-import { CustomConfig } from '../types/index';
+import {CustomConfig} from '../types/index';
 
 /**
  * Custom Verdaccio Authenticate Plugin.

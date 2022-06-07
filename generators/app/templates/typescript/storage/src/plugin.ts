@@ -9,11 +9,11 @@ import {
   Config,
   onEndSearchPackage,
   onSearchPackage,
-  onValidatePackage
+  onValidatePackage,
 } from '@verdaccio/types';
-import { getInternalError } from '@verdaccio/commons-api';
+import {getInternalError} from '@verdaccio/commons-api';
 
-import { CustomConfig } from '../types/index';
+import {CustomConfig} from '../types/index';
 
 import PackageStorage from './PackageStorage';
 
@@ -22,8 +22,8 @@ export default class VerdaccioStoragePlugin implements IPluginStorage<CustomConf
   version?: string;
   public logger: Logger;
   public constructor(
-    config: CustomConfig,
-    options: PluginOptions<CustomConfig>
+      config: CustomConfig,
+      options: PluginOptions<CustomConfig>,
   ) {
     this.config = config;
     this.logger = options.logger;
@@ -60,9 +60,9 @@ export default class VerdaccioStoragePlugin implements IPluginStorage<CustomConf
    * @param validateName
    */
   public search(
-    onPackage: onSearchPackage,
-    onEnd: onEndSearchPackage,
-    validateName: onValidatePackage
+      onPackage: onSearchPackage,
+      onEnd: onEndSearchPackage,
+      validateName: onValidatePackage,
   ): void {
     /**
      * Example of implementation:

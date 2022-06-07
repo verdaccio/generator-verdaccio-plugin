@@ -1,7 +1,7 @@
-import { Logger, IPluginMiddleware, IBasicAuth, IStorageManager, PluginOptions } from '@verdaccio/types';
-import { Router, Request, Response, NextFunction, Application } from 'express';
+import {Logger, IPluginMiddleware, IBasicAuth, IStorageManager, PluginOptions} from '@verdaccio/types';
+import {Router, Request, Response, NextFunction, Application} from 'express';
 
-import { CustomConfig } from '../types/index';
+import {CustomConfig} from '../types/index';
 
 export default class VerdaccioMiddlewarePlugin implements IPluginMiddleware<CustomConfig> {
   public logger: Logger;
@@ -12,10 +12,10 @@ export default class VerdaccioMiddlewarePlugin implements IPluginMiddleware<Cust
   }
 
   public register_middlewares(
-    app: Application,
-    auth: IBasicAuth<CustomConfig>,
-    /* eslint @typescript-eslint/no-unused-vars: off */
-    _storage: IStorageManager<CustomConfig>
+      app: Application,
+      auth: IBasicAuth<CustomConfig>,
+      /* eslint @typescript-eslint/no-unused-vars: off */
+      _storage: IStorageManager<CustomConfig>,
   ): void {
     /**
      * This is just an example of implementation
