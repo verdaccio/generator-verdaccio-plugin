@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "generator-verdaccio-plugin": "3.0.1"
+  },
+  "changesets": []
+}
