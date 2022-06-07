@@ -3,3 +3,4 @@ coverage
 yarn-error.log
 .idea/*
 generators/*
+.pnpm-store/*
