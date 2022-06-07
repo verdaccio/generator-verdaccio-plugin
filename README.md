@@ -1,19 +1,14 @@
-# Verdaccio plugin generator
+# Plugin Generator
 
-[![NPM version][npm-image]][npm-url]
-generator-verdaccio-plugin/master?type=dev)
-[![License](https://img.shields.io/github/license/verdaccio/generator-verdaccio-plugin)](./LICENSE)
+[![verdaccio (latest)](https://img.shields.io/npm/v/verdaccio/latest.svg)](https://www.npmjs.com/package/verdaccio)
+[![verdaccio (downloads)](https://img.shields.io/npm/dy/verdaccio.svg)](https://www.npmjs.com/package/verdaccio)
+[![docker pulls](https://img.shields.io/docker/pulls/verdaccio/verdaccio.svg?maxAge=43200)](https://verdaccio.org/docs/en/docker.html)
 [![Backers](https://opencollective.com/verdaccio/tiers/backer/badge.svg?label=Backer&color=brightgreen)](https://opencollective.com/verdaccio)
 [![Stackshare](https://img.shields.io/badge/Follow%20on-StackShare-blue.svg?logo=stackshare&style=flat)](https://stackshare.io/verdaccio)
 [![Discord](https://img.shields.io/discord/388674437219745793?logo=discord)](http://chat.verdaccio.org/)
 [![Twitter followers](https://img.shields.io/twitter/follow/verdaccio_npm.svg?style=social&label=Follow)](https://twitter.com/verdaccio_npm)
 
 Verdaccio plugin generator based in [Yeoman](http://yeoman.io) aims to help to scaffold plugins development
-
-### Maintainers
-
-* [Anix](https://github.com/anikethsaha)
-* [Juan Picado](https://github.com/juanpicado)
 
 ## Installation
 
@@ -32,16 +27,15 @@ yo verdaccio-plugin
 
 ## Plugin Types Supported
 
-- Authentication
-- Storage
-- Middleware
+* Authentication
+* Storage
+* Middleware
 
+### Maintainers
+
+* [Anix](https://github.com/anikethsaha)
+* [Juan Picado](https://github.com/juanpicado)
 
 ## License
 
 MIT © [Juan Picado &lt;@jotadeveloper&gt;]()
-
-[npm-image]: https://badge.fury.io/js/generator-verdaccio-plugin.svg
-[npm-url]: https://npmjs.org/package/generator-verdaccio-plugin
-[daviddm-image]: https://david-dm.org/verdaccio/generator-verdaccio-plugin.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/verdaccio/generator-verdaccio-plugin
