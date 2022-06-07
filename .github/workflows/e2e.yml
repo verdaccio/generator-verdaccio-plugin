@@ -1,0 +1,40 @@
+name: E2E
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    services:
+      verdaccio:
+        image: verdaccio/verdaccio:5
+        ports:
+          - 4873:4873
+
+    strategy:
+      matrix:
+        node-version: [12]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install pnpm
+      run: npm i pnpm@6.32.15 -g
+    - uses: actions/cache@v3
+      with:
+        path: ~/.pnpm-store
+        key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+    - name: install
+      run: pnpm install
+    - name: lint
+      run: pnpm run lint
+    - name: build
+      run: pnpm build
+    - name: login
+      run: npx npm-cli-login -u test -p 1234 -e test@domain.test -r http://localhost:4873
+    - name: publish
+      run: pnpm publish --registry http://localhost:4873
