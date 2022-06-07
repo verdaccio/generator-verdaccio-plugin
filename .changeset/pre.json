@@ -6,6 +6,7 @@
   },
   "changesets": [
     "early-ads-flow",
-    "fuzzy-eels-approve"
+    "fuzzy-eels-approve",
+    "silver-panthers-sort"
   ]
 }
