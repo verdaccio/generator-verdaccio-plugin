@@ -1,0 +1,16 @@
+# Installation
+> `npm install --save @types/mem-fs-editor`
+
+# Summary
+This package contains type definitions for mem-fs-editor (https://github.com/SBoudrias/mem-fs-editor#readme).
+
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mem-fs-editor.
+
+### Additional Details
+ * Last updated: Thu, 12 May 2022 19:01:46 GMT
+ * Dependencies: [@types/ejs](https://npmjs.com/package/@types/ejs), [@types/glob](https://npmjs.com/package/@types/glob), [@types/json-schema](https://npmjs.com/package/@types/json-schema), [@types/mem-fs](https://npmjs.com/package/@types/mem-fs), [@types/vinyl](https://npmjs.com/package/@types/vinyl), [@types/node](https://npmjs.com/package/@types/node)
+ * Global values: none
+
+# Credits
+These definitions were written by [My Food Bag](https://github.com/MyFoodBag), and [Jason Kwok](https://github.com/JasonHK).

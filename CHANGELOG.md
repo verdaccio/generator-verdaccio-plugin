@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.0.0-next.0
+### Major Changes
+
+- 9e00210: feat: refactor templates, remove js and update dependencies
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ### [3.0.1](https://github.com/verdaccio/generator-verdaccio-plugin/compare/v3.0.0...v3.0.1) (2020-12-23)
