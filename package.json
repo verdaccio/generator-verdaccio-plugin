@@ -91,7 +91,7 @@
     "release": "standard-version -a -s",
     "type-check": "tsc --noEmit -p tsconfig.build.json",
     "build:types": "tsc --emitDeclarationOnly -p tsconfig.build.json",
-    "build": "babel src/ --out-dir generators/ --copy-files --extensions \".ts,.tsx\" --source-maps",
+    "build": "babel src/ --out-dir generators/ --copy-files --extensions \".ts,.tsx\" --source-maps --ignore src/app/templates",
     "test": "jest",
     "lint": "eslint  --max-warnings 0 \"**/*.{js,ts}\"",
     "changeset": "changeset",

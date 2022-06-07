@@ -3,10 +3,10 @@ const os = require('os');
 const fs = require('fs');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
-const constants = require('../test/constants');
+const constants = require('../helpers/constants');
 
 describe('template generator', function() {
-  jest.setTimeout(10000);
+  // jest.setTimeout(10000);
   const name = 'test';
   const description = 'An amazing verdaccio plugin';
   const githubUsername = 'testing';
@@ -27,7 +27,7 @@ describe('template generator', function() {
       const lang = 'typescript';
 
       test('should check storage files', function(done) {
-        helpers.run(path.join(__dirname, '../generators/app')).inDir(tempRoot).withPrompts({
+        helpers.run(path.join(__dirname, '../src/app')).inDir(tempRoot).withPrompts({
           name,
           lang,
           pluginType: 'storage',
@@ -41,7 +41,7 @@ describe('template generator', function() {
         }).then(function() {
           assert.file([
             ...constants.map((item) => getBuildAsset(tempRoot, item)),
-            getBuildAsset(tempRoot, '/index.ts'),
+            getBuildAsset(tempRoot, '/index.js'),
             getBuildAsset(tempRoot, '/types/index.ts'),
             getBuildAsset(tempRoot, '/tsconfig.json'),
             getBuildAsset(tempRoot, '/src/index.ts'),
@@ -53,7 +53,7 @@ describe('template generator', function() {
       });
 
       test('should check auth files', function(done) {
-        helpers.run(path.join(__dirname, '../generators/app')).inDir(tempRoot).withPrompts({
+        helpers.run(path.join(__dirname, '../src/app')).inDir(tempRoot).withPrompts({
           name,
           lang,
           pluginType: 'auth',
@@ -68,7 +68,7 @@ describe('template generator', function() {
           assert.file([
             ...constants.map((item) => getBuildAsset(tempRoot, item)),
             getBuildAsset(tempRoot, '/src/index.ts'),
-            getBuildAsset(tempRoot, '/index.ts'),
+            getBuildAsset(tempRoot, '/index.js'),
             getBuildAsset(tempRoot, '/types/index.ts'),
             getBuildAsset(tempRoot, '/tsconfig.json'),
           ]);
@@ -77,7 +77,7 @@ describe('template generator', function() {
       });
 
       test('should check middleware files', function(done) {
-        helpers.run(path.join(__dirname, '../generators/app')).inDir(tempRoot).withPrompts({
+        helpers.run(path.join(__dirname, '../src/app')).inDir(tempRoot).withPrompts({
           name,
           lang,
           pluginType: 'middleware',
@@ -92,7 +92,7 @@ describe('template generator', function() {
           assert.file([
             ...constants.map((item) => getBuildAsset(tempRoot, item)),
             getBuildAsset(tempRoot, '/src/index.ts'),
-            getBuildAsset(tempRoot, '/index.ts'),
+            getBuildAsset(tempRoot, '/index.js'),
             getBuildAsset(tempRoot, '/types/index.ts'),
             getBuildAsset(tempRoot, '/tsconfig.json'),
           ]);

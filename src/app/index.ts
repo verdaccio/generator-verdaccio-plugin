@@ -159,12 +159,12 @@ class VerdaccioPluginGenerator extends Generator {
 
     this.fs.copy(
         this.templatePath(
-            `typescript/common/index.ts`,
+            `typescript/common/index.js`,
         ),
         this.destinationPath(
             resolve(
                 this.destinationPathName,
-                `index.ts`,
+                `index.js`,
             ),
         ),
     );

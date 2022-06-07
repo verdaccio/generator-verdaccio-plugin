@@ -4,3 +4,4 @@ yarn-error.log
 .idea/*
 generators/*
 .pnpm-store/*
+.pnpm-debug.log
