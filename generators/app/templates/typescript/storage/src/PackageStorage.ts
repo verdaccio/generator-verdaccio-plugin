@@ -7,21 +7,21 @@ import {
   StorageWriteCallback,
   CallbackAction,
   Package,
-  ReadPackageCallback
-} from "@verdaccio/types";
-import { UploadTarball, ReadTarball } from "@verdaccio/streams";
-import { getNotFound, getConflict, getInternalError } from '@verdaccio/commons-api';
+  ReadPackageCallback,
+} from '@verdaccio/types';
+import {UploadTarball, ReadTarball} from '@verdaccio/streams';
+import {getNotFound, getConflict, getInternalError} from '@verdaccio/commons-api';
 
-import { CustomConfig } from "../types/index";
+import {CustomConfig} from '../types/index';
 export default class StoragePluginManage implements ILocalPackageManager {
   public logger: Logger;
   public packageName: string;
   public config: CustomConfig;
 
   public constructor(
-    config: CustomConfig,
-    packageName: string,
-    logger: Logger
+      config: CustomConfig,
+      packageName: string,
+      logger: Logger,
   ) {
     this.logger = logger;
     this.packageName = packageName;
@@ -37,11 +37,11 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * @param onEnd
    */
   public updatePackage(
-    name: string,
-    updateHandler: StorageUpdateCallback,
-    onWrite: StorageWriteCallback,
-    transformPackage: PackageTransformer,
-    onEnd: CallbackAction
+      name: string,
+      updateHandler: StorageUpdateCallback,
+      onWrite: StorageWriteCallback,
+      transformPackage: PackageTransformer,
+      onEnd: CallbackAction,
   ): void {
     /**
      * Example of implementation:
@@ -100,9 +100,9 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * @param callback
    */
   public createPackage(
-    name: string,
-    data: Package,
-    callback: CallbackAction
+      name: string,
+      data: Package,
+      callback: CallbackAction,
   ): void {
     /**
      * Example of implementation:
@@ -161,7 +161,7 @@ export default class StoragePluginManage implements ILocalPackageManager {
    * @param name
    */
   public writeTarball(name: string): UploadTarball {
-      /**
+    /**
        * Example of implementation:
        * const stream = new UploadTarball({});
          return stream;
