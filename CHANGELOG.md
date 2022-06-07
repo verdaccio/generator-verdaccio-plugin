@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.0.0-next.1
+### Major Changes
+
+- 2cd418d5: fix: restore file configuration generator
+
 ## 4.0.0-next.0
 ### Major Changes
 
