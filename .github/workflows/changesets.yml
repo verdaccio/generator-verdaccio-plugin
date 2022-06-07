@@ -50,7 +50,7 @@ jobs:
         run: pnpm build
 
       - name: create versions
-        uses: verdaccio/changeset-action@master
+        uses: changesets/action@v1
         with:
           version: pnpm ci:version
           commit: 'chore: update versions'
