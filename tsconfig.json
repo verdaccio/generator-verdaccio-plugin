@@ -11,21 +11,16 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "rootDir": "./generators",
-    "outDir": "./build"
+    "rootDir": "src",
+    "outDir": "./generators"
   },
-  "typeRoots": [
-    "./node_modules/@verdaccio/types/lib/verdaccio",
-    "./node_modules/@types",
-    "./types/custom.d.ts"
-  ],
   "include": [
-    "generators/",
+    "src",
     "types/*.d.ts",
-    "node_modules/config", "generators"
+    "node_modules/config", "src"
   ],
   "exclude": [
     "node_modules",
-    "generators/app/templates/*"
+    "src/app/templates/*"
   ]
 }

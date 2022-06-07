@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","names":[],"sources":["index.ts"],"sourcesContent":["import {Config} from '@verdaccio/types';\n\nexport interface CustomConfig extends Config {\n  foo: string;\n}\n"],"mappings":""}
