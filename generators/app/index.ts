@@ -4,7 +4,15 @@ import Generator from "yeoman-generator";
 import chalk from "chalk";
 import _ from "lodash";
 
-import { propsTypes } from "./types";
+type propsTypes = {
+  name?: string;
+  pluginType?: string;
+  description?: string;
+  githubUsername?: string;
+  authorName?: string;
+  authorEmail?: string;
+  keywords?: Array<string>;
+};
 
 const yosay = require("yosay");
 
@@ -18,7 +26,6 @@ export default class VerdaccioPluginGenerator extends Generator {
   }
 
   prompting() {
-    // Have Yeoman greet the user.
     this.log(
       yosay(
         "Welcome to " +
@@ -40,15 +47,6 @@ export default class VerdaccioPluginGenerator extends Generator {
       },
       {
         type: "list",
-        name: "lang",
-        require: true,
-        message: "Select Language",
-        default: "typescript",
-        store: true,
-        choices: [{ value: "typescript" }, { value: "javascript" }]
-      },
-      {
-        type: "list",
         name: "pluginType",
         require: true,
         message: "What kind of plugin you want to create?",
@@ -67,7 +65,7 @@ export default class VerdaccioPluginGenerator extends Generator {
       },
       {
         name: "githubUsername",
-        message: "GitHub username or organization",
+        message: "GitHub username or Organization",
         validate: function(input) {
           return input !== "";
         }
@@ -116,8 +114,8 @@ export default class VerdaccioPluginGenerator extends Generator {
   }
 
   packageJSON() {
-    const { lang, pluginType } = this.props;
-    const pkgJsonLocation = `${lang}/${pluginType}/_package.json`;
+    const { pluginType } = this.props;
+    const pkgJsonLocation = `typescript/${pluginType}/_package.json`;
     this.fs.copyTpl(
       this.templatePath(pkgJsonLocation),
       this.destinationPath(resolve(this.destinationPathName, "package.json")),
@@ -126,90 +124,70 @@ export default class VerdaccioPluginGenerator extends Generator {
   }
 
   writing() {
-    const { lang } = this.props;
     this.fs.copy(
-      this.templatePath(`${lang}/common/gitignore`),
+      this.templatePath(`typescript/common/gitignore`),
       this.destinationPath(resolve(this.destinationPathName, ".gitignore"))
     );
     this.fs.copy(
-      this.templatePath(`${lang}/common/npmignore`),
+      this.templatePath(`typescript/common/npmignore`),
       this.destinationPath(resolve(this.destinationPathName, ".npmignore"))
     );
     this.fs.copy(
-      this.templatePath(`${lang}/common/jest.config.js`),
+      this.templatePath(`typescript/common/jest.config.js`),
       this.destinationPath(resolve(this.destinationPathName, "jest.config.js"))
     );
-    this.fs.copy(
-      this.templatePath(`${lang}/common/babelrc`),
-      this.destinationPath(resolve(this.destinationPathName, ".babelrc"))
-    );
-    this.fs.copy(
-      this.templatePath(`${lang}/common/travis.yml`),
-      this.destinationPath(resolve(this.destinationPathName, ".travis.yml"))
-    );
-    this.fs.copy(
-      this.templatePath(`${lang}/common/travis.yml`),
-      this.destinationPath(resolve(this.destinationPathName, ".travis.yml"))
-    );
     this.fs.copyTpl(
-      this.templatePath(`${lang}/common/README.md`),
+      this.templatePath(`typescript/common/README.md`),
       this.destinationPath(resolve(this.destinationPathName, "README.md")),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath(`${lang}/common/eslintrc`),
+      this.templatePath(`typescript/common/eslintrc`),
       this.destinationPath(resolve(this.destinationPathName, ".eslintrc")),
       this.props
     );
     this.fs.copyTpl(
-      this.templatePath(`${lang}/common/eslintignore`),
+      this.templatePath(`typescript/common/eslintignore`),
       this.destinationPath(resolve(this.destinationPathName, ".eslintignore")),
       this.props
     );
 
     this.fs.copy(
-      this.templatePath(`${lang}/${this.props.pluginType}/src`),
-      this.destinationPath(resolve(this.destinationPathName, "src")),
-      this.props
+      this.templatePath(`typescript/${this.props.pluginType}/src`),
+      this.destinationPath(resolve(this.destinationPathName, "src"))
     );
 
     this.fs.copy(
       this.templatePath(
-        `${lang}/common/index.${lang == "typescript" ? "ts" : "js"}`
+        `typescript/common/index.ts`
       ),
       this.destinationPath(
         resolve(
           this.destinationPathName,
-          `index.${lang == "typescript" ? "ts" : "js"}`
+          `index.ts`
         )
-      ),
-      this.props
+      )
     );
 
-    if (lang == "typescript") {
-      this.fs.copy(
-        this.templatePath(`${lang}/common/tsconfig.json`),
-        this.destinationPath(
-          resolve(this.destinationPathName, "tsconfig.json")
-        ),
-        this.props
-      );
-      this.fs.copy(
-        this.templatePath(`${lang}/${this.props.pluginType}/types`),
-        this.destinationPath(resolve(this.destinationPathName, "types")),
-        this.props
-      );
-    }
+    this.fs.copy(
+      this.templatePath(`typescript/common/tsconfig.json`),
+      this.destinationPath(
+        resolve(this.destinationPathName, "tsconfig.json")
+      )
+    );
+    this.fs.copy(
+      this.templatePath(`typescript/${this.props.pluginType}/types`),
+      this.destinationPath(resolve(this.destinationPathName, "types")),
+    );
 
     this.fs.copy(
-      this.templatePath(`${lang}/common/editorconfig`),
+      this.templatePath(`typescript/common/editorconfig`),
       this.destinationPath(resolve(this.destinationPathName, ".editorconfig")),
-      this.props
     );
   }
 
   install() {
     process.chdir(this.projectName);
-    this.installDependencies({ npm: true, bower: false });
+    // this.installDependencies({ npm: true, bower: false });
   }
 }

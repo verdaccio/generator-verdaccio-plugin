@@ -10,7 +10,9 @@
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "rootDir": "./generators",
+    "outDir": "./build"
   },
   "typeRoots": [
     "./node_modules/@verdaccio/types/lib/verdaccio",

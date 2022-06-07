@@ -3,7 +3,7 @@ const os = require('os');
 const fs = require('fs');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
-const constants = require('./constants');
+const constants = require('../test/constants');
 
 describe('template generator', function() {
   const name = 'test';
@@ -97,83 +97,6 @@ describe('template generator', function() {
               getBuildAsset(tempRoot, pluginType, '/index.ts'),
               getBuildAsset(tempRoot, pluginType, '/types/index.ts'),
               getBuildAsset(tempRoot, pluginType, '/tsconfig.json'),
-            ])
-            done();
-          });
-      });
-    });
-
-    describe('javascript', function() {
-      const  lang = 'javascript';
-      let pluginType;
-
-      it('should check storage files', function(done) {
-        pluginType = 'storage';
-        helpers.run(path.join(__dirname, '../generators/app')).inDir(tempRoot).withPrompts({
-            name,
-            lang,
-            pluginType,
-            description,
-            githubUsername,
-            authorName,
-            authorEmail,
-            keywords,
-            license,
-            repository
-          }).then(function() {
-            assert.file([
-              ...constants.map(item => getBuildAsset(tempRoot, pluginType, item)),
-              getBuildAsset(tempRoot, pluginType, '/src/index.js'),
-              getBuildAsset(tempRoot, pluginType, '/index.js'),
-              getBuildAsset(tempRoot, pluginType, '/src/plugin.js'),
-              getBuildAsset(tempRoot, pluginType, '/src/PackageStorage.js'),
-            ])
-            done();
-          });
-      });
-
-      it('should check auth files', function(done) {
-        pluginType = 'auth';
-        helpers.run(path.join(__dirname, '../generators/app')).inDir(tempRoot).withPrompts({
-            name,
-            lang,
-            pluginType,
-            description,
-            githubUsername,
-            authorName,
-            authorEmail,
-            keywords,
-            license,
-            repository
-          }).then(function() {
-            assert.file([
-              ...constants.map(item => getBuildAsset(tempRoot, pluginType, item)),
-              getBuildAsset(tempRoot, pluginType, '/src/index.js'),
-              getBuildAsset(tempRoot, pluginType, '/index.js'),
-            ])
-            done();
-          });
-      });
-
-
-      it('should check middleware files', function(done) {
-        pluginType = 'middleware';
-        helpers.run(path.join(__dirname, '../generators/app')).inDir(tempRoot).withPrompts({
-            name,
-            lang,
-            pluginType,
-            description,
-            githubUsername,
-            authorName,
-            authorEmail,
-            keywords,
-            license,
-            repository
-          }).then(function() {
-            assert.file([
-              ...constants.map(item => getBuildAsset(tempRoot, pluginType, item)),
-              getBuildAsset(tempRoot, pluginType, '/src/index.js'),
-              getBuildAsset(tempRoot, pluginType, '/index.js'),
             ])
             done();
           });

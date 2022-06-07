@@ -3,3 +3,4 @@ coverage
 generators/app/*.js
 yarn-error.log
 .idea/*
+/build/*
