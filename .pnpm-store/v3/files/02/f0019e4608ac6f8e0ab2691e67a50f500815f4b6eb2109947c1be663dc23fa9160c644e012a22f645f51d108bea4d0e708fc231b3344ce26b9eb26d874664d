@@ -1,0 +1,26 @@
+{
+    "name": "@types/mem-fs",
+    "version": "1.1.2",
+    "description": "TypeScript definitions for mem-fs",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "My Food Bag",
+            "url": "https://github.com/MyFoodBag",
+            "githubUsername": "MyFoodBag"
+        }
+    ],
+    "main": "",
+    "types": "index",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*",
+        "@types/vinyl": "*"
+    },
+    "typesPublisherContentHash": "6b1e1266a1ebb3f4dd41d9a3c4130df0d28282b2a5c301a4caa51778a38d34cb",
+    "typeScriptVersion": "2.0"
+}

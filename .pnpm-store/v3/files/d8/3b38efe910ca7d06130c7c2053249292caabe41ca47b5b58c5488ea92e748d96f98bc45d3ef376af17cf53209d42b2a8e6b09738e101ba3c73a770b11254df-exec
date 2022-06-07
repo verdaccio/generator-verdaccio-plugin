@@ -1,0 +1,16 @@
+# Installation
+> `npm install --save @types/yeoman-test`
+
+# Summary
+This package contains type definitions for yeoman-test (https://github.com/yeoman/yeoman-test).
+
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/yeoman-test.
+
+### Additional Details
+ * Last updated: Mon, 06 Sep 2021 19:31:29 GMT
+ * Dependencies: [@types/yeoman-generator](https://npmjs.com/package/@types/yeoman-generator), [@types/yeoman-environment](https://npmjs.com/package/@types/yeoman-environment), [@types/mem-fs](https://npmjs.com/package/@types/mem-fs), [@types/mem-fs-editor](https://npmjs.com/package/@types/mem-fs-editor)
+ * Global values: none
+
+# Credits
+These definitions were written by [Ika](https://github.com/ikatyang), and [Manuel Thalmann](https://github.com/manuth).

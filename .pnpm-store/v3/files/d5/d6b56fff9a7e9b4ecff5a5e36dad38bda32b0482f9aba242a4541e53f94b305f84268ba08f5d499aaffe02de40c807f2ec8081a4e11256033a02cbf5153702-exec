@@ -1,0 +1,41 @@
+{
+    "name": "@types/yeoman-environment",
+    "version": "2.10.7",
+    "description": "TypeScript definitions for yeoman-environment",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/yeoman-environment",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "c4605",
+            "url": "https://github.com/bolasblack",
+            "githubUsername": "bolasblack"
+        },
+        {
+            "name": "Manuel Thalmann",
+            "url": "https://github.com/manuth",
+            "githubUsername": "manuth"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/yeoman-environment"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/diff": "*",
+        "@types/inquirer": "*",
+        "@types/mem-fs": "*",
+        "@types/text-table": "*",
+        "@types/vinyl": "*",
+        "@types/yeoman-generator": "*",
+        "chalk": "^4.1.0",
+        "commander": "^9.0.0",
+        "execa": "^5.0.0",
+        "rxjs": "^6.4.0"
+    },
+    "typesPublisherContentHash": "bbffcd06c3fad9ff4c80e0ada4b363b7617df953149cd3b342f2bc06d7b66170",
+    "typeScriptVersion": "4.2"
+}
