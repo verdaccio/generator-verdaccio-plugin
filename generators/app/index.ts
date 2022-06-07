@@ -16,7 +16,7 @@ type propsTypes = {
 
 const yosay = require('yosay');
 
-export default class VerdaccioPluginGenerator extends Generator {
+class VerdaccioPluginGenerator extends Generator {
   private props: propsTypes;
   private projectName = 'verdaccio-';
   private destinationPathName = 'verdaccio-';
@@ -191,3 +191,5 @@ export default class VerdaccioPluginGenerator extends Generator {
     // this.installDependencies({ npm: true, bower: false });
   }
 }
+
+module.exports = VerdaccioPluginGenerator;

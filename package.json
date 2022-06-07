@@ -9,9 +9,8 @@
     "url": "https://github.com/verdaccio/generator-verdaccio-plugin"
   },
   "files": [
-    "build"
+    "generators"
   ],
-  "main": "build/app/index.js",
   "keywords": [
     "verdaccio-plugin",
     "yeoman-generator"
@@ -92,7 +91,7 @@
     "release": "standard-version -a -s",
     "type-check": "tsc --noEmit -p tsconfig.build.json",
     "build:types": "tsc --emitDeclarationOnly -p tsconfig.build.json",
-    "build": "babel generators/ --out-dir build/ --copy-files --extensions \".ts,.tsx\" --source-maps",
+    "build": "babel generators/ --out-dir generators/ --copy-files --extensions \".ts,.tsx\" --source-maps",
     "test": "jest",
     "lint": "eslint  --max-warnings 0 \"**/*.{js,ts}\"",
     "changeset": "changeset",

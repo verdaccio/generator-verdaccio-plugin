@@ -1,11 +1,8 @@
 # Verdaccio plugin generator
 
 [![NPM version][npm-image]][npm-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=verdaccio/generator-verdaccio-plugin)](https://dependabot.com)
-[![DevDependencies](https://david-dm.org/verdaccio/generator-verdaccio-plugin/master/dev-status.svg)](https://david-dm.org/verdaccio/generator-verdaccio-plugin/master?type=dev)
+generator-verdaccio-plugin/master?type=dev)
 [![License](https://img.shields.io/github/license/verdaccio/generator-verdaccio-plugin)](./LICENSE)
-
 [![Backers](https://opencollective.com/verdaccio/tiers/backer/badge.svg?label=Backer&color=brightgreen)](https://opencollective.com/verdaccio)
 [![Stackshare](https://img.shields.io/badge/Follow%20on-StackShare-blue.svg?logo=stackshare&style=flat)](https://stackshare.io/verdaccio)
 [![Discord](https://img.shields.io/discord/388674437219745793?logo=discord)](http://chat.verdaccio.org/)
