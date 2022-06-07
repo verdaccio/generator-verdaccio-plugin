@@ -3,7 +3,7 @@ name: E2E
 on: [pull_request]
 
 jobs:
-  build:
+  e2e:
 
     runs-on: ubuntu-latest
     services:
@@ -37,4 +37,4 @@ jobs:
     - name: login
       run: npx npm-cli-login -u test -p 1234 -e test@domain.test -r http://localhost:4873
     - name: publish
-      run: pnpm publish --registry http://localhost:4873
+      run: pnpm publish --registry http://localhost:4873 --no-git-checks
