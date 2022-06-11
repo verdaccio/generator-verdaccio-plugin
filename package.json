@@ -79,7 +79,7 @@
     "yeoman-test": "6.3.0"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "repository": {
     "type": "git",
