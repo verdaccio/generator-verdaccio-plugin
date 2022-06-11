@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install pnpm
-      run: npm i pnpm@6.32.15 -g
+      run: npm i pnpm@latest
     - uses: actions/cache@v3
       with:
         path: ~/.pnpm-store
