@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "files": ["lib/"],
   "engines": {
-    "node": ">=14"
+    "node": ">=12"
   },
   "dependencies": {
     "@verdaccio/commons-api": "latest",
