@@ -28,23 +28,11 @@ class VerdaccioPluginGenerator extends Generator {
   prompting() {
     this.log(
         yosay(
-            'Welcome to ' +
-          chalk.red('generator-verdaccio-plugin') +
-          ' plugin generator!',
+            `Welcome to ${chalk.red('generator-verdaccio-plugin')} plugin generator!`,
         ),
     );
 
     const prompts = [
-      {
-        type: 'input',
-        name: 'name',
-        require: true,
-        message: 'What is the name of your plugin?',
-        default: 'customname',
-        validate: function(input) {
-          return input !== '';
-        },
-      },
       {
         type: 'list',
         name: 'pluginType',
@@ -55,7 +43,23 @@ class VerdaccioPluginGenerator extends Generator {
           {value: 'auth'},
           {value: 'storage'},
           {value: 'middleware'},
+          {value: 'theme'},
         ],
+      },
+      {
+        type: 'input',
+        name: 'name',
+        require: true,
+        message: `What's the plugin name? The prefix (verdaccio-xxx) will be added automatically`,
+        default: 'customname',
+        validate: function(input: string) {
+          if (input.startsWith('verdaccio-')) {
+            return false;
+          } else if (input === '') {
+            return false;
+          }
+          return true;
+        },
       },
       {
         type: 'input',
