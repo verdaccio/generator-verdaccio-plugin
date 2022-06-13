@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.0.0-next.3
+### Minor Changes
+
+- 6335bc0b: feat: refactor all templates update deps minor bugs
+
 ## 4.0.0-next.2
 ### Major Changes
 
