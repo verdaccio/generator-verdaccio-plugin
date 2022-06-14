@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.0.0
+### Major Changes
+
+- 9e002107: feat: refactor templates, remove js and update dependencies
+- 2cd418d5: fix: restore file configuration generator
+- 0a5326d2: fix: broken build
+
+### Minor Changes
+
+- cb333bb6: fix: improve plugin structure auth
+- 6335bc0b: feat: refactor all templates update deps minor bugs
+
 ## 4.0.0-next.3
 ### Minor Changes
 
