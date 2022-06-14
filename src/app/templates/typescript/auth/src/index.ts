@@ -7,6 +7,7 @@ import {
   RemoteUser,
   Logger,
 } from '@verdaccio/types';
+import {getInternalError} from '@verdaccio/commons-api';
 
 import {CustomConfig} from '../types/index';
 
@@ -33,7 +34,7 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
       if (this.foo) {
         cb(null, ['group-foo', 'group-bar']);
       } else {
-        cb('error, try again', false);
+        cb(getInternalError("error, try again"), false);
       }
     */
   }
@@ -52,7 +53,7 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
       cb(null, true)
     } else {
       this.logger.error({name: user.name}, '@{name} is not allowed to access this package');
-      cb('error, try again', false);
+       cb(getInternalError("error, try again"), false);
     }
      */
   }
@@ -71,7 +72,7 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
       cb(null, true)
     } else {
       this.logger.error({name: user.name}, '@{name} is not allowed to publish this package');
-      cb('error, try again', false);
+       cb(getInternalError("error, try again"), false);
     }
      */
   }
@@ -84,7 +85,7 @@ export default class AuthCustomPlugin implements IPluginAuth<CustomConfig> {
       cb(null, true)
     } else {
       this.logger.error({name: user.name}, '@{name} is not allowed to publish this package');
-      cb('error, try again', false);
+      cb(getInternalError("error, try again"), false);
     }
      */
   }

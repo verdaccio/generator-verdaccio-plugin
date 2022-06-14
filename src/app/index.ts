@@ -43,7 +43,6 @@ class VerdaccioPluginGenerator extends Generator {
           {value: 'auth'},
           {value: 'storage'},
           {value: 'middleware'},
-          {value: 'theme'},
         ],
       },
       {

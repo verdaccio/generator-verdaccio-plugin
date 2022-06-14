@@ -2,8 +2,8 @@
   "name": "<%= name %>",
   "version": "0.0.1",
   "description": "<%= description %>",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "engines": {
     "node": ">=12"
   },
