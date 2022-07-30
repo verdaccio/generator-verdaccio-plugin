@@ -56,7 +56,7 @@ specifiers:
   ts-jest: ^28.0.4
   typescript: 4.7.4
   yeoman-assert: 3.1.1
-  yeoman-environment: 3.9.1
+  yeoman-environment: 3.10.0
   yeoman-generator: 5.7.0
   yeoman-test: 6.3.0
   yosay: 2.0.2
@@ -64,8 +64,8 @@ specifiers:
 dependencies:
   chalk: 4.1.2
   lodash: 4.17.21
-  yeoman-environment: 3.9.1
-  yeoman-generator: 5.7.0_yeoman-environment@3.9.1
+  yeoman-environment: 3.10.0
+  yeoman-generator: 5.7.0_yeoman-environment@3.10.0
   yosay: 2.0.2
 
 devDependencies:
@@ -122,7 +122,7 @@ devDependencies:
   ts-jest: 28.0.4_qfrsgica3z6cdgxy6jhs4zk72q
   typescript: 4.7.4
   yeoman-assert: 3.1.1
-  yeoman-test: 6.3.0_prl3niuvaqgylmtv4vxtdedjpa
+  yeoman-test: 6.3.0_kb5n5yxi2tkzaobnqrfeewuhhy
 
 packages:
 
@@ -3671,7 +3671,7 @@ packages:
     hasBin: true
 
   /colors/1.0.3:
-    resolution: {integrity: sha1-BDP0TYCWgP3rYO0mDxsMJi6CpAs=}
+    resolution: {integrity: sha512-pFGrxThWcWQ2MsAz6RtgeWe4NK2kUE1WfsrvvlctdII745EW9I0yflqhe7++M5LEc7bV2c/9/5zc8sFcpL0Drw==}
     engines: {node: '>=0.1.90'}
 
   /commander/4.1.1:
@@ -7514,13 +7514,13 @@ packages:
       ansi-regex: 5.0.1
 
   /strip-bom-buf/1.0.0:
-    resolution: {integrity: sha1-HLRar1dTD0yvhsf3UXnSyaUd1XI=}
+    resolution: {integrity: sha512-1sUIL1jck0T1mhOLP2c696BIznzT525Lkub+n4jjMHjhjhoAQA6Ye659DxdlZBr0aLDMQoTxKIpnlqxgtwjsuQ==}
     engines: {node: '>=4'}
     dependencies:
       is-utf8: 0.2.1
 
   /strip-bom-stream/2.0.0:
-    resolution: {integrity: sha1-+H217yYT9paKpUWr/h7HKLaoKco=}
+    resolution: {integrity: sha512-yH0+mD8oahBZWnY43vxs4pSinn8SMKAdml/EOGBewoe1Y0Eitd0h2Mg3ZRiXruUW6L4P+lvZiEgbh0NgUGia1w==}
     engines: {node: '>=0.10.0'}
     dependencies:
       first-chunk-stream: 2.0.0
@@ -7646,7 +7646,7 @@ packages:
     engines: {node: '>=0.8'}
 
   /through/2.3.8:
-    resolution: {integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=}
+    resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
   /tmp/0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
@@ -7870,7 +7870,7 @@ packages:
     dev: true
 
   /util-deprecate/1.0.2:
-    resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
   /utils-merge/1.0.1:
     resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
@@ -7904,7 +7904,7 @@ packages:
       spdx-expression-parse: 3.0.1
 
   /validate-npm-package-name/3.0.0:
-    resolution: {integrity: sha1-X6kS2B630MdK/BQN5zF/DKffQ34=}
+    resolution: {integrity: sha512-M6w37eVCMMouJ9V/sdPGnC5H4uDr73/+xdq0FBLO3TFFX1+7wiUY6Es328NN+y43tmY+doUdN9g9J21vqB7iLw==}
     dependencies:
       builtins: 1.0.3
 
@@ -7914,7 +7914,7 @@ packages:
     dev: true
 
   /vinyl-file/3.0.0:
-    resolution: {integrity: sha1-sQTZ5ECf+jJfqt1SBkLQo7SIs2U=}
+    resolution: {integrity: sha512-BoJDj+ca3D9xOuPEM6RWVtWQtvEPQiQYn82LvdxhLWplfQsBzBqtgK0yhCP0s1BNTi6dH9BO+dzybvyQIacifg==}
     engines: {node: '>=4'}
     dependencies:
       graceful-fs: 4.2.10
@@ -8106,8 +8106,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /yeoman-environment/3.9.1:
-    resolution: {integrity: sha512-IdRnbQt/DSOSnao0oD9c+or1X2UrL+fx9eC0O7Lq/MGZV68nhv9k77MqG+hEAySPSlyCpocVlhfQwV62hczk5Q==}
+  /yeoman-environment/3.10.0:
+    resolution: {integrity: sha512-sYtSxBK9daq21QjoskJTHKLQ1xEsRPURkmFV/aM8HS8ZlQVzwx57Rz1zCs8EGPhK4vqsmTE8H92Gp1jg1fT3EA==}
     engines: {node: '>=12.10.0'}
     hasBin: true
     dependencies:
@@ -8129,6 +8129,7 @@ packages:
       grouped-queue: 2.0.0
       inquirer: 8.2.4
       is-scoped: 2.1.0
+      isbinaryfile: 4.0.10
       lodash: 4.17.21
       log-symbols: 4.1.0
       mem-fs: 2.2.1
@@ -8150,7 +8151,7 @@ packages:
       - bluebird
       - supports-color
 
-  /yeoman-generator/5.7.0_yeoman-environment@3.9.1:
+  /yeoman-generator/5.7.0_yeoman-environment@3.10.0:
     resolution: {integrity: sha512-z9ZwgKoDOd+llPDCwn8Ax2l4In5FMhlslxdeByW4AMxhT+HbTExXKEAahsClHSbwZz1i5OzRwLwRIUdOJBr5Bw==}
     engines: {node: '>=12.10.0'}
     peerDependencies:
@@ -8172,12 +8173,12 @@ packages:
       shelljs: 0.8.5
       sort-keys: 4.2.0
       text-table: 0.2.0
-      yeoman-environment: 3.9.1
+      yeoman-environment: 3.10.0
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  /yeoman-test/6.3.0_prl3niuvaqgylmtv4vxtdedjpa:
+  /yeoman-test/6.3.0_kb5n5yxi2tkzaobnqrfeewuhhy:
     resolution: {integrity: sha512-FpaLV5AiVFlYe4pizAB/QLWc+5BSyttk/TcFQfi/r8g/rz290uqEkV4waN3rHEvP/DCmoMNSJykKTZNWL2y07g==}
     engines: {node: '>=12.10.0'}
     peerDependencies:
@@ -8191,8 +8192,8 @@ packages:
       mem-fs-editor: 9.4.0_mem-fs@2.2.1
       sinon: 10.0.0
       temp-dir: 2.0.0
-      yeoman-environment: 3.9.1
-      yeoman-generator: 5.7.0_yeoman-environment@3.9.1
+      yeoman-environment: 3.10.0
+      yeoman-generator: 5.7.0_yeoman-environment@3.10.0
     dev: true
 
   /yocto-queue/0.1.0:
