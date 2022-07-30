@@ -19,7 +19,7 @@
     "chalk": "4.1.2",
     "lodash": "4.17.21",
     "yeoman-environment": "3.9.1",
-    "yeoman-generator": "5.6.1",
+    "yeoman-generator": "5.7.0",
     "yosay": "2.0.2"
   },
   "devDependencies": {
