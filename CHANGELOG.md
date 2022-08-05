@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.1.0
+### Minor Changes
+
+- 62c9b896: chore: update dependencies
+
+### Patch Changes
+
+- c51faf7c: chore: update generator packages deps
+
 ## 4.0.0
 ### Major Changes
 
