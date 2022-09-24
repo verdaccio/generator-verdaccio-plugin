@@ -33,7 +33,7 @@ specifiers:
   '@types/lodash': 4.14.185
   '@types/mocha': 9.1.1
   '@types/node': 17.0.40
-  '@types/yeoman-environment': 2.10.7
+  '@types/yeoman-environment': 2.10.8
   '@types/yeoman-generator': 5.2.11
   '@types/yeoman-test': 4.0.3
   '@typescript-eslint/eslint-plugin': 5.38.0
@@ -101,7 +101,7 @@ devDependencies:
   '@types/lodash': 4.14.185
   '@types/mocha': 9.1.1
   '@types/node': 17.0.40
-  '@types/yeoman-environment': 2.10.7
+  '@types/yeoman-environment': 2.10.8
   '@types/yeoman-generator': 5.2.11
   '@types/yeoman-test': 4.0.3
   '@typescript-eslint/eslint-plugin': 5.38.0_4gkcvl6qsi23tqqawfqgcwtp54
@@ -2852,8 +2852,8 @@ packages:
       '@types/yargs-parser': 21.0.0
     dev: true
 
-  /@types/yeoman-environment/2.10.7:
-    resolution: {integrity: sha512-74+PN82IHkOGFAAYOaYNCj428vdQfd+bcP40i6EtC6a+F41YlHTNCx6Rs06MArQTX7uc6qAwcXqufAoIQ2HLiQ==}
+  /@types/yeoman-environment/2.10.8:
+    resolution: {integrity: sha512-/g92Z/PAMXklSoWafGxTW8DxB4admgl5NDHvKn0qMkz2C0GJUvbV7tpU9LbKNnlMO+ynerz5bCVbhuBzEHbb6Q==}
     dependencies:
       '@types/diff': 5.0.2
       '@types/inquirer': 8.2.1
@@ -2874,7 +2874,7 @@ packages:
       '@types/ejs': 3.1.1
       '@types/inquirer': 8.2.1
       '@types/mem-fs-editor': 7.0.2
-      '@types/yeoman-environment': 2.10.7
+      '@types/yeoman-environment': 2.10.8
       rxjs: 6.6.7
     dev: true
 
@@ -2883,7 +2883,7 @@ packages:
     dependencies:
       '@types/mem-fs': 1.1.2
       '@types/mem-fs-editor': 7.0.2
-      '@types/yeoman-environment': 2.10.7
+      '@types/yeoman-environment': 2.10.8
       '@types/yeoman-generator': 5.2.11
     dev: true
 

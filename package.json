@@ -55,7 +55,7 @@
     "@types/lodash": "4.14.185",
     "@types/mocha": "9.1.1",
     "@types/node": "17.0.40",
-    "@types/yeoman-environment": "2.10.7",
+    "@types/yeoman-environment": "2.10.8",
     "@types/yeoman-generator": "5.2.11",
     "@types/yeoman-test": "4.0.3",
     "@typescript-eslint/eslint-plugin": "5.38.0",
