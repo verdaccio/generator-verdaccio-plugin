@@ -38,7 +38,7 @@ specifiers:
   '@types/yeoman-test': 4.0.3
   '@typescript-eslint/eslint-plugin': 5.38.0
   '@typescript-eslint/parser': 5.38.0
-  '@verdaccio/types': 10.5.2
+  '@verdaccio/types': 10.7.0
   chalk: 4.1.2
   eslint: 8.24.0
   eslint-config-google: 0.14.0
@@ -106,7 +106,7 @@ devDependencies:
   '@types/yeoman-test': 4.0.3
   '@typescript-eslint/eslint-plugin': 5.38.0_4gkcvl6qsi23tqqawfqgcwtp54
   '@typescript-eslint/parser': 5.38.0_7ilbxdl5iguzcjriqqcg2m5cku
-  '@verdaccio/types': 10.5.2
+  '@verdaccio/types': 10.7.0
   eslint: 8.24.0
   eslint-config-google: 0.14.0_eslint@8.24.0
   eslint-config-prettier: 8.5.0_eslint@8.24.0
@@ -3073,8 +3073,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@verdaccio/types/10.5.2:
-    resolution: {integrity: sha512-orebDGzdMwEfEKrpqdPKjuCv8apYj4uRZzjDIVYyx/QiHHjBLIMPMlyar2ZjNSbcyT40HNSDQl4X2TT9xdJD/g==}
+  /@verdaccio/types/10.7.0:
+    resolution: {integrity: sha512-sLTa8ga4AIGjpuqrnAfDHda5QEzA9mLk0Y0Ul88+h+eKWtF/DiyjwJXEKWUm2WyvndWftifHvdiVUywNkcBRGQ==}
     dev: true
 
   /abbrev/1.1.1:
