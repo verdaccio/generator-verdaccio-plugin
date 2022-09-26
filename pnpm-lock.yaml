@@ -39,7 +39,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.38.1
   '@typescript-eslint/parser': 5.38.1
   '@verdaccio/types': 10.7.0
-  chalk: 4.1.2
+  chalk: 5.0.1
   eslint: 8.24.0
   eslint-config-google: 0.14.0
   eslint-config-prettier: 8.5.0
@@ -62,7 +62,7 @@ specifiers:
   yosay: 2.0.2
 
 dependencies:
-  chalk: 4.1.2
+  chalk: 5.0.1
   lodash: 4.17.21
   yeoman-environment: 3.11.0_tkv3x422zs67v2422edqzi5l4i
   yeoman-generator: 5.7.0_yeoman-environment@3.11.0
@@ -3645,7 +3645,6 @@ packages:
   /chalk/5.0.1:
     resolution: {integrity: sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
-    dev: true
 
   /char-regex/1.0.2:
     resolution: {integrity: sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==}
