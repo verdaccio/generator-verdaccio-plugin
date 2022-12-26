@@ -52,7 +52,7 @@
     "@trivago/prettier-plugin-sort-imports": "4.0.0",
     "@types/chalk": "2.2.0",
     "@types/express": "4.17.15",
-    "@types/lodash": "4.14.190",
+    "@types/lodash": "4.14.191",
     "@types/mocha": "10.0.1",
     "@types/node": "18.11.9",
     "@types/yeoman-environment": "2.10.8",
