@@ -56,7 +56,7 @@ specifiers:
   ts-jest: ^29.0.0
   typescript: 4.9.5
   yeoman-assert: 3.1.1
-  yeoman-environment: 3.13.0
+  yeoman-environment: 3.15.1
   yeoman-generator: 5.7.0
   yeoman-test: 6.3.0
   yosay: 2.0.2
@@ -64,8 +64,8 @@ specifiers:
 dependencies:
   chalk: 4.1.2
   lodash: 4.17.21
-  yeoman-environment: 3.13.0_tkv3x422zs67v2422edqzi5l4i
-  yeoman-generator: 5.7.0_yeoman-environment@3.13.0
+  yeoman-environment: 3.15.1_tkv3x422zs67v2422edqzi5l4i
+  yeoman-generator: 5.7.0_yeoman-environment@3.15.1
   yosay: 2.0.2
 
 devDependencies:
@@ -122,7 +122,7 @@ devDependencies:
   ts-jest: 29.0.1_7latyidodje3t47qvjmeshd2uy
   typescript: 4.9.5
   yeoman-assert: 3.1.1
-  yeoman-test: 6.3.0_wd7tkuwixonj6x6luemkpydp4a
+  yeoman-test: 6.3.0_iiuzuaj324uv3qbktspux5hoee
 
 packages:
 
@@ -8297,8 +8297,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /yeoman-environment/3.13.0_tkv3x422zs67v2422edqzi5l4i:
-    resolution: {integrity: sha512-eBPpBZCvFzx6yk17x+ZrOHp8ADDv6qHradV+SgdugaQKIy9NjEX5AkbwdTHLOgccSTkQ9rN791xvYOu6OmqjBg==}
+  /yeoman-environment/3.15.1_tkv3x422zs67v2422edqzi5l4i:
+    resolution: {integrity: sha512-P4DTQxqCxNTBD7gph+P+dIckBdx0xyHmvOYgO3vsc9/Sl67KJ6QInz5Qv6tlXET3CFFJ/YxPIdl9rKb0XwTRLg==}
     engines: {node: '>=12.10.0'}
     hasBin: true
     peerDependencies:
@@ -8345,7 +8345,7 @@ packages:
       - bluebird
       - supports-color
 
-  /yeoman-generator/5.7.0_yeoman-environment@3.13.0:
+  /yeoman-generator/5.7.0_yeoman-environment@3.15.1:
     resolution: {integrity: sha512-z9ZwgKoDOd+llPDCwn8Ax2l4In5FMhlslxdeByW4AMxhT+HbTExXKEAahsClHSbwZz1i5OzRwLwRIUdOJBr5Bw==}
     engines: {node: '>=12.10.0'}
     peerDependencies:
@@ -8367,12 +8367,12 @@ packages:
       shelljs: 0.8.5
       sort-keys: 4.2.0
       text-table: 0.2.0
-      yeoman-environment: 3.13.0_tkv3x422zs67v2422edqzi5l4i
+      yeoman-environment: 3.15.1_tkv3x422zs67v2422edqzi5l4i
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  /yeoman-test/6.3.0_wd7tkuwixonj6x6luemkpydp4a:
+  /yeoman-test/6.3.0_iiuzuaj324uv3qbktspux5hoee:
     resolution: {integrity: sha512-FpaLV5AiVFlYe4pizAB/QLWc+5BSyttk/TcFQfi/r8g/rz290uqEkV4waN3rHEvP/DCmoMNSJykKTZNWL2y07g==}
     engines: {node: '>=12.10.0'}
     peerDependencies:
@@ -8386,8 +8386,8 @@ packages:
       mem-fs-editor: 9.4.0_mem-fs@2.2.1
       sinon: 10.0.0
       temp-dir: 2.0.0
-      yeoman-environment: 3.13.0_tkv3x422zs67v2422edqzi5l4i
-      yeoman-generator: 5.7.0_yeoman-environment@3.13.0
+      yeoman-environment: 3.15.1_tkv3x422zs67v2422edqzi5l4i
+      yeoman-generator: 5.7.0_yeoman-environment@3.15.1
     dev: true
 
   /yocto-queue/0.1.0:
