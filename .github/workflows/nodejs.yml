@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14, 16, 17, 18]
+        node-version: [16, 18, 19]
 
     steps:
     - uses: actions/checkout@v3
@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install pnpm
-      run: npm i -g pnpm@latest
+      run: npm i pnpm@latest-8
     - uses: actions/cache@v3
       with:
         path: ~/.pnpm-store
