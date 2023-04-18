@@ -11,8 +11,8 @@ dependencies:
     specifier: 3.15.1
     version: 3.15.1(mem-fs-editor@9.7.0)(mem-fs@2.3.0)
   yeoman-generator:
-    specifier: 5.7.0
-    version: 5.7.0(yeoman-environment@3.15.1)
+    specifier: 5.8.0
+    version: 5.8.0(mem-fs@2.3.0)(yeoman-environment@3.15.1)
   yosay:
     specifier: 2.0.2
     version: 2.0.2
@@ -179,7 +179,7 @@ devDependencies:
     version: 3.1.1
   yeoman-test:
     specifier: 6.3.0
-    version: 6.3.0(mem-fs@2.3.0)(yeoman-environment@3.15.1)(yeoman-generator@5.7.0)
+    version: 6.3.0(mem-fs@2.3.0)(yeoman-environment@3.15.1)(yeoman-generator@5.8.0)
 
 packages:
 
@@ -8199,8 +8199,8 @@ packages:
       - bluebird
       - supports-color
 
-  /yeoman-generator@5.7.0(yeoman-environment@3.15.1):
-    resolution: {integrity: sha512-z9ZwgKoDOd+llPDCwn8Ax2l4In5FMhlslxdeByW4AMxhT+HbTExXKEAahsClHSbwZz1i5OzRwLwRIUdOJBr5Bw==}
+  /yeoman-generator@5.8.0(mem-fs@2.3.0)(yeoman-environment@3.15.1):
+    resolution: {integrity: sha512-dsrwFn9/c2/MOe80sa2nKfbZd/GaPTgmmehdgkFifs1VN/I7qPsW2xcBfvSkHNGK+PZly7uHyH8kaVYSFNUDhQ==}
     engines: {node: '>=12.10.0'}
     peerDependencies:
       yeoman-environment: ^3.2.0
@@ -8214,6 +8214,7 @@ packages:
       execa: 5.1.1
       github-username: 6.0.0
       lodash: 4.17.21
+      mem-fs-editor: 9.7.0(mem-fs@2.3.0)
       minimist: 1.2.8
       read-pkg-up: 7.0.1
       run-async: 2.4.1
@@ -8224,9 +8225,10 @@ packages:
       yeoman-environment: 3.15.1(mem-fs-editor@9.7.0)(mem-fs@2.3.0)
     transitivePeerDependencies:
       - encoding
+      - mem-fs
       - supports-color
 
-  /yeoman-test@6.3.0(mem-fs@2.3.0)(yeoman-environment@3.15.1)(yeoman-generator@5.7.0):
+  /yeoman-test@6.3.0(mem-fs@2.3.0)(yeoman-environment@3.15.1)(yeoman-generator@5.8.0):
     resolution: {integrity: sha512-FpaLV5AiVFlYe4pizAB/QLWc+5BSyttk/TcFQfi/r8g/rz290uqEkV4waN3rHEvP/DCmoMNSJykKTZNWL2y07g==}
     engines: {node: '>=12.10.0'}
     peerDependencies:
@@ -8241,7 +8243,7 @@ packages:
       sinon: 10.0.0
       temp-dir: 2.0.0
       yeoman-environment: 3.15.1(mem-fs-editor@9.7.0)(mem-fs@2.3.0)
-      yeoman-generator: 5.7.0(yeoman-environment@3.15.1)
+      yeoman-generator: 5.8.0(mem-fs@2.3.0)(yeoman-environment@3.15.1)
     dev: true
 
   /yocto-queue@0.1.0:
