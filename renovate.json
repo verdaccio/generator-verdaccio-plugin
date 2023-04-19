@@ -1,6 +1,6 @@
 {
   "extends": ["config:base"],
-  "prConcurrentLimit": 5,
+  "prConcurrentLimit": 10,
   "baseBranches": ["master"],
   "major": true,
   "labels": ["bot: dependencies"],
@@ -18,7 +18,11 @@
       "groupName": "all linting dependencies",
       "groupSlug": "all-linting",
       "baseBranchList": ["master"]
+    },
+    {
+      "packageNames": ["yeoman-test"],
+      "allowedVersions": "^6.3.0"
     }
   ],
-  "pinVersions": false
+  "pinVersions": true
 }
