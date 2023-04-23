@@ -73,13 +73,13 @@
     "express": "4.18.2",
     "jest": "29.5.0",
     "prettier": "2.8.7",
-    "ts-jest": "^29.0.0",
+    "ts-jest": "29.1.0",
     "typescript": "5.0.4",
     "yeoman-assert": "3.1.1",
     "yeoman-test": "6.3.0"
   },
   "engines": {
-    "node": ">=14"
+    "node": "20.0.0"
   },
   "repository": {
     "type": "git",
