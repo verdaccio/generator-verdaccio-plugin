@@ -8,11 +8,11 @@ dependencies:
     specifier: 4.17.21
     version: 4.17.21
   yeoman-environment:
-    specifier: 3.18.3
-    version: 3.18.3
+    specifier: 3.18.4
+    version: 3.18.4
   yeoman-generator:
     specifier: 5.9.0
-    version: 5.9.0(mem-fs@2.3.0)(yeoman-environment@3.18.3)
+    version: 5.9.0(mem-fs@2.3.0)(yeoman-environment@3.18.4)
   yosay:
     specifier: 2.0.2
     version: 2.0.2
@@ -179,7 +179,7 @@ devDependencies:
     version: 3.1.1
   yeoman-test:
     specifier: 6.3.0
-    version: 6.3.0(mem-fs@2.3.0)(yeoman-environment@3.18.3)(yeoman-generator@5.9.0)
+    version: 6.3.0(mem-fs@2.3.0)(yeoman-environment@3.18.4)(yeoman-generator@5.9.0)
 
 packages:
 
@@ -8687,8 +8687,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /yeoman-environment@3.18.3:
-    resolution: {integrity: sha512-OF5C87D7QUDOe4Lo2QucPnqFz0V3dNvC7D5Up6kVxUZKrY3LtNM7JIFAb/rhfEp/lKlZ28Olrb/BYFTDHcJ2og==}
+  /yeoman-environment@3.18.4:
+    resolution: {integrity: sha512-/BN8fR3XJOJ6blcO+jKfcCKGq9gACWS8EiMFj/I6khRz73CcTsrrmqvCBtyQ6ym8BnS5cy+YKch0pBo8KWVtLQ==}
     engines: {node: '>=12.10.0'}
     hasBin: true
     dependencies:
@@ -8732,7 +8732,7 @@ packages:
       - bluebird
       - supports-color
 
-  /yeoman-generator@5.9.0(mem-fs@2.3.0)(yeoman-environment@3.18.3):
+  /yeoman-generator@5.9.0(mem-fs@2.3.0)(yeoman-environment@3.18.4):
     resolution: {integrity: sha512-sN1e01Db4fdd8P/n/yYvizfy77HdbwzvXmPxps9Gwz2D24slegrkSn+qyj+0nmZhtFwGX2i/cH29QDrvAFT9Aw==}
     engines: {node: '>=12.10.0'}
     peerDependencies:
@@ -8756,14 +8756,14 @@ packages:
       shelljs: 0.8.5
       sort-keys: 4.2.0
       text-table: 0.2.0
-      yeoman-environment: 3.18.3
+      yeoman-environment: 3.18.4
     transitivePeerDependencies:
       - bluebird
       - encoding
       - mem-fs
       - supports-color
 
-  /yeoman-test@6.3.0(mem-fs@2.3.0)(yeoman-environment@3.18.3)(yeoman-generator@5.9.0):
+  /yeoman-test@6.3.0(mem-fs@2.3.0)(yeoman-environment@3.18.4)(yeoman-generator@5.9.0):
     resolution: {integrity: sha512-FpaLV5AiVFlYe4pizAB/QLWc+5BSyttk/TcFQfi/r8g/rz290uqEkV4waN3rHEvP/DCmoMNSJykKTZNWL2y07g==}
     engines: {node: '>=12.10.0'}
     peerDependencies:
@@ -8777,8 +8777,8 @@ packages:
       mem-fs-editor: 9.7.0(mem-fs@2.3.0)
       sinon: 10.0.0
       temp-dir: 2.0.0
-      yeoman-environment: 3.18.3
-      yeoman-generator: 5.9.0(mem-fs@2.3.0)(yeoman-environment@3.18.3)
+      yeoman-environment: 3.18.4
+      yeoman-generator: 5.9.0(mem-fs@2.3.0)(yeoman-environment@3.18.4)
     dev: true
 
   /yocto-queue@0.1.0:
