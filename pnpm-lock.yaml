@@ -110,8 +110,8 @@ devDependencies:
     specifier: 4.17.17
     version: 4.17.17
   '@types/lodash':
-    specifier: 4.14.195
-    version: 4.14.195
+    specifier: 4.17.0
+    version: 4.17.0
   '@types/mocha':
     specifier: 10.0.1
     version: 10.0.1
@@ -2978,8 +2978,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/lodash@4.14.195:
-    resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
+  /@types/lodash@4.17.0:
+    resolution: {integrity: sha512-t7dhREVv6dbNj0q17X12j7yDG4bD/DHYX7o5/DbDxobP0HnGPgpRz2Ej77aL7TZT3DSw13fqUTj8J4mMnqa7WA==}
     dev: true
 
   /@types/mem-fs-editor@7.0.3:
