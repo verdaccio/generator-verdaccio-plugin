@@ -1,0 +1,5 @@
+node_modules
+npm-debug.log
+generators/**/*.ts
+.DS_Store
+__tests__

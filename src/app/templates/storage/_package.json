@@ -1,0 +1,22 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "description": "<%= description %>",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@verdaccio/streams": "10.2.1"
+  },
+  "devDependencies": {},
+  "keywords": ["<%= keywords %>"],
+  "license": "<%= license %>",
+  "repository": "<%= repository %>",
+  "author": "<%= authorName %> <<%= authorEmail %>>",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
