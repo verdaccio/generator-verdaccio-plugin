@@ -15,7 +15,7 @@ Verdaccio plugin generator based in [Yeoman](http://yeoman.io) aims to help to s
 First, install [Yeoman](http://yeoman.io) and generator-verdaccio-plugin using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-npm install -g yo
+npm install -g yo@4
 npm install -g generator-verdaccio-plugin
 ```
 
