@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.0.0
+
+### Major Changes
+
+- 7eff10aa: feat: refactor, new plugins api
+
 ## 4.1.0
 
 ### Minor Changes
