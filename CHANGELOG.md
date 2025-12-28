@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.0.1
+
+### Patch Changes
+
+- 6f4d7594: fix: override issue on create template
+
 ## 6.0.0
 
 ### Major Changes
