@@ -27,20 +27,15 @@ jobs:
       - name: setup node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.REGISTRY_AUTH_TOKEN }}
 
       - name: install pnpm
-        run: npm i  -g pnpm@latest-8
+        run: npm i -g corepack@latest || corepack enable && corepack prepare pnpm@latest --activate
         env:
           NODE_AUTH_TOKEN: ${{ secrets.REGISTRY_AUTH_TOKEN }}
-
-      - name: setup pnpm config
-        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
-      - name: setup pnpm config registry
-        run: pnpm config set registry https://registry.npmjs.org
 
       - name: install dependencies
         run: pnpm install
@@ -57,7 +52,7 @@ jobs:
           title: 'chore: update versions'
           publish: pnpm ci:publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CHANGESET_RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.REGISTRY_AUTH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.REGISTRY_AUTH_TOKEN }}
           NPM_CONFIG_REGISTRY: https://registry.npmjs.org
