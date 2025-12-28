@@ -73,11 +73,9 @@
     "test": "pnpm build && vitest run",
     "test:coverage": "pnpm build && vitest run --coverage",
     "lint": "eslint  --max-warnings 10 \"**/*.ts\" --fix",
-    "changeset": "changeset",
-    "changeset:check": "changeset status --since-master",
-    "ci:version": "run-s ci:version:changeset ci:version:install",
-    "ci:version:install": "pnpm install --frozen-lockfile=false",
     "ci:version:changeset": "changeset version",
+    "ci:version": "npm run ci:version:changeset && npm run ci:version:install",
+    "ci:version:install": "pnpm install --frozen-lockfile=false",
     "ci:publish": "changeset publish"
   },
   "license": "MIT"
