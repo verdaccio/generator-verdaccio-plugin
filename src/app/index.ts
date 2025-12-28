@@ -143,6 +143,7 @@ export default class PluginGenerator extends Generator {
 
     this.fs.copy(this.templatePath('common/gitignore'), dest('.gitignore'));
     this.fs.copy(this.templatePath('common/npmignore'), dest('.npmignore'));
+    this.fs.copy(this.templatePath('common/nvmrc'), dest('.nvmrc'));
 
     this.fs.copyTpl(this.templatePath('common/README.md'), dest('README.md'), this.props);
 
