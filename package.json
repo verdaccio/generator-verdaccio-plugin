@@ -71,7 +71,7 @@
     "build": "rm -Rf ./generators && tsc && cp -R ./src/app/templates generators/app/",
     "test": "pnpm build && vitest run",
     "test:coverage": "pnpm build && vitest run --coverage",
-    "lint": "eslint  --max-warnings 10 \"**/*.{js,ts}\" --fix",
+    "lint": "eslint  --max-warnings 10 \"**/*.ts\" --fix",
     "changeset": "changeset",
     "changeset:check": "changeset status --since-master",
     "ci:version": "run-s ci:version:changeset ci:version:install",
