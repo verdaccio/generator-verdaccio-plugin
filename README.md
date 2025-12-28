@@ -1,4 +1,4 @@
-## Code was moved to:
+# generator-verdaccio-plugin
 
 [![verdaccio (latest)](https://img.shields.io/npm/v/generator-verdaccio-plugin/latest.svg)](https://www.npmjs.com/package/generator-verdaccio-plugin)
 [![verdaccio (downloads)](https://img.shields.io/npm/dy/generator-verdaccio-plugin.svg)](https://www.npmjs.com/package/generator-verdaccio-plugin)
