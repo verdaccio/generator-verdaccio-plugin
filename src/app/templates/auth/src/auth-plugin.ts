@@ -1,16 +1,16 @@
+import debugCore from 'debug';
+
 import {API_ERROR, errorUtils, pluginUtils} from '@verdaccio/core';
-import {
-  AuthAccessCallback,
-  AuthCallback,
-  Config,
-  Logger,
-  PackageAccess,
-  RemoteUser,
-} from '@verdaccio/types';
+import {Config, Logger, PackageAccess, RemoteUser} from '@verdaccio/types';
 
 import {CustomConfig} from '../types/index';
 
 const {Plugin} = pluginUtils;
+
+// Initialize debug logging
+// Replace 'custom-auth-plugin' with your plugin name
+// This code is meant to help during development and debugging
+const debug = debugCore('verdaccio:plugin:custom-auth-plugin');
 
 /**
  * Custom Verdaccio Authenticate Plugin.
@@ -26,6 +26,8 @@ export default class AuthCustomPlugin
     this._config = config;
     this._logger = appOptions.logger;
     this._app_config = appOptions.config;
+    debug('AuthCustomPlugin config: %o', this._config);
+    debug('App Config: %o', this._app_config);
   }
   /**
    * Authenticate an user.
@@ -33,65 +35,68 @@ export default class AuthCustomPlugin
    * @param password provided password
    * @param cb callback function
    */
-  public authenticate(user: string, password: string, cb: AuthCallback): void {
-    /**
-     * This code is just an example for demostration purpose
-      if (this.foo) {
-        cb(null, ['group-foo', 'group-bar']);
-      } else {
-        cb(getInternalError("error, try again"), false);
-      }
-    */
+  public authenticate(user: string, password: string, cb: pluginUtils.AuthCallback): void {
+    debug('Authenticating user: %o', user);
+    debug('Password: %o', password);
+
+    // TODO: replace this code with your own authentication logic
+    // TODO: replace this code with your own authentication logic
+    // TODO: replace this code with your own authentication logic
+    if (password === 'verdaccio') {
+      this._logger.info(`User @{user} authenticated successfully`);
+      debug('User @{user} authenticated successfully', {user});
+      return cb(null, [user]);
+    } else {
+      this._logger.error(`User @{user} authentication failed`);
+      return cb(errorUtils.getUnauthorized(API_ERROR.BAD_USERNAME_PASSWORD));
+    }
+    // TODO: replace this code with your own authentication logic
+    // TODO: replace this code with your own authentication logic
+    // TODO: replace this code with your own authentication logic
   }
 
-  /**
-   * Triggered on each access request
-   * @param user
-   * @param pkg
-   * @param cb
-   */
-  public allow_access(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
-    /**
-     * This code is just an example for demostration purpose
-    if (user.name === this.foo && pkg?.access?.includes[user.name]) {
-      this.logger.debug({name: user.name}, 'your package has been granted for @{name}');
-      cb(null, true)
-    } else {
-      this.logger.error({name: user.name}, '@{name} is not allowed to access this package');
-       cb(getInternalError("error, try again"), false);
+  public allow_access(user: RemoteUser, pkg: PackageAccess, cb: pluginUtils.AccessCallback): void {
+    debug('allow access for %o', user);
+    debug('package access list %o', pkg?.access);
+    // TODO: replace this code with your own access logic
+    // TODO: replace this code with your own access logic
+    // TODO: replace this code with your own access logic
+    if (pkg?.access?.includes('$anonymous')) {
+      debug('%o has been granted access', user?.name);
+      this._logger.info('Anonymous user granted access to package');
+      return cb(null, true);
+    } else if (pkg?.access?.includes('$all')) {
+      debug('%o has been granted access', user?.name);
+      this._logger.info('All users granted access to package');
+      return cb(null, false);
     }
-     */
+    // TODO: replace this code with your own access logic
+    // TODO: replace this code with your own access logic
+    // TODO: replace this code with your own access logic
   }
 
-  /**
-   * Triggered on each publish request
-   * @param user
-   * @param pkg
-   * @param cb
-   */
-  public allow_publish(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
-    /**
-     * This code is just an example for demostration purpose
-    if (user.name === this.foo && pkg?.access?.includes[user.name]) {
-      this.logger.debug({name: user.name}, '@{name} has been granted to publish');
-      cb(null, true)
+  public allow_publish(
+      user: RemoteUser,
+      pkg: PackageAccess,
+      cb: pluginUtils.AuthAccessCallback,
+  ): void {
+    // TODO: replace this code with your own publish logic
+    // TODO: replace this code with your own publish logic
+    // TODO: replace this code with your own publish logic
+    // TODO: replace this code with your own publish logic
+    debug('allow publish for %o', user);
+    debug('package publish access list %o', pkg?.publish);
+    if (user?.name === 'verdaccio') {
+      debug('%o has been granted to publish', user?.name);
+      return cb(null, true);
     } else {
-      this.logger.error({name: user.name}, '@{name} is not allowed to publish this package');
-       cb(getInternalError("error, try again"), false);
+      const err = errorUtils.getForbidden('not allowed to publish package');
+      this._logger.error('%o not allowed to publish package');
+      debug('%o not allowed to publish package err %o', user?.name, err.message);
+      return cb(err);
     }
-     */
-  }
-
-  public allow_unpublish(user: RemoteUser, pkg: PackageAccess, cb: AuthAccessCallback): void {
-    /**
-     * This code is just an example for demostration purpose
-    if (user.name === this.foo && pkg?.access?.includes[user.name]) {
-      this.logger.debug({name: user.name}, '@{name} has been granted to unpublish');
-      cb(null, true)
-    } else {
-      this.logger.error({name: user.name}, '@{name} is not allowed to publish this package');
-      cb(getInternalError("error, try again"), false);
-    }
-     */
+    // TODO: replace this code with your own publish logic
+    // TODO: replace this code with your own publish logic
+    // TODO: replace this code with your own publish logic
   }
 }

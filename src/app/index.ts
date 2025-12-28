@@ -116,10 +116,12 @@ export default class PluginGenerator extends Generator {
     // devDependencies
     pkg.devDependencies['@types/node'] = rootP.devDependencies['@types/node'];
     pkg.devDependencies['@types/express'] = rootP.devDependencies['@types/express'];
+    pkg.devDependencies['@types/debug'] = rootP.devDependencies['@types/debug'];
     pkg.devDependencies['typescript'] = rootP.devDependencies['typescript'];
     pkg.devDependencies['@verdaccio/types'] = rootP.devDependencies['@verdaccio/types'];
     // dependencies
     pkg.dependencies['@verdaccio/core'] = rootP.dependencies['@verdaccio/core'];
+    pkg.dependencies['@verdaccio/config'] = rootP.dependencies['@verdaccio/config'];
     pkg.dependencies['debug'] = rootP.dependencies['debug'];
     if (pluginType === 'auth') {
       pkg.devDependencies['@verdaccio/auth'] = rootP.devDependencies['@verdaccio/auth'];

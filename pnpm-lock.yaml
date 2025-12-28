@@ -47,6 +47,9 @@ importers:
       '@types/chalk':
         specifier: 2.2.0
         version: 2.2.0
+      '@types/debug':
+        specifier: ^4.1.12
+        version: 4.1.12
       '@types/express':
         specifier: 4.17.13
         version: 4.17.13
@@ -1430,6 +1433,12 @@ packages:
         integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==,
       }
 
+  '@types/debug@4.1.12':
+    resolution:
+      {
+        integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==,
+      }
+
   '@types/deep-eql@4.0.2':
     resolution:
       {
@@ -1512,6 +1521,12 @@ packages:
     resolution:
       {
         integrity: sha512-/fvYntiO1GeICvqbQ3doGDIP97vWmvFt83GKguJ6prmQM2iXZfFcq6YE8KteFyRtX2/h5Hf91BYvPodJKFYv5Q==,
+      }
+
+  '@types/ms@2.1.0':
+    resolution:
+      {
+        integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==,
       }
 
   '@types/node@12.20.55':
@@ -7952,6 +7967,10 @@ snapshots:
     dependencies:
       '@types/node': 18.18.12
 
+  '@types/debug@4.1.12':
+    dependencies:
+      '@types/ms': 2.1.0
+
   '@types/deep-eql@4.0.2': {}
 
   '@types/ejs@3.1.5': {}
@@ -7993,6 +8012,8 @@ snapshots:
   '@types/minimist@1.2.5': {}
 
   '@types/mocha@10.0.1': {}
+
+  '@types/ms@2.1.0': {}
 
   '@types/node@12.20.55': {}
 
