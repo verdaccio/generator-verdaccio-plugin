@@ -1,0 +1,10 @@
+{
+  "extends": ["config:base", "helpers:pinGitHubActionDigests"],
+  "prConcurrentLimit": 2,
+  "schedule": ["before 3:00am on the 3 day of the month"],
+  "baseBranches": ["master"],
+  "semanticCommitType": "fix",
+  "major": true,
+  "labels": ["bot: dependencies"],
+  "pinVersions": false
+}
