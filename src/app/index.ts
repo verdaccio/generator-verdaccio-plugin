@@ -119,6 +119,8 @@ export default class PluginGenerator extends Generator {
     pkg.devDependencies['@types/debug'] = rootP.devDependencies['@types/debug'];
     pkg.devDependencies['typescript'] = rootP.devDependencies['typescript'];
     pkg.devDependencies['@verdaccio/types'] = rootP.devDependencies['@verdaccio/types'];
+    // required by verdaccio types
+    pkg.devDependencies['@types/jsonwebtoken'] = rootP.devDependencies['@types/jsonwebtoken'];
     // dependencies
     pkg.dependencies['@verdaccio/core'] = rootP.dependencies['@verdaccio/core'];
     pkg.dependencies['@verdaccio/config'] = rootP.dependencies['@verdaccio/config'];

@@ -1,5 +1,5 @@
-import AuthPlugin from './auth-plugin';
+import MiddlewarePlugin from './middleware-plugin';
 
-export {AuthPlugin};
+export {MiddlewarePlugin};
 
-export default AuthPlugin;
+export default MiddlewarePlugin;
