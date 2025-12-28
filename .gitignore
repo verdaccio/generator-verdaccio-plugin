@@ -5,3 +5,4 @@ yarn-error.log
 generators/*
 .pnpm-store/*
 .pnpm-debug.log
+.DS_Store
