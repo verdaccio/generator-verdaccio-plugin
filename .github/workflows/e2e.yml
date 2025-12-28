@@ -1,13 +1,17 @@
 name: E2E
 
-on: [pull_request]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   e2e:
     runs-on: ubuntu-latest
+    # Avoid running on draft PRs
+    if: github.event.pull_request.draft == false    
     services:
       verdaccio:
-        image: verdaccio/verdaccio:5
+        image: verdaccio/verdaccio:6
         ports:
           - 4873:4873
 
