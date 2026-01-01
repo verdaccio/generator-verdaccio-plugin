@@ -1,5 +1,5 @@
 import AuthPlugin from './auth-plugin';
 
-export {AuthPlugin};
+export { AuthPlugin };
 
 export default AuthPlugin;

@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {describe, it} from 'vitest';
+import { describe, it } from 'vitest';
 import helpers from 'yeoman-test';
 
 describe('generator-verdaccio-plugin (storage)', () => {

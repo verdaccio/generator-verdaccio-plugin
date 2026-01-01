@@ -1,5 +1,5 @@
 import MiddlewarePlugin from './middleware-plugin';
 
-export {MiddlewarePlugin};
+export { MiddlewarePlugin };
 
 export default MiddlewarePlugin;

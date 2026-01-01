@@ -1,11 +1,11 @@
 import debugCore from 'debug';
 
-import {API_ERROR, errorUtils, pluginUtils} from '@verdaccio/core';
-import {Config, Logger, PackageAccess, RemoteUser} from '@verdaccio/types';
+import { API_ERROR, errorUtils, pluginUtils } from '@verdaccio/core';
+import { Config, Logger, PackageAccess, RemoteUser } from '@verdaccio/types';
 
-import {CustomConfig} from '../types/index';
+import { CustomConfig } from '../types/index';
 
-const {Plugin} = pluginUtils;
+const { Plugin } = pluginUtils;
 
 // Initialize debug logging
 // Replace 'custom-auth-plugin' with your plugin name
@@ -17,7 +17,8 @@ const debug = debugCore('verdaccio:plugin:custom-auth-plugin');
  */
 export default class AuthCustomPlugin
   extends Plugin<CustomConfig>
-  implements pluginUtils.Auth<CustomConfig> {
+  implements pluginUtils.Auth<CustomConfig>
+{
   private _logger: Logger;
   private _config: {};
   private _app_config: Config;
@@ -44,7 +45,7 @@ export default class AuthCustomPlugin
     // TODO: replace this code with your own authentication logic
     if (password === 'verdaccio') {
       this._logger.info(`User @{user} authenticated successfully`);
-      debug('User @{user} authenticated successfully', {user});
+      debug('User @{user} authenticated successfully', { user });
       return cb(null, [user]);
     } else {
       this._logger.error(`User @{user} authentication failed`);
@@ -76,9 +77,9 @@ export default class AuthCustomPlugin
   }
 
   public allow_publish(
-      user: RemoteUser,
-      pkg: PackageAccess,
-      cb: pluginUtils.AuthAccessCallback,
+    user: RemoteUser,
+    pkg: PackageAccess,
+    cb: pluginUtils.AuthAccessCallback
   ): void {
     // TODO: replace this code with your own publish logic
     // TODO: replace this code with your own publish logic
