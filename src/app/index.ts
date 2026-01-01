@@ -4,11 +4,11 @@ import { resolve } from 'node:path';
 import Generator from 'yeoman-generator';
 import yosay from 'yosay';
 
-import rootP from '../../package.json';
+import rootPackageJSON from '../../package.json';
 
 interface Props {
   name?: string;
-  pluginType?: 'auth' | 'storage' | 'middleware';
+  pluginType?: 'auth' | 'storage' | 'middleware' | 'filter';
   description?: string;
   githubUsername?: string;
   authorName?: string;
@@ -40,6 +40,7 @@ export default class PluginGenerator extends Generator {
           { name: 'Auth', value: 'auth' },
           { name: 'Storage', value: 'storage' },
           { name: 'Middleware', value: 'middleware' },
+          { name: 'Filter', value: 'filter' },
         ],
       },
       {
@@ -114,21 +115,21 @@ export default class PluginGenerator extends Generator {
     const pkg = this.fs.readJSON(this.templatePath(`${pluginType}/_package.json`));
 
     // devDependencies
-    pkg.devDependencies['@types/node'] = rootP.devDependencies['@types/node'];
-    pkg.devDependencies['@types/express'] = rootP.devDependencies['@types/express'];
-    pkg.devDependencies['@types/debug'] = rootP.devDependencies['@types/debug'];
-    pkg.devDependencies['typescript'] = rootP.devDependencies['typescript'];
-    pkg.devDependencies['@verdaccio/types'] = rootP.devDependencies['@verdaccio/types'];
+    pkg.devDependencies['@types/node'] =  rootPackageJSON.devDependencies['@types/node'];
+    pkg.devDependencies['@types/express'] = rootPackageJSON.devDependencies['@types/express'];
+    pkg.devDependencies['@types/debug'] = rootPackageJSON.devDependencies['@types/debug'];
+    pkg.devDependencies['typescript'] = rootPackageJSON.devDependencies['typescript'];
+    pkg.devDependencies['@verdaccio/types'] = rootPackageJSON.devDependencies['@verdaccio/types'];
     // required by verdaccio types
-    pkg.devDependencies['@types/jsonwebtoken'] = rootP.devDependencies['@types/jsonwebtoken'];
+    pkg.devDependencies['@types/jsonwebtoken'] = rootPackageJSON.devDependencies['@types/jsonwebtoken'];
     // dependencies
-    pkg.dependencies['@verdaccio/core'] = rootP.dependencies['@verdaccio/core'];
-    pkg.dependencies['@verdaccio/config'] = rootP.dependencies['@verdaccio/config'];
-    pkg.dependencies['debug'] = rootP.dependencies['debug'];
+    pkg.dependencies['@verdaccio/core'] = rootPackageJSON.dependencies['@verdaccio/core'];
+    pkg.dependencies['@verdaccio/config'] = rootPackageJSON.dependencies['@verdaccio/config'];
+    pkg.dependencies['debug'] = rootPackageJSON.dependencies['debug'];
     if (pluginType === 'auth') {
-      pkg.devDependencies['@verdaccio/auth'] = rootP.devDependencies['@verdaccio/auth'];
+      pkg.devDependencies['@verdaccio/auth'] = rootPackageJSON.devDependencies['@verdaccio/auth'];
     } else if (pluginType === 'middleware') {
-      pkg.dependencies['express'] = rootP.dependencies['express'];
+      pkg.dependencies['express'] = rootPackageJSON.dependencies['express'];
     }
 
     this.fs.writeJSON(this.templatePath(`${pluginType}/_package.json`), pkg);
