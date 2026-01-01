@@ -1,5 +1,5 @@
 import StoragePlugin from './storage-plugin';
 
-export {StoragePlugin};
+export { StoragePlugin };
 
 export default StoragePlugin;

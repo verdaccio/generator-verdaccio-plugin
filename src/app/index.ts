@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import _ from 'lodash';
-import {resolve} from 'node:path';
+import { resolve } from 'node:path';
 import Generator from 'yeoman-generator';
 import yosay from 'yosay';
 
@@ -37,15 +37,15 @@ export default class PluginGenerator extends Generator {
         message: 'What kind of plugin do you want to create?',
         default: process.env.PLUGIN_TYPE ?? 'auth',
         choices: [
-          {name: 'Auth', value: 'auth'},
-          {name: 'Storage', value: 'storage'},
-          {name: 'Middleware', value: 'middleware'},
+          { name: 'Auth', value: 'auth' },
+          { name: 'Storage', value: 'storage' },
+          { name: 'Middleware', value: 'middleware' },
         ],
       },
       {
         type: 'input',
         name: 'name',
-        message: 'What\'s the plugin name? The prefix (verdaccio-xxx) will be added automatically',
+        message: "What's the plugin name? The prefix (verdaccio-xxx) will be added automatically",
         default: process.env.PLUGIN_NAME ?? 'my-plugin',
         validate: (input: string) => {
           if (!input) {
@@ -72,13 +72,13 @@ export default class PluginGenerator extends Generator {
       {
         type: 'input',
         name: 'authorName',
-        message: 'Author\'s Name',
+        message: "Author's Name",
         store: true,
       },
       {
         type: 'input',
         name: 'authorEmail',
-        message: 'Author\'s Email',
+        message: "Author's Email",
         store: true,
       },
       {
@@ -104,7 +104,7 @@ export default class PluginGenerator extends Generator {
   }
 
   packageJSON(): void {
-    const {pluginType} = this.props;
+    const { pluginType } = this.props;
 
     if (!pluginType) {
       this.log.error('pluginType is required');
@@ -134,9 +134,9 @@ export default class PluginGenerator extends Generator {
     this.fs.writeJSON(this.templatePath(`${pluginType}/_package.json`), pkg);
 
     this.fs.copyTpl(
-        this.templatePath(`${pluginType}/_package.json`),
-        this.destinationPath(resolve(this.destinationPathName, 'package.json')),
-        this.props,
+      this.templatePath(`${pluginType}/_package.json`),
+      this.destinationPath(resolve(this.destinationPathName, 'package.json')),
+      this.props
     );
   }
 

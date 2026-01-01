@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import debugCore from 'debug';
 
-import {errorUtils, searchUtils} from '@verdaccio/core';
-import {Callback, Config, Logger} from '@verdaccio/types';
+import { errorUtils, searchUtils } from '@verdaccio/core';
+import { Callback, Config, Logger } from '@verdaccio/types';
 
 // Initialize debug logging
 // Replace 'custom-auth-plugin' with your plugin name
@@ -36,8 +36,8 @@ class LocalDatabase {
   }
 
   public async filterByQuery(
-      _results: searchUtils.SearchItemPkg[],
-      _query: searchUtils.SearchQuery,
+    _results: searchUtils.SearchItemPkg[],
+    _query: searchUtils.SearchQuery
   ): Promise<searchUtils.SearchItemPkg[]> {
     throw errorUtils.getServiceUnavailable();
   }
