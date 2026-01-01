@@ -66,18 +66,12 @@ importers:
       '@types/node':
         specifier: 25.0.3
         version: 25.0.3
-      '@typescript-eslint/eslint-plugin':
-        specifier: 6.21.0
-        version: 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
-      '@typescript-eslint/parser':
-        specifier: 6.21.0
-        version: 6.21.0(eslint@8.57.1)(typescript@5.9.3)
       '@verdaccio/auth':
         specifier: 8.0.0-next-8.28
         version: 8.0.0-next-8.28
       '@verdaccio/eslint-config':
-        specifier: 11.0.0
-        version: 11.0.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(prettier@3.4.2)(typescript@5.9.3)(vitest@4.0.16(@types/node@25.0.3))
+        specifier: 11.0.1
+        version: 11.0.1(eslint@8.57.1)(prettier@3.4.2)(typescript@5.9.3)(vitest@4.0.16(@types/node@25.0.3))
       '@verdaccio/types':
         specifier: 13.0.0-next-8.10
         version: 13.0.0-next-8.10
@@ -1157,8 +1151,8 @@ packages:
     resolution: {integrity: sha512-W/wBvgF53CLr7m2zDV4QnHGYh0M/D3HTm5OuTxIjeclwDZGH2UHSdiI2BFFhvW7zt6MQVjfTQdgtcH4cmLGXhQ==}
     engines: {node: '>=18'}
 
-  '@verdaccio/eslint-config@11.0.0':
-    resolution: {integrity: sha512-wvIIKbuBmDU3LE4TJTKKKOfCgXLW2so9ziiJtuGmMZSTVt7qSTCBylX4lBSk/AvdyBWkngJbsq0rBxsFdZ0mGA==}
+  '@verdaccio/eslint-config@11.0.1':
+    resolution: {integrity: sha512-S5D1fX2eCH/UpLeBShvYA2WF0NY49tPI7/dMKpSTgII/Nj+h8HahS/olm1qiVN3ZsOS+pKU8KGCdj/kxOv6I2Q==}
 
   '@verdaccio/file-locking@13.0.0-next-8.6':
     resolution: {integrity: sha512-F6xQWvsZnEyGjugrYfe+D/ChSVudXmBFWi8xuTIX6PAdp7dk9x9biOGQFW8O3GSAK8UhJ6WlRisQKJeYRa6vWQ==}
@@ -5685,8 +5679,10 @@ snapshots:
       process-warning: 1.0.0
       semver: 7.7.3
 
-  '@verdaccio/eslint-config@11.0.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(prettier@3.4.2)(typescript@5.9.3)(vitest@4.0.16(@types/node@25.0.3))':
+  '@verdaccio/eslint-config@11.0.1(eslint@8.57.1)(prettier@3.4.2)(typescript@5.9.3)(vitest@4.0.16(@types/node@25.0.3))':
     dependencies:
+      '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
+      '@typescript-eslint/parser': 6.21.0(eslint@8.57.1)(typescript@5.9.3)
       '@vitest/eslint-plugin': 1.4.2(eslint@8.57.1)(typescript@5.9.3)(vitest@4.0.16(@types/node@25.0.3))
       eslint-config-google: 0.14.0(eslint@8.57.1)
       eslint-config-prettier: 10.1.8(eslint@8.57.1)
@@ -5702,7 +5698,6 @@ snapshots:
       eslint-plugin-vitest-globals: 1.5.0
     transitivePeerDependencies:
       - '@types/eslint'
-      - '@typescript-eslint/parser'
       - eslint
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
