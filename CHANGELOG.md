@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.1.0
+
+### Minor Changes
+
+- d1024a04: feat: add filter plugin support
+
 ## 6.0.1
 
 ### Patch Changes
