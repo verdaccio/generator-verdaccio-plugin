@@ -27,6 +27,7 @@ yo verdaccio-plugin
 - Authentication
 - Storage
 - Middleware
+- Filters
 
 ### Maintainers
 
