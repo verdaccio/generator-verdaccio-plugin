@@ -3,6 +3,7 @@
   "prConcurrentLimit": 2,
   "baseBranches": ["master"],
   "semanticCommitType": "fix",
+  "pinVersions": false,
   "major": true,
   "labels": ["bot: dependencies"],
   "packageRules": [
@@ -11,11 +12,7 @@
       "groupName": "all actions",
       "groupSlug": "github-actions",
       "schedule": ["every 4 month"]
-    },
-    {
-      "matchDatasources": ["docker"],
-      "labels": ["bot: docker-update"]
-    }
+    }   
   ],
   "pinVersions": true
 }
