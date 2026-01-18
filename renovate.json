@@ -5,5 +5,17 @@
   "semanticCommitType": "fix",
   "major": true,
   "labels": ["bot: dependencies"],
-  "pinVersions": false
+  "packageRules": [
+    {
+      "packageNames": ["actions/*", "github/codeql-action/*"],
+      "groupName": "all actions",
+      "groupSlug": "github-actions",
+      "schedule": ["every 4 month"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "labels": ["bot: docker-update"]
+    }
+  ],
+  "pinVersions": true
 }
