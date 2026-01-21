@@ -34,8 +34,8 @@ importers:
         version: 2.0.2
     devDependencies:
       '@changesets/changelog-github':
-        specifier: 0.4.8
-        version: 0.4.8(encoding@0.1.13)
+        specifier: 0.5.2
+        version: 0.5.2(encoding@0.1.13)
       '@changesets/cli':
         specifier: 2.26.1
         version: 2.26.1
@@ -211,8 +211,8 @@ packages:
   '@changesets/changelog-git@0.1.14':
     resolution: {integrity: sha512-+vRfnKtXVWsDDxGctOfzJsPhaCdXRYoe+KyWYoq5X/GqoISREiat0l3L8B0a453B2B4dfHGcZaGyowHbp9BSaA==}
 
-  '@changesets/changelog-github@0.4.8':
-    resolution: {integrity: sha512-jR1DHibkMAb5v/8ym77E4AMNWZKB5NPzw5a5Wtqm1JepAuIF+hrKp2u04NKM14oBZhHglkCfrla9uq8ORnK/dw==}
+  '@changesets/changelog-github@0.5.2':
+    resolution: {integrity: sha512-HeGeDl8HaIGj9fQHo/tv5XKQ2SNEi9+9yl1Bss1jttPqeiASRXhfi0A2wv8yFKCp07kR1gpOI5ge6+CWNm1jPw==}
 
   '@changesets/cli@2.26.1':
     resolution: {integrity: sha512-XnTa+b51vt057fyAudvDKGB0Sh72xutQZNAdXkCqPBKO2zvs2yYZx5hFZj1u9cbtpwM6Sxtcr02/FQJfZOzemQ==}
@@ -230,8 +230,8 @@ packages:
   '@changesets/get-dependents-graph@1.3.6':
     resolution: {integrity: sha512-Q/sLgBANmkvUm09GgRsAvEtY3p1/5OCzgBE5vX3vgb5CvW0j7CEljocx5oPXeQSNph6FXulJlXV3Re/v3K3P3Q==}
 
-  '@changesets/get-github-info@0.5.2':
-    resolution: {integrity: sha512-JppheLu7S114aEs157fOZDjFqUDpm7eHdq5E8SSR0gUBTEK0cNSHsrSR5a66xs0z3RWuo46QvA3vawp8BxDHvg==}
+  '@changesets/get-github-info@0.7.0':
+    resolution: {integrity: sha512-+i67Bmhfj9V4KfDeS1+Tz3iF32btKZB2AAx+cYMqDSRFP7r3/ZdGbjCo+c6qkyViN9ygDuBjzageuPGJtKGe5A==}
 
   '@changesets/get-release-plan@3.0.17':
     resolution: {integrity: sha512-6IwKTubNEgoOZwDontYc2x2cWXfr6IKxP3IhKeK+WjyD6y3M4Gl/jdQvBw+m/5zWILSOCAaGLu2ZF6Q+WiPniw==}
@@ -259,6 +259,9 @@ packages:
 
   '@changesets/types@5.2.1':
     resolution: {integrity: sha512-myLfHbVOqaq9UtUKqR/nZA/OY7xFjQMdfgfqeZIBK4d0hA6pgxArvdv8M+6NUzzBsjWLOtvApv8YHr4qM+Kpfg==}
+
+  '@changesets/types@6.1.0':
+    resolution: {integrity: sha512-rKQcJ+o1nKNgeoYRHKOS07tAMNd3YSN0uHaJOZYjBAgxfV7TUE7JE+z4BzZdQwb5hKaYbayKN5KrYV7ODb2rAA==}
 
   '@changesets/write@0.2.3':
     resolution: {integrity: sha512-Dbamr7AIMvslKnNYsLFafaVORx4H0pvCA2MHqgtNCySMe1blImEyAEOzDmcgKAkgz4+uwoLz7demIrX+JBr/Xw==}
@@ -4622,10 +4625,10 @@ snapshots:
     dependencies:
       '@changesets/types': 5.2.1
 
-  '@changesets/changelog-github@0.4.8(encoding@0.1.13)':
+  '@changesets/changelog-github@0.5.2(encoding@0.1.13)':
     dependencies:
-      '@changesets/get-github-info': 0.5.2(encoding@0.1.13)
-      '@changesets/types': 5.2.1
+      '@changesets/get-github-info': 0.7.0(encoding@0.1.13)
+      '@changesets/types': 6.1.0
       dotenv: 8.6.0
     transitivePeerDependencies:
       - encoding
@@ -4696,7 +4699,7 @@ snapshots:
       fs-extra: 7.0.1
       semver: 7.7.3
 
-  '@changesets/get-github-info@0.5.2(encoding@0.1.13)':
+  '@changesets/get-github-info@0.7.0(encoding@0.1.13)':
     dependencies:
       dataloader: 1.4.0
       node-fetch: 2.7.0(encoding@0.1.13)
@@ -4756,6 +4759,8 @@ snapshots:
   '@changesets/types@4.1.0': {}
 
   '@changesets/types@5.2.1': {}
+
+  '@changesets/types@6.1.0': {}
 
   '@changesets/write@0.2.3':
     dependencies:
