@@ -40,12 +40,12 @@
     "@verdaccio/auth": "8.0.0-next-8.29",
     "@verdaccio/eslint-config": "11.0.1",
     "@verdaccio/types": "13.0.0-next-8.10",
-    "@vitest/coverage-v8": "4.0.17",
+    "@vitest/coverage-v8": "4.0.18",
     "eslint": "8.57.1",
     "express": "4.22.1",
     "prettier": "3.8.1",
     "typescript": "5.9.3",
-    "vitest": "4.0.17",
+    "vitest": "4.0.18",
     "yeoman-test": "11.2.0"
   },
   "engines": {
