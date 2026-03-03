@@ -115,13 +115,14 @@ export default class PluginGenerator extends Generator {
     const pkg = this.fs.readJSON(this.templatePath(`${pluginType}/_package.json`));
 
     // devDependencies
-    pkg.devDependencies['@types/node'] =  rootPackageJSON.devDependencies['@types/node'];
+    pkg.devDependencies['@types/node'] = rootPackageJSON.devDependencies['@types/node'];
     pkg.devDependencies['@types/express'] = rootPackageJSON.devDependencies['@types/express'];
     pkg.devDependencies['@types/debug'] = rootPackageJSON.devDependencies['@types/debug'];
     pkg.devDependencies['typescript'] = rootPackageJSON.devDependencies['typescript'];
     pkg.devDependencies['@verdaccio/types'] = rootPackageJSON.devDependencies['@verdaccio/types'];
     // required by verdaccio types
-    pkg.devDependencies['@types/jsonwebtoken'] = rootPackageJSON.devDependencies['@types/jsonwebtoken'];
+    pkg.devDependencies['@types/jsonwebtoken'] =
+      rootPackageJSON.devDependencies['@types/jsonwebtoken'];
     // dependencies
     pkg.dependencies['@verdaccio/core'] = rootPackageJSON.dependencies['@verdaccio/core'];
     pkg.dependencies['@verdaccio/config'] = rootPackageJSON.dependencies['@verdaccio/config'];

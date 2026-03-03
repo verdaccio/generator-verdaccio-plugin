@@ -3,16 +3,37 @@
   "prConcurrentLimit": 2,
   "baseBranches": ["master"],
   "semanticCommitType": "fix",
-  "pinVersions": false,
   "major": true,
   "labels": ["bot: dependencies"],
   "packageRules": [
+    {
+      "matchDepTypes": ["dependencies"],
+      "matchPackagePatterns": ["^@verdaccio/"],
+      "minimumReleaseAge": "0 days"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "excludePackagePatterns": ["^@verdaccio/"],
+      "minimumReleaseAge": "15 days"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePatterns": ["eslint", "prettier", "vitest", "@vitest/", "@types/", "typescript"],
+      "groupName": "linting, test and type tooling",
+      "minimumReleaseAge": "60 days"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "excludePackagePatterns": ["eslint", "prettier", "vitest", "@vitest/", "@types/", "typescript"],
+      "groupName": "other devDependencies",
+      "minimumReleaseAge": "60 days"
+    },
     {
       "packageNames": ["actions/*", "github/codeql-action/*"],
       "groupName": "all actions",
       "groupSlug": "github-actions",
       "schedule": ["every 4 month"]
-    }   
+    }
   ],
   "pinVersions": true
 }

@@ -27,7 +27,7 @@ jobs:
       - name: setup node.js
         uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
-          node-version-file: '.nvmrc'      
+          node-version-file: '.nvmrc'
       - name: install pnpm
         run: npm i -g corepack@latest || corepack enable && corepack prepare pnpm@latest --activate
       - name: install dependencies

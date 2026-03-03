@@ -1,12 +1,16 @@
-import {  Config, Logger, Manifest } from '@verdaccio/types';
-
 import debugCore from 'debug';
-const debug = debugCore('verdaccio:plugin:filter');
+
+import { pluginUtils } from '@verdaccio/core';
+import { Config, Logger, Manifest } from '@verdaccio/types';
 
 import { CustomConfig } from '../types';
-import { pluginUtils } from '@verdaccio/core';
 
-export default class FilterPlugin extends pluginUtils.Plugin<CustomConfig> implements pluginUtils.ManifestFilter<CustomConfig> {
+const debug = debugCore('verdaccio:plugin:filter');
+
+export default class FilterPlugin
+  extends pluginUtils.Plugin<CustomConfig>
+  implements pluginUtils.ManifestFilter<CustomConfig>
+{
   private _logger: Logger;
   private _config: {};
   private _app_config: Config;
