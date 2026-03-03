@@ -1,0 +1,15 @@
+{
+  "plugin": ["typedoc-plugin-markdown"],
+  "entryPoints": ["node_modules/@verdaccio/core/build/index.d.ts"],
+  "tsconfig": "tsconfig.docs.json",
+  "out": "docs/api/core",
+  "readme": "none",
+  "entryFileName": "index",
+  "disableSources": true,
+  "flattenOutputFiles": false,
+  "hideBreadcrumbs": true,
+  "useCodeBlocks": true,
+  "parametersFormat": "table",
+  "propertiesFormat": "table",
+  "typeDeclarationFormat": "table"
+}

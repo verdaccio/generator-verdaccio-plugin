@@ -9,3 +9,5 @@ generators/*
 
 # vitepress
 /docs/.vitepress/dist/**
+/docs/.vitepress/cache/**
+/docs/api/core/

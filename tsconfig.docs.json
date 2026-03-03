@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "allowJs": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["node_modules/@verdaccio/core/build/**/*.d.ts"]
+}
