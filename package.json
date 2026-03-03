@@ -45,6 +45,7 @@
     "express": "4.22.1",
     "prettier": "3.8.1",
     "typescript": "5.9.3",
+    "vitepress": "1.6.4",
     "vitest": "4.0.18",
     "yeoman-test": "11.2.0"
   },
@@ -68,7 +69,10 @@
     "ci:version:changeset": "changeset version",
     "ci:version": "npm run ci:version:changeset && npm run ci:version:install",
     "ci:version:install": "pnpm install --frozen-lockfile=false",
-    "ci:publish": "changeset publish"
+    "ci:publish": "changeset publish",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "license": "MIT"
 }
