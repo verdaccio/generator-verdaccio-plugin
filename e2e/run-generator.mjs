@@ -1,7 +1,9 @@
-import { resolve } from 'node:path';
+import { cpSync } from 'node:fs';
+import { join, resolve } from 'node:path';
 import helpers from 'yeoman-test';
 
 const pluginType = process.argv[2] || 'auth';
+const outputDir = process.argv[3] || resolve('e2e-output');
 const pluginName = 'test-plugin';
 const generatorPath = resolve('generators/app');
 
@@ -29,4 +31,8 @@ const expectedFiles = [
 
 expectedFiles.forEach((file) => result.assertFile(file));
 
-console.log(`Generated ${pluginType} plugin successfully, files verified.`);
+// Copy generated plugin to the output directory for subsequent CI steps
+const source = join(result.cwd, `verdaccio-${pluginName}`);
+cpSync(source, outputDir, { recursive: true });
+
+console.log(`Generated ${pluginType} plugin successfully at ${outputDir}`);
