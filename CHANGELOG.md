@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.0
+
+### Major Changes
+
+- 88e9b78: feat: update yosay major dep
+
 ## 6.1.0
 
 ### Minor Changes
