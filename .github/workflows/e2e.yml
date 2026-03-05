@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     # Avoid running on draft PRs
     if: github.event.pull_request.draft == false
+    strategy:
+      matrix:
+        plugin-type: [auth, storage, middleware, filter]
     services:
       verdaccio:
         image: verdaccio/verdaccio:6
@@ -43,3 +46,11 @@ jobs:
         run: npm install -g yo
       - name: install generator
         run: npm install -g generator-verdaccio-plugin --registry http://localhost:4873
+      - name: generate ${{ matrix.plugin-type }} plugin
+        run: node e2e/run-generator.mjs ${{ matrix.plugin-type }}
+      - name: install generated plugin deps
+        working-directory: verdaccio-test-plugin
+        run: npm install
+      - name: build generated plugin
+        working-directory: verdaccio-test-plugin
+        run: npx tsc
