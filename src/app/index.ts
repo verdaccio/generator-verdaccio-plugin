@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import Generator from 'yeoman-generator';
 import yosay from 'yosay';
 
-import rootPackageJSON from '../../package.json';
+import rootPackageJSON from '../../package.json' with { type: 'json' };
 
 interface Props {
   name?: string;
