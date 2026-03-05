@@ -2,7 +2,8 @@
   "compilerOptions": {
     "skipLibCheck": true,
     "target": "esnext",
-    "module": "commonjs",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "declaration": true,
     "noImplicitAny": false,
     "strict": true,
