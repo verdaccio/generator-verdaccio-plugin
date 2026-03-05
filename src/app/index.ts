@@ -127,9 +127,10 @@ export default class PluginGenerator extends Generator {
     pkg.dependencies['@verdaccio/core'] = rootPackageJSON.dependencies['@verdaccio/core'];
     pkg.dependencies['@verdaccio/config'] = rootPackageJSON.dependencies['@verdaccio/config'];
     pkg.dependencies['debug'] = rootPackageJSON.dependencies['debug'];
-    if (pluginType === 'auth') {
+    if (pluginType === 'auth' || pluginType === 'middleware') {
       pkg.devDependencies['@verdaccio/auth'] = rootPackageJSON.devDependencies['@verdaccio/auth'];
-    } else if (pluginType === 'middleware') {
+    }
+    if (pluginType === 'middleware') {
       pkg.dependencies['express'] = rootPackageJSON.dependencies['express'];
     }
 
