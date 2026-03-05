@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.1
+
+### Patch Changes
+
+- 2df81b1: fix: add missing auth dependency
+
 ## 7.0.0
 
 ### Major Changes
