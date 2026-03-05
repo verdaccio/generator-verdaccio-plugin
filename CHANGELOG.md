@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.2
+
+### Patch Changes
+
+- 6505bb7: fix: remove duplicated dependency
+
 ## 7.0.1
 
 ### Patch Changes
