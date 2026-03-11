@@ -53,7 +53,7 @@
     "yeoman-test": "11.2.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": "v25.8.1"
   },
   "repository": {
     "type": "git",
