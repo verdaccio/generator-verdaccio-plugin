@@ -17,7 +17,7 @@ This creates `verdaccio-my-auth/` with the auth plugin boilerplate.
 ```yaml
 auth:
   verdaccio-my-auth:
-    foo: bar   # custom config fields (see CustomConfig below)
+    foo: bar # custom config fields (see CustomConfig below)
 ```
 
 ## Custom Configuration
@@ -72,11 +72,11 @@ export default class AuthPlugin
 
 ### `constructor(config, options)`
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `config` | `CustomConfig` | Plugin config block from `verdaccio.yaml` merged with the global config |
-| `options.logger` | `Logger` | Verdaccio logger instance |
-| `options.config` | `Config` | Full Verdaccio application config |
+| Parameter        | Type           | Description                                                             |
+| ---------------- | -------------- | ----------------------------------------------------------------------- |
+| `config`         | `CustomConfig` | Plugin config block from `verdaccio.yaml` merged with the global config |
+| `options.logger` | `Logger`       | Verdaccio logger instance                                               |
+| `options.config` | `Config`       | Full Verdaccio application config                                       |
 
 ---
 
@@ -84,11 +84,11 @@ export default class AuthPlugin
 
 Called when a user runs `npm login`.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `user` | `string` | Username supplied by the client |
-| `password` | `string` | Password supplied by the client |
-| `cb` | `AuthCallback` | Call `cb(null, [user])` on success; `cb(error)` on failure |
+| Parameter  | Type           | Description                                                |
+| ---------- | -------------- | ---------------------------------------------------------- |
+| `user`     | `string`       | Username supplied by the client                            |
+| `password` | `string`       | Password supplied by the client                            |
+| `cb`       | `AuthCallback` | Call `cb(null, [user])` on success; `cb(error)` on failure |
 
 ```ts
 public authenticate(user: string, password: string, cb: pluginUtils.AuthCallback): void {
@@ -106,11 +106,11 @@ public authenticate(user: string, password: string, cb: pluginUtils.AuthCallback
 
 Called before Verdaccio serves a package tarball or metadata. Controls **read** access.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `user` | `RemoteUser` | Authenticated user (`{ name, groups, real_groups }`) |
-| `pkg` | `PackageAccess` | Package config from `verdaccio.yaml` (`{ access, publish, ... }`) |
-| `cb` | `AccessCallback` | Call `cb(null, true)` to allow; `cb(null, false)` or `cb(error)` to deny |
+| Parameter | Type             | Description                                                              |
+| --------- | ---------------- | ------------------------------------------------------------------------ |
+| `user`    | `RemoteUser`     | Authenticated user (`{ name, groups, real_groups }`)                     |
+| `pkg`     | `PackageAccess`  | Package config from `verdaccio.yaml` (`{ access, publish, ... }`)        |
+| `cb`      | `AccessCallback` | Call `cb(null, true)` to allow; `cb(null, false)` or `cb(error)` to deny |
 
 ```ts
 public allow_access(user: RemoteUser, pkg: PackageAccess, cb: pluginUtils.AccessCallback): void {
@@ -127,11 +127,11 @@ public allow_access(user: RemoteUser, pkg: PackageAccess, cb: pluginUtils.Access
 
 Called before Verdaccio accepts a `npm publish`. Controls **write** access.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `user` | `RemoteUser` | Authenticated user |
-| `pkg` | `PackageAccess` | Package config from `verdaccio.yaml` |
-| `cb` | `AuthAccessCallback` | Call `cb(null, true)` to allow; `cb(error)` to deny |
+| Parameter | Type                 | Description                                         |
+| --------- | -------------------- | --------------------------------------------------- |
+| `user`    | `RemoteUser`         | Authenticated user                                  |
+| `pkg`     | `PackageAccess`      | Package config from `verdaccio.yaml`                |
+| `cb`      | `AuthAccessCallback` | Call `cb(null, true)` to allow; `cb(error)` to deny |
 
 ```ts
 public allow_publish(user: RemoteUser, pkg: PackageAccess, cb: pluginUtils.AuthAccessCallback): void {
@@ -181,10 +181,10 @@ type AuthAccessCallback = (err: VerdaccioError | null, allowed?: boolean) => voi
 ```ts
 import { errorUtils } from '@verdaccio/core';
 
-errorUtils.getUnauthorized('message')   // HTTP 401
-errorUtils.getForbidden('message')      // HTTP 403
-errorUtils.getNotFound('message')       // HTTP 404
-errorUtils.getServiceUnavailable()      // HTTP 503
+errorUtils.getUnauthorized('message'); // HTTP 401
+errorUtils.getForbidden('message'); // HTTP 403
+errorUtils.getNotFound('message'); // HTTP 404
+errorUtils.getServiceUnavailable(); // HTTP 503
 ```
 
 ## Build & Publish

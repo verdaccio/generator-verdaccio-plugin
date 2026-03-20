@@ -9,22 +9,54 @@
     {
       "matchDepTypes": ["dependencies"],
       "matchPackagePatterns": ["^@verdaccio/"],
-      "minimumReleaseAge": "0 days"
+      "minimumReleaseAge": null
     },
     {
-      "matchDepTypes": ["dependencies"],
-      "excludePackagePatterns": ["^@verdaccio/"],
-      "minimumReleaseAge": "15 days"
+      "matchPackagePatterns": [
+        "yeoman-generator",
+        "yeoman-environment",
+        "yeoman-test",
+        "^yo$",
+        "^@yeoman/"
+      ],
+      "groupName": "yeoman dependencies"
+    },
+    {
+      "matchPackagePatterns": ["^@changesets/", "^changeset$"],
+      "groupName": "changeset dependencies"
+    },
+    {
+      "matchPackagePatterns": ["eslint", "prettier"],
+      "groupName": "eslint and prettier",
+      "minimumReleaseAge": "60 days"
+    },
+    {
+      "matchPackagePatterns": ["vitest", "^@vitest/"],
+      "groupName": "vitest",
+      "minimumReleaseAge": "30 days"
+    },
+    {
+      "matchPackagePatterns": ["typedoc"],
+      "groupName": "typedoc",
+      "minimumReleaseAge": "120 days"
     },
     {
       "matchDepTypes": ["devDependencies"],
-      "matchPackagePatterns": ["eslint", "prettier", "vitest", "@vitest/", "@types/", "typescript"],
-      "groupName": "linting, test and type tooling",
+      "matchPackagePatterns": ["@types/", "typescript"],
+      "groupName": "type tooling",
       "minimumReleaseAge": "60 days"
     },
     {
       "matchDepTypes": ["devDependencies"],
-      "excludePackagePatterns": ["eslint", "prettier", "vitest", "@vitest/", "@types/", "typescript"],
+      "excludePackagePatterns": [
+        "eslint",
+        "prettier",
+        "vitest",
+        "@vitest/",
+        "@types/",
+        "typescript",
+        "typedoc"
+      ],
       "groupName": "other devDependencies",
       "minimumReleaseAge": "60 days"
     },
@@ -33,6 +65,11 @@
       "groupName": "all actions",
       "groupSlug": "github-actions",
       "schedule": ["every 4 month"]
+    },
+    {
+      "matchManagers": ["nvm", "nodenv", "node-version"],
+      "matchPackageNames": ["node"],
+      "allowedVersions": "<25"
     }
   ],
   "pinVersions": true

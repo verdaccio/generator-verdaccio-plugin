@@ -23,14 +23,14 @@ The generator walks you through a short set of prompts and creates a `verdaccio-
 
 ## Interactive Prompts
 
-| Prompt | Description |
-|--------|-------------|
-| Plugin type | `auth`, `storage`, `middleware`, or `filter` |
-| Plugin name | Suffix after `verdaccio-` — e.g. `my-plugin` produces `verdaccio-my-plugin` |
-| Description | Short description added to `package.json` |
-| GitHub username / org | Populates the `repository` field in `package.json` |
-| Author name & email | Stored locally and reused in future runs |
-| Keywords | Comma-separated; `verdaccio` is always appended automatically |
+| Prompt                | Description                                                                 |
+| --------------------- | --------------------------------------------------------------------------- |
+| Plugin type           | `auth`, `storage`, `middleware`, or `filter`                                |
+| Plugin name           | Suffix after `verdaccio-` — e.g. `my-plugin` produces `verdaccio-my-plugin` |
+| Description           | Short description added to `package.json`                                   |
+| GitHub username / org | Populates the `repository` field in `package.json`                          |
+| Author name & email   | Stored locally and reused in future runs                                    |
+| Keywords              | Comma-separated; `verdaccio` is always appended automatically               |
 
 ## Generated Project Structure
 
