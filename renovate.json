@@ -23,7 +23,8 @@
     },
     {
       "matchPackagePatterns": ["^@changesets/", "^changeset$"],
-      "groupName": "changeset dependencies"
+      "groupName": "changeset dependencies",
+      "minimumReleaseAge": "120 days"
     },
     {
       "matchPackagePatterns": ["eslint", "prettier"],
@@ -72,5 +73,9 @@
       "allowedVersions": "<25"
     }
   ],
-  "pinVersions": true
+  "pinVersions": true,
+  "postUpgradeTasks": {
+    "commands": ["pnpm format"],
+    "executionMode": "branch"
+  }
 }
