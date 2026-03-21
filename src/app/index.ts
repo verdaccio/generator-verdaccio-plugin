@@ -6,6 +6,13 @@ import yosay from 'yosay';
 
 import rootPackageJSON from '../../package.json' with { type: 'json' };
 
+const pluginCategoryMap: Record<string, string> = {
+  auth: 'authentication',
+  storage: 'storage',
+  middleware: 'middleware',
+  filter: 'filter',
+};
+
 interface Props {
   name?: string;
   pluginType?: 'auth' | 'storage' | 'middleware' | 'filter';
@@ -133,6 +140,13 @@ export default class PluginGenerator extends Generator {
     if (pluginType === 'middleware') {
       pkg.dependencies['express'] = rootPackageJSON.dependencies['express'];
     }
+
+    // plugin-verifier
+    pkg.devDependencies['@verdaccio/plugin-verifier'] =
+      rootPackageJSON.devDependencies['@verdaccio/plugin-verifier'];
+    const category = pluginCategoryMap[pluginType];
+    pkg.scripts['verify'] =
+      `verdaccio-plugin-verifier ${this.projectName} --category ${category}`;
 
     this.fs.writeJSON(this.templatePath(`${pluginType}/_package.json`), pkg);
 
