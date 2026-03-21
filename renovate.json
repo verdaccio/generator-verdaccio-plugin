@@ -1,68 +1,70 @@
 {
-  "extends": ["config:base", "helpers:pinGitHubActionDigests"],
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
   "prConcurrentLimit": 1,
-  "baseBranches": ["master"],
+  "baseBranchPatterns": ["master"],
   "semanticCommitType": "fix",
-  "major": true,
+  "major": {
+    "enabled": true
+  },
   "labels": ["bot: dependencies"],
   "packageRules": [
     {
       "matchDepTypes": ["dependencies"],
-      "matchPackagePatterns": ["^@verdaccio/"],
-      "minimumReleaseAge": null
+      "minimumReleaseAge": null,
+      "matchPackageNames": ["/^@verdaccio//"]
     },
     {
-      "matchPackagePatterns": [
-        "yeoman-generator",
-        "yeoman-environment",
-        "yeoman-test",
-        "^yo$",
-        "^@yeoman/"
-      ],
-      "groupName": "yeoman dependencies"
+      "groupName": "yeoman dependencies",
+      "matchPackageNames": [
+        "/yeoman-generator/",
+        "/yeoman-environment/",
+        "/yeoman-test/",
+        "/^yo$/",
+        "/^@yeoman//"
+      ]
     },
     {
-      "matchPackagePatterns": ["^@changesets/", "^changeset$"],
       "groupName": "changeset dependencies",
-      "minimumReleaseAge": "120 days"
+      "minimumReleaseAge": "120 days",
+      "matchPackageNames": ["/^@changesets//", "/^changeset$/"]
     },
     {
-      "matchPackagePatterns": ["eslint", "prettier"],
       "groupName": "eslint and prettier",
-      "minimumReleaseAge": "60 days"
+      "minimumReleaseAge": "60 days",
+      "matchPackageNames": ["/eslint/", "/prettier/"]
     },
     {
-      "matchPackagePatterns": ["vitest", "^@vitest/"],
       "groupName": "vitest",
-      "minimumReleaseAge": "30 days"
+      "minimumReleaseAge": "30 days",
+      "matchPackageNames": ["/vitest/", "/^@vitest//"]
     },
     {
-      "matchPackagePatterns": ["typedoc"],
       "groupName": "typedoc",
-      "minimumReleaseAge": "120 days"
+      "minimumReleaseAge": "120 days",
+      "matchPackageNames": ["/typedoc/"]
     },
     {
       "matchDepTypes": ["devDependencies"],
-      "matchPackagePatterns": ["@types/", "typescript"],
       "groupName": "type tooling",
-      "minimumReleaseAge": "60 days"
+      "minimumReleaseAge": "60 days",
+      "matchPackageNames": ["/@types//", "/typescript/"]
     },
     {
       "matchDepTypes": ["devDependencies"],
-      "excludePackagePatterns": [
-        "eslint",
-        "prettier",
-        "vitest",
-        "@vitest/",
-        "@types/",
-        "typescript",
-        "typedoc"
-      ],
       "groupName": "other devDependencies",
-      "minimumReleaseAge": "60 days"
+      "minimumReleaseAge": "60 days",
+      "matchPackageNames": [
+        "!/eslint/",
+        "!/prettier/",
+        "!/vitest/",
+        "!/@vitest//",
+        "!/@types//",
+        "!/typescript/",
+        "!/typedoc/"
+      ]
     },
     {
-      "packageNames": ["actions/*", "github/codeql-action/*"],
+      "matchPackageNames": ["actions/*", "github/codeql-action/*"],
       "groupName": "all actions",
       "groupSlug": "github-actions",
       "schedule": ["every 4 month"]
@@ -73,7 +75,7 @@
       "allowedVersions": "<25"
     }
   ],
-  "pinVersions": true,
+  "rangeStrategy": "pin",
   "postUpgradeTasks": {
     "commands": ["pnpm format"],
     "executionMode": "branch"
