@@ -1,3 +1,4 @@
+// sort-imports-ignore
 import chalk from 'chalk';
 import _ from 'lodash';
 import { resolve } from 'node:path';
@@ -145,8 +146,7 @@ export default class PluginGenerator extends Generator {
     pkg.devDependencies['@verdaccio/plugin-verifier'] =
       rootPackageJSON.devDependencies['@verdaccio/plugin-verifier'];
     const category = pluginCategoryMap[pluginType];
-    pkg.scripts['verify'] =
-      `verdaccio-plugin-verifier ${this.projectName} --category ${category}`;
+    pkg.scripts['verify'] = `verdaccio-plugin-verifier ${this.projectName} --category ${category}`;
 
     this.fs.writeJSON(this.templatePath(`${pluginType}/_package.json`), pkg);
 
