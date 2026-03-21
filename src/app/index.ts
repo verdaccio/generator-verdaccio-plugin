@@ -6,7 +6,7 @@ import yosay from 'yosay';
 
 import rootPackageJSON from '../../package.json' with { type: 'json' };
 
-const pluginCategoryMap: Record<string, string> = {
+const pluginCategoryMap = {
   auth: 'authentication',
   storage: 'storage',
   middleware: 'middleware',
