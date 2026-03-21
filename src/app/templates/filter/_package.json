@@ -8,13 +8,16 @@
     "node": ">=18"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@verdaccio/plugin-verifier": "1.0.0-next-9.1"
+  },
   "keywords": ["<%= keywords %>"],
   "license": "<%= license %>",
   "repository": "<%= repository %>",
   "author": "<%= authorName %> <<%= authorEmail %>>",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "verify": "verdaccio-plugin-verifier <%= name %> --category filter"
   }
 }

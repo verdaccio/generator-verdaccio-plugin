@@ -1,3 +1,4 @@
+// sort-imports-ignore
 import chalk from 'chalk';
 import _ from 'lodash';
 import { resolve } from 'node:path';
@@ -5,6 +6,13 @@ import Generator from 'yeoman-generator';
 import yosay from 'yosay';
 
 import rootPackageJSON from '../../package.json' with { type: 'json' };
+
+const pluginCategoryMap = {
+  auth: 'authentication',
+  storage: 'storage',
+  middleware: 'middleware',
+  filter: 'filter',
+};
 
 interface Props {
   name?: string;
@@ -134,6 +142,12 @@ export default class PluginGenerator extends Generator {
       pkg.dependencies['express'] = rootPackageJSON.dependencies['express'];
     }
 
+    // plugin-verifier
+    pkg.devDependencies['@verdaccio/plugin-verifier'] =
+      rootPackageJSON.devDependencies['@verdaccio/plugin-verifier'];
+    const category = pluginCategoryMap[pluginType];
+    pkg.scripts['verify'] = `verdaccio-plugin-verifier ${this.projectName} --category ${category}`;
+
     this.fs.writeJSON(this.templatePath(`${pluginType}/_package.json`), pkg);
 
     this.fs.copyTpl(
@@ -150,7 +164,11 @@ export default class PluginGenerator extends Generator {
     this.fs.copy(this.templatePath('common/npmignore'), dest('.npmignore'));
     this.fs.copy(this.templatePath('common/nvmrc'), dest('.nvmrc'));
 
-    this.fs.copyTpl(this.templatePath('common/README.md'), dest('README.md'), this.props);
+    this.fs.copyTpl(
+      this.templatePath(`${this.props.pluginType}/README.md`),
+      dest('README.md'),
+      this.props
+    );
 
     this.fs.copy(this.templatePath(`${this.props.pluginType}/src`), dest('src'));
     // this.fs.copy(this.templatePath('common/index.ts'), dest('index.ts'));
