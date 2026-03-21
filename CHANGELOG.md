@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.1.0
+
+### Minor Changes
+
+- 37911c5: Integrate @verdaccio/plugin-verifier into generated plugins, adding a `verify` script that validates the plugin can be loaded by Verdaccio's plugin loader
+
 ## 7.0.2
 
 ### Patch Changes
