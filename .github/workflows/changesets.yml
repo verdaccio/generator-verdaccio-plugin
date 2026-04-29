@@ -35,7 +35,7 @@ jobs:
       - name: test
         run: pnpm test
       - name: create versions
-        uses: changesets/action@master
+        uses: changesets/action@41adcfa1f4c9a2f03ee74a426a8878a2b8cf7b85 # master
         with:
           version: pnpm ci:version
           commit: 'build: release packages'
