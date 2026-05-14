@@ -51,7 +51,7 @@ jobs:
           title: 'build: release packages'
           publish: pnpm ci:publish
           createGithubReleases: true
-          setupGitUser: false
+          setupGitUser: true
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESET_RELEASE_TOKEN }}
           NPM_CONFIG_REGISTRY: https://registry.npmjs.org
