@@ -3,6 +3,7 @@
   "prConcurrentLimit": 1,
   "baseBranchPatterns": ["master"],
   "semanticCommitType": "fix",
+  "pinVersions": true,
   "major": {
     "enabled": true
   },
@@ -10,7 +11,7 @@
   "packageRules": [
     {
       "matchDepTypes": ["dependencies"],
-      "minimumReleaseAge": null,
+      "minimumReleaseAge": "0 days",
       "matchPackageNames": ["/^@verdaccio//"]
     },
     {
