@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.1.1
+
+### Patch Changes
+
+- 1c339b9: chore: release package test
+
 ## 7.1.0
 
 ### Minor Changes
