@@ -8,9 +8,15 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
 env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
+  NPM_CONFIG_PROVENANCE: 'true'
 
 jobs:
   # Update package versions from changesets.
@@ -29,7 +35,10 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - name: install pnpm
-        run: npm i -g corepack@latest || corepack enable && corepack prepare pnpm@latest --activate
+        run: |
+          npm install --global corepack@latest
+          corepack enable
+          corepack install
       - name: install dependencies
         run: pnpm install
       - name: test
@@ -45,6 +54,4 @@ jobs:
           setupGitUser: false
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESET_RELEASE_TOKEN }}
-          NPM_TOKEN: ${{ secrets.REGISTRY_AUTH_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.REGISTRY_AUTH_TOKEN }}
           NPM_CONFIG_REGISTRY: https://registry.npmjs.org
