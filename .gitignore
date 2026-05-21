@@ -12,3 +12,4 @@ e2e-output
 /docs/.vitepress/dist/**
 /docs/.vitepress/cache/**
 /docs/api/core/
+.claude
