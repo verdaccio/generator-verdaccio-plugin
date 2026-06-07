@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.1.2
+
+### Patch Changes
+
+- d797e79: chore: force release with env
+
 ## 7.1.1
 
 ### Patch Changes
