@@ -1,6 +1,7 @@
 {
   "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
   "prConcurrentLimit": 1,
+  "minimumReleaseAge": "15 days",
   "baseBranchPatterns": ["master"],
   "semanticCommitType": "fix",
   "pinVersions": true,
