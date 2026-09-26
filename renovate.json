@@ -31,9 +31,9 @@
       "matchPackageNames": ["/^@changesets//", "/^changeset$/"]
     },
     {
-      "groupName": "eslint and prettier",
-      "minimumReleaseAge": "60 days",
-      "matchPackageNames": ["/eslint/", "/prettier/"]
+      "groupName": "oxlint and oxfmt",
+      "minimumReleaseAge": "7 days",
+      "matchPackageNames": ["/oxlint/", "/oxfmt/"]
     },
     {
       "groupName": "vitest",
@@ -56,8 +56,8 @@
       "groupName": "other devDependencies",
       "minimumReleaseAge": "60 days",
       "matchPackageNames": [
-        "!/eslint/",
-        "!/prettier/",
+        "!/oxlint/",
+        "!/oxfmt/",
         "!/vitest/",
         "!/@vitest//",
         "!/@types//",

@@ -1,11 +1,11 @@
+import rootPackageJSON from '../../package.json' with {type: 'json'};
+
 // sort-imports-ignore
 import chalk from 'chalk';
 import _ from 'lodash';
-import { resolve } from 'node:path';
+import {resolve} from 'node:path';
 import Generator from 'yeoman-generator';
 import yosay from 'yosay';
-
-import rootPackageJSON from '../../package.json' with { type: 'json' };
 
 const pluginCategoryMap = {
   auth: 'authentication',
@@ -45,10 +45,10 @@ export default class PluginGenerator extends Generator {
         message: 'What kind of plugin do you want to create?',
         default: process.env.PLUGIN_TYPE ?? 'auth',
         choices: [
-          { name: 'Auth', value: 'auth' },
-          { name: 'Storage', value: 'storage' },
-          { name: 'Middleware', value: 'middleware' },
-          { name: 'Filter', value: 'filter' },
+          {name: 'Auth', value: 'auth'},
+          {name: 'Storage', value: 'storage'},
+          {name: 'Middleware', value: 'middleware'},
+          {name: 'Filter', value: 'filter'},
         ],
       },
       {
@@ -113,7 +113,7 @@ export default class PluginGenerator extends Generator {
   }
 
   packageJSON(): void {
-    const { pluginType } = this.props;
+    const {pluginType} = this.props;
 
     if (!pluginType) {
       this.log.error('pluginType is required');
