@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import debugCore from 'debug';
 
 import { errorUtils, searchUtils } from '@verdaccio/core';

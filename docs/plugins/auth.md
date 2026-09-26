@@ -26,7 +26,7 @@ Extend `Config` from `@verdaccio/types` to define the fields your plugin reads f
 
 ```ts
 // types/index.ts
-import { Config } from '@verdaccio/types';
+import {Config} from '@verdaccio/types';
 
 export interface CustomConfig extends Config {
   foo: string;
@@ -179,7 +179,7 @@ type AuthAccessCallback = (err: VerdaccioError | null, allowed?: boolean) => voi
 ## Common Error Helpers (`@verdaccio/core`)
 
 ```ts
-import { errorUtils } from '@verdaccio/core';
+import {errorUtils} from '@verdaccio/core';
 
 errorUtils.getUnauthorized('message'); // HTTP 401
 errorUtils.getForbidden('message'); // HTTP 403

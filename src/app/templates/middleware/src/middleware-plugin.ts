@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import express, { type Express, type Request, type Response } from 'express';
 
 import type { Auth } from '@verdaccio/auth';
@@ -22,9 +21,7 @@ export default class ProxyAudit
   // TODO: implement your middleware logic here
   // TODO: implement your middleware logic here
   public register_middlewares(app: Express, _auth: Auth): void {
-    /* eslint new-cap:off */
     const router = express.Router();
-    /* eslint new-cap:off */
 
     router.post('/custom-endpoint', express.json({ limit: '10mb' }), (req, res, next) => {
       this.logger.info({ method: req.method, url: req.url }, 'middleware-demo: incoming request');

@@ -129,4 +129,4 @@ See the [Verdaccio contributing guide](https://github.com/verdaccio/verdaccio/bl
 
 ## License
 
-MIT © [Juan Picado &lt;@jotadeveloper&gt;]()
+MIT © [Juan Picado &lt;@jotadeveloper&gt;](<>)
