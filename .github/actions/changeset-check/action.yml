@@ -1,0 +1,119 @@
+name: 'Changeset check'
+description: 'Verify a changeset file is included in the PR and that it actually versions the package. Posts a comment if missing, removes it when resolved.'
+
+runs:
+  using: composite
+  steps:
+    - name: Check for changeset files
+      id: check
+      shell: bash
+      run: |
+        BASE="${{ github.event.pull_request.base.ref }}"
+        # The base branch is not guaranteed to be present even with
+        # fetch-depth 0, since checkout fetches the PR merge ref.
+        git fetch --no-tags --depth=0 origin "$BASE" 2>/dev/null || true
+        CHANGED=$(git diff --name-only "origin/$BASE...HEAD" -- '.changeset/*.md' | grep -v 'README.md' || true)
+        if [ -z "$CHANGED" ]; then
+          echo "found=false" >> "$GITHUB_OUTPUT"
+        else
+          echo "found=true" >> "$GITHUB_OUTPUT"
+          echo "Changeset file(s) found:"
+          echo "$CHANGED"
+        fi
+
+    # Forked PRs run with a read-only GITHUB_TOKEN, so the comment steps below
+    # would 403. Skip them entirely when the PR head is a fork — the
+    # "Fail if changeset is missing" step still enforces the check.
+    - name: Find existing comment
+      id: find-comment
+      if: always() && github.event.pull_request.head.repo.full_name == github.repository
+      uses: peter-evans/find-comment@b30e6a3c0ed37e7c023ccd3f1db5c6c0b0c23aad # v4.0.0
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        body-includes: '<!-- changeset-check -->'
+
+    - name: Post missing changeset comment
+      if: >-
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        steps.check.outputs.found == 'false' &&
+        steps.find-comment.outputs.comment-id == ''
+      uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5.0.0
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          <!-- changeset-check -->
+          ## Changeset missing
+
+          This PR does not include a changeset file. Changes to the generator or its templates need a changeset so that versioning and changelogs are updated correctly.
+
+          **How to fix:**
+          ```bash
+          pnpm changeset
+          ```
+
+    - name: Remove comment when changeset is added
+      if: >-
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        steps.check.outputs.found == 'true' &&
+        steps.find-comment.outputs.comment-id != ''
+      uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5.0.0
+      with:
+        comment-id: ${{ steps.find-comment.outputs.comment-id }}
+        edit-mode: replace
+        body: |
+          <!-- changeset-check -->
+          ## Changeset found
+
+          Thank you for including a changeset!
+
+    - name: Fail if changeset is missing
+      if: steps.check.outputs.found == 'false'
+      shell: bash
+      run: |
+        echo "::error::No changeset file found. Please run 'pnpm changeset' to add one."
+        exit 1
+
+    - name: Use Node
+      uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      with:
+        node-version-file: '.nvmrc'
+
+    - name: Install pnpm
+      shell: bash
+      run: |
+        npm install --global corepack@latest
+        corepack enable
+        corepack install
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install
+
+    # Existing is not enough: a changeset naming a package that is not in the
+    # workspace, or one whose frontmatter does not parse, versions to nothing
+    # and would be found only at release time. Apply it to a throwaway tree and
+    # require the version to actually move.
+    - name: Verify the changeset versions the package
+      shell: bash
+      run: |
+        BEFORE=$(node -p "require('./package.json').version")
+
+        if ! pnpm exec changeset version; then
+          echo "::error::'changeset version' failed — the changeset in this PR is not valid."
+          exit 1
+        fi
+
+        AFTER=$(node -p "require('./package.json').version")
+        # Discard the throwaway bump; releasing is the changesets workflow's
+        # job. Scoped to what `changeset version` writes rather than the whole
+        # tree, so nothing else in the checkout is silently reverted.
+        git checkout -- package.json CHANGELOG.md .changeset
+
+        if [ "$BEFORE" = "$AFTER" ]; then
+          echo "::error::The changeset does not bump generator-verdaccio-plugin (version stayed at $BEFORE). Check the package name in its frontmatter."
+          exit 1
+        fi
+
+        echo "Changeset is valid: $BEFORE -> $AFTER"
+        echo "### Changeset check" >> "$GITHUB_STEP_SUMMARY"
+        echo "This PR would release \`generator-verdaccio-plugin@$AFTER\` (currently \`$BEFORE\`)." >> "$GITHUB_STEP_SUMMARY"

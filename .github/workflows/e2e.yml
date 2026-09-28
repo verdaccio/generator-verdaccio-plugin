@@ -11,10 +11,35 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  e2e:
+  # Gate: a PR without a working changeset never reaches the e2e matrix, which
+  # publishes to a registry and generates a plugin per type. Mirrors the
+  # changeset-check job on verdaccio/verdaccio master.
+  changeset-check:
+    name: Changeset file check
     runs-on: ubuntu-latest
-    # Avoid running on draft PRs
-    if: github.event.pull_request.draft == false
+    if: >-
+      github.event.pull_request.draft == false &&
+      github.actor != 'renovate[bot]' &&
+      github.actor != 'dependabot[bot]' &&
+      github.head_ref != 'changeset-release/master' &&
+      !contains(github.event.pull_request.labels.*.name, 'skip changeset')
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
+        with:
+          fetch-depth: 0
+      - name: Check changeset
+        uses: ./.github/actions/changeset-check
+
+  e2e:
+    needs: [changeset-check]
+    runs-on: ubuntu-latest
+    # Avoid running on draft PRs. `always() && !failure() && !cancelled()` lets
+    # the matrix still run when the gate was skipped (bots, release PRs), but
+    # not when it failed.
+    if: ${{ always() && !failure() && !cancelled() && github.event.pull_request.draft == false }}
     strategy:
       matrix:
         plugin-type: [auth, storage, middleware, filter]
