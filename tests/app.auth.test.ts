@@ -21,6 +21,7 @@ describe('generator-verdaccio-plugin (auth)', () => {
       'verdaccio-my-plugin/.gitignore',
       'verdaccio-my-plugin/.npmignore',
       'verdaccio-my-plugin/README.md',
+      'verdaccio-my-plugin/AGENTS.md',
       'verdaccio-my-plugin/src/index.ts',
 
       'verdaccio-my-plugin/tsconfig.json',

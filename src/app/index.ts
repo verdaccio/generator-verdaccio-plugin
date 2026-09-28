@@ -170,6 +170,15 @@ export default class PluginGenerator extends Generator {
       this.props
     );
 
+    // Instructions for coding agents, per plugin type. The interfaces were renamed in
+    // Verdaccio 7 and years of tutorials still use the old names, so an assistant given
+    // no context writes a plugin that does not compile.
+    this.fs.copyTpl(
+      this.templatePath(`${this.props.pluginType}/AGENTS.md`),
+      dest('AGENTS.md'),
+      this.props
+    );
+
     this.fs.copy(this.templatePath(`${this.props.pluginType}/src`), dest('src'));
     // this.fs.copy(this.templatePath('common/index.ts'), dest('index.ts'));
     this.fs.copy(this.templatePath('common/tsconfig.json'), dest('tsconfig.json'));
