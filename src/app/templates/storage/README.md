@@ -6,6 +6,11 @@ return '> ' + line
 
 ---
 
+> [!IMPORTANT]
+> This plugin implements the **promise based** storage API, which is available from
+> **Verdaccio 7.x onwards**. It will not load on Verdaccio 6.x or earlier, where storage
+> plugins are expected to implement the older callback based contract.
+
 ## Usage
 
 Add the plugin to your Verdaccio configuration file (`config.yaml`):
