@@ -44,10 +44,7 @@
     "express": "4.22.1",
     "oxfmt": "0.68.0",
     "oxlint": "1.83.0",
-    "typedoc": "0.28.17",
-    "typedoc-plugin-markdown": "4.10.0",
     "typescript": "5.9.3",
-    "vitepress": "1.6.4",
     "vitest": "4.0.18",
     "yeoman-test": "11.3.1"
   },
@@ -72,10 +69,6 @@
     "ci:version": "npm run ci:version:changeset && npm run ci:version:install",
     "ci:version:install": "pnpm install --frozen-lockfile=false",
     "ci:publish": "changeset publish",
-    "docs:api": "typedoc",
-    "docs:dev": "pnpm docs:api && vitepress dev docs",
-    "docs:build": "pnpm docs:api && vitepress build docs",
-    "docs:preview": "vitepress preview docs",
     "lint:fix": "oxlint --ignore-path .oxlintignore --fix ."
   },
   "license": "MIT",

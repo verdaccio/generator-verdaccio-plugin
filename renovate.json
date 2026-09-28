@@ -41,11 +41,6 @@
       "matchPackageNames": ["/vitest/", "/^@vitest//"]
     },
     {
-      "groupName": "typedoc",
-      "minimumReleaseAge": "120 days",
-      "matchPackageNames": ["/typedoc/"]
-    },
-    {
       "matchDepTypes": ["devDependencies"],
       "groupName": "type tooling",
       "minimumReleaseAge": "60 days",
@@ -61,8 +56,7 @@
         "!/vitest/",
         "!/@vitest//",
         "!/@types//",
-        "!/typescript/",
-        "!/typedoc/"
+        "!/typescript/"
       ]
     },
     {
