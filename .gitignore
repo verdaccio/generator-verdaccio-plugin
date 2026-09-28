@@ -9,7 +9,4 @@ generators/*
 e2e-output
 
 # vitepress
-/docs/.vitepress/dist/**
-/docs/.vitepress/cache/**
-/docs/api/core/
 .claude
